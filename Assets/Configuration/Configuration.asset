@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512410c72e1269b4c9bf37a189e34a56, type: 3}
+  m_Name: Configuration
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 8860612680123976218, guid: 4035f2b7de45edf4f9c6fc23e7a3c240, type: 3}
+  playerSpeed: 0.03
+  followOffset: {x: 0, y: 0, z: 0}
+  smoothTime: 0.05
+  projectileSetting:
+    prefab: {fileID: 9222280101073507360, guid: 72a72930ad7358846af140081064ec3c, type: 3}
+    hitEffectPrefab: {fileID: 2447312744532032233, guid: b5f7da774ab096941b05ec8414b9ec0c, type: 3}
+    LiveTime: 3
+  weaponSettings:
+    projectilePrefab: {fileID: 0}
+    projectileSocket: {fileID: 0}
+    projectileSpeed: 0
+    projectileRadius: 0
+    weaponDamage: 0
+    currentInMagazine: 0
+    maxInMagazine: 0
+    totalAmmo: 0

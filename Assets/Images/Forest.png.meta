@@ -1,0 +1,1582 @@
+fileFormatVersion: 2
+guid: 3160ee615e6ff8e479639a2fa26d2fbe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TreeTin1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 295
+        width: 46
+        height: 130
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -65}
+        - {x: -4, y: -57}
+        - {x: 4, y: -57}
+        - {x: 4, y: -65}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c9cc93897a0ea1449e16e7d8ec26d5b
+      internalID: 1238834430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreePin2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 297
+        width: 34
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -61.5}
+        - {x: -4, y: -54.5}
+        - {x: 2, y: -54.5}
+        - {x: 2, y: -61.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cad5aa4165b03142af215d3c2c3335f
+      internalID: -2013061355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreePin3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 297
+        width: 37
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4.5, y: -58}
+        - {x: -3.5, y: -51}
+        - {x: 2.5, y: -51}
+        - {x: 2.5, y: -58}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a99115ffafc811429285a65892a9d67
+      internalID: -1218972723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreePin4
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 298
+        width: 40
+        height: 140
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -69}
+        - {x: 2, y: -62}
+        - {x: 8, y: -62}
+        - {x: 10, y: -69}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49731e94cdc52af4fb07f03f3e745872
+      internalID: 922902392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockSmall1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 388
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3.5, y: -8.5}
+        - {x: -12.5, y: -4.5}
+        - {x: -10.5, y: 3.5}
+        - {x: 10.5, y: 3.5}
+        - {x: 9.5, y: -7.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a569159e5864f664697425127a1257a2
+      internalID: 953010750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockSmall2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 390
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.5, y: -11}
+        - {x: -12.5, y: -8}
+        - {x: -11.5, y: 2}
+        - {x: 9.5, y: 2}
+        - {x: 10.5, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935fddbf2ccd1bc44baea839bdef0c5e
+      internalID: 1935696216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_6
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 394
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef77c2fbad037014eb4f1075e69e4b22
+      internalID: -1390248860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreeDead3
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 292
+        width: 84
+        height: 117
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8, y: -57.5}
+        - {x: -7, y: -51.5}
+        - {x: -1, y: -51.5}
+        - {x: 0, y: -57.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f6d3e92b7382c499f7c19aecd43c43
+      internalID: 922703635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_18
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 394
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad4d9ceb3b03ad479486a873d3e9f17
+      internalID: 1880502519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockSmall3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 349
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 3, y: -12.5}
+        - {x: -7, y: -10.5}
+        - {x: -5, y: -2.5}
+        - {x: 13, y: -2.5}
+        - {x: 15, y: -11.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b44791ccfb4c314e918c0118c8c3dc6
+      internalID: 412497064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_49
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 373
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3f4a629d55519418c9ce817ddc2e41
+      internalID: -393599920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_50
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 374
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d26db1476b4fa349a74c7f1574a2deb
+      internalID: -418192162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockSmall4
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 346
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2.5, y: -9}
+        - {x: -10.5, y: -5}
+        - {x: -8.5, y: 3}
+        - {x: 10.5, y: 2}
+        - {x: 11.5, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9e881ddc276634ab94cb59c6a8c9ee
+      internalID: 1849618412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockSmall5
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 346
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.5, y: -9.5}
+        - {x: -9.5, y: -7.5}
+        - {x: -9.5, y: 1.5}
+        - {x: 7.5, y: 1.5}
+        - {x: 10.5, y: -5.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f4d3a378d358e409caee2eb766acad
+      internalID: -1136140005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundGrass1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 295
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb2e70baa97bfc4390649ec28b06714
+      internalID: 1061885174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundGrass0
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 295
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee90167f41c2efa49b9cf0f2b10931bd
+      internalID: -106362660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreeDead1
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 296
+        width: 35
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -8.5, y: -31}
+        - {x: -6.5, y: -21}
+        - {x: 3.5, y: -21}
+        - {x: 5.5, y: -31}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878e73981c854fe45bf7806f36b1cefc
+      internalID: -474523629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreeDead4
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 289
+        width: 45
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7.5, y: -38}
+        - {x: -6.5, y: -32}
+        - {x: -0.5, y: -32}
+        - {x: 0.5, y: -38}
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc72f29c63a3c54dbd493a23d67e0e6
+      internalID: 659406060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreeDead5
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 289
+        width: 47
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -7.5, y: -41.5}
+        - {x: -6.5, y: -35.5}
+        - {x: 1.5, y: -35.5}
+        - {x: 1.5, y: -41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32d3c3a19f7d124cb894341abb9e06f
+      internalID: -763972805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_64
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 301
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b40ba34d4c45af40818b6014a7f1029
+      internalID: -1529560837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_65
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 333
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99460db8c4a357f409bb16d01699f1ac
+      internalID: 2113765056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_66
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 301
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f55ca7876b1e404d984d3c1075b59ff
+      internalID: -1259205112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreeDead2
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 297
+        width: 30
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -6, y: -24.5}
+        - {x: -4, y: -18.5}
+        - {x: 2, y: -18.5}
+        - {x: 4, y: -24.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324b6a0b2973bc64cbac08572d30b332
+      internalID: -642402469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TreePinBrocken
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 299
+        width: 98
+        height: 33
+      alignment: 9
+      pivot: {x: 0.07, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -46, y: -15.5}
+        - {x: -45, y: -9.5}
+        - {x: -39, y: -9.5}
+        - {x: -38, y: -15.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac07cba2cd8e96498ae9969a90fef79
+      internalID: 2124563412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_69
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 300
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9f60021c559be4bbe4462b07fbf5ab
+      internalID: 2086348105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_70
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 301
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656f08fb8a41cff478a412d737658378
+      internalID: 1663511126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack13
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 254
+        width: 62
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -3, y: -15.5}
+        - {x: -27, y: -9.5}
+        - {x: -27, y: 3.5}
+        - {x: 23, y: 5.5}
+        - {x: 24, y: -4.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c558b69c7ff13645b45651823a3a074
+      internalID: 765882967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack14
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 250
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -17}
+        - {x: -19, y: -9}
+        - {x: -18, y: 0}
+        - {x: 23, y: -1}
+        - {x: 24, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebb07fbdd9b9cd418ed46fa8e417590
+      internalID: 169866552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 251
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.19937134, y: -17}
+        - {x: -20, y: -10}
+        - {x: -17, y: 1}
+        - {x: 17, y: 1}
+        - {x: 13, y: -11}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca559e9275636a47a85bd07f6dd86cb
+      internalID: -309478214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack2
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 255
+        width: 62
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: -16.5}
+        - {x: -23, y: -6.5}
+        - {x: -20, y: 6.5}
+        - {x: 23, y: 4.5}
+        - {x: 26, y: -6.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f045a0e1d3d8c438c5cf6b6fa228d6
+      internalID: -1227332679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundDirt0
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 221
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c4ca020cf604440a6d9c0605e45589
+      internalID: 861391557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_76
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 221
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762ab836f736c91478838263d990ef59
+      internalID: 577175242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_77
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 268
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95591badef3209b4fa47d71a8f38fbfb
+      internalID: -1010403416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_78
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 267
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13395c331470af94db5a609e864d8fba
+      internalID: 1041599637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack16
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 209
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.19042969, y: -16}
+        - {x: -14.5, y: -9}
+        - {x: -11.5, y: 0}
+        - {x: 12.5, y: -1}
+        - {x: 13.5, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434b57c08e712b84f85b3867c313e89c
+      internalID: -682130293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 211
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.5, y: -15.5}
+        - {x: -11.5, y: -12.5}
+        - {x: -10.5, y: 1.5}
+        - {x: 8.5, y: 2.5}
+        - {x: 10.5, y: -9.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e17c4c7293c1d84c993c75d2f5b580b
+      internalID: -1679341571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack5
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 203
+        width: 62
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -22.5}
+        - {x: -27, y: -15.5}
+        - {x: -27, y: -3.3850098}
+        - {x: -18, y: 4.5}
+        - {x: 20, y: 2.5}
+        - {x: 24, y: -11.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fed868fc0cc68a46bd8122f8125bb7d
+      internalID: -428299158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_82
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 245
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a99bb432fec55e48a20a2b67cd21695
+      internalID: 935067640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_83
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 244
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990eb7cb055b56f44aab6b85d70836e2
+      internalID: -1116672948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack15
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 206
+        width: 44
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.6180725, y: -13.5}
+        - {x: -17, y: -9.5}
+        - {x: -16, y: -0.5}
+        - {x: 18, y: -1.5}
+        - {x: 17, y: -9.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef54d3e4f5466c4abc2a0c0248ec9ef
+      internalID: -1471431330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack17
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 206
+        width: 43
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.5, y: -13}
+        - {x: -15.5, y: -6}
+        - {x: -14.5, y: 2}
+        - {x: 14.5, y: 3}
+        - {x: 17.5, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f3825ae7fd8554ea5380b674169563
+      internalID: -1813203004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 203
+        width: 61
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.5, y: -19.5}
+        - {x: -26.5, y: -8.5}
+        - {x: -20.5, y: 2.5}
+        - {x: 21.5, y: 3.5}
+        - {x: 23.5, y: -7.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ae424ad1f74a44eb74834ad8cf0832
+      internalID: -953823543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 145
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1.4999771, y: -18.5}
+        - {x: -28, y: -10.5}
+        - {x: -28, y: 0.5}
+        - {x: 24.455048, y: 2.4212952}
+        - {x: 24, y: -8.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65696c59cf0e17349a9227f29b8334ce
+      internalID: 2121992782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack19
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 140
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.0848999, y: -16.5}
+        - {x: -20, y: -7.5}
+        - {x: -17, y: 2.5}
+        - {x: 15, y: 1.5}
+        - {x: 20, y: -8.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e8f04b4813e4d47833bf884895012c
+      internalID: -138329545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack8
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 143
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2.5, y: -15.5}
+        - {x: -18, y: -15}
+        - {x: -17, y: -1}
+        - {x: 15, y: 3}
+        - {x: 18, y: -8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861996d14cdccbb4ea55f646234c5799
+      internalID: 187740472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack9
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 148
+        width: 62
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: -20.5}
+        - {x: -23, y: -9.5}
+        - {x: -20, y: 0.5}
+        - {x: 25, y: -0.5}
+        - {x: 27, y: -12.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b307fc756cef14ab239b72ddec3795
+      internalID: -309736219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 81
+        width: 62
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2.1491394, y: -26}
+        - {x: -23, y: -14}
+        - {x: -23, y: 1}
+        - {x: 18, y: 1}
+        - {x: 28, y: -8.3667755}
+        - {x: 28, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358f671df5bb90e4c8ef789b961f4411
+      internalID: 843384861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 100
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2.6870499, y: -17}
+        - {x: -15, y: -12}
+        - {x: -15, y: 1}
+        - {x: 15, y: 0}
+        - {x: 15, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501f7ac458fb87447926f99594ec7c38
+      internalID: 1980492878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack22
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 99
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1, y: -20.5}
+        - {x: -24, y: -9.5}
+        - {x: -22, y: 2.5}
+        - {x: 24, y: 3.5}
+        - {x: 28, y: -10.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8748039e1cf22e14aac0fa37ff27d92c
+      internalID: 1311102748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 90
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2, y: -19.5}
+        - {x: -27, y: -12.5}
+        - {x: -26, y: -1.5}
+        - {x: 23, y: 0.5}
+        - {x: 24, y: -9.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa3d9078fb330944ab5ec9a0092b2de
+      internalID: -231607583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack11
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 90
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -16}
+        - {x: -15, y: -11}
+        - {x: -15, y: 1}
+        - {x: 16, y: 2}
+        - {x: 16, y: -10}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e417f46b242ca41b6a78dce7095800
+      internalID: -1407064233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockBlack12
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 76
+        width: 62
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -1, y: -24.5}
+        - {x: -26, y: -17.5}
+        - {x: -26.675323, y: -3.6558685}
+        - {x: -17, y: 3.5}
+        - {x: 24, y: -2.5}
+        - {x: 24, y: -13.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f867b1f96ad3f204787c9d1aff56b51d
+      internalID: 227182097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneBig
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 88
+        width: 120
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c342cdf4294354b997fc9f860aba3f
+      internalID: -327408491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass1
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 376
+        width: 64
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c582e49b49dc104cad0d487ef09c87e
+      internalID: -407862552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 379
+        width: 64
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0b37fcf17168b4ab844a775d6fa2fc
+      internalID: -1067694258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass3
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 371
+        width: 64
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a3e219f9b86ce4ba60d6ded61cac79
+      internalID: -828297712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Forest_10: 1779191764
+      Forest_11: -1812715850
+      Forest_12: -606628136
+      Forest_13: 1936799135
+      Forest_14: -65695848
+      Forest_15: -195674077
+      Forest_16: 32971634
+      Forest_18: 1880502519
+      Forest_19: 65485220
+      Forest_20: -1176458964
+      Forest_21: -1126030834
+      Forest_22: -1339428185
+      Forest_23: -977575784
+      Forest_24: 54161489
+      Forest_25: 1449950342
+      Forest_26: 649415733
+      Forest_27: -121246432
+      Forest_28: 142266177
+      Forest_29: 808368078
+      Forest_30: 863065559
+      Forest_31: 1312268997
+      Forest_32: 1174838594
+      Forest_33: 389930222
+      Forest_34: 864887905
+      Forest_35: 2138138063
+      Forest_36: -846423004
+      Forest_37: -1828125649
+      Forest_38: 50713731
+      Forest_39: 1142274620
+      Forest_40: -1077470911
+      Forest_41: -2103294257
+      Forest_42: 696749121
+      Forest_43: -693514479
+      Forest_44: -1774172328
+      Forest_45: 758675754
+      Forest_46: -1314337617
+      Forest_47: -1594994521
+      Forest_49: -393599920
+      Forest_50: -418192162
+      Forest_51: 1143685244
+      Forest_52: 232736160
+      Forest_53: 1991564240
+      Forest_54: -1722324646
+      Forest_55: 1157844079
+      Forest_56: -519539158
+      Forest_6: -1390248860
+      Forest_64: -1529560837
+      Forest_65: 2113765056
+      Forest_66: -1259205112
+      Forest_69: 2086348105
+      Forest_7: -1611192252
+      Forest_70: 1663511126
+      Forest_76: 577175242
+      Forest_77: -1010403416
+      Forest_78: 1041599637
+      Forest_8: 1990065644
+      Forest_82: 935067640
+      Forest_83: -1116672948
+      Forest_9: -973450223
+      Forest_97: -137025593
+      Forest_98: -1149852701
+      Grass1: -407862552
+      Grass2: -1067694258
+      Grass3: -828297712
+      GroundDirt0: 861391557
+      GroundGrass0: -106362660
+      GroundGrass1: 1061885174
+      RockBlack1: -309478214
+      RockBlack10: -231607583
+      RockBlack11: -1407064233
+      RockBlack12: 227182097
+      RockBlack13: 765882967
+      RockBlack14: 169866552
+      RockBlack15: -1471431330
+      RockBlack16: -682130293
+      RockBlack17: -1813203004
+      RockBlack18: 2121992782
+      RockBlack19: -138329545
+      RockBlack2: -1227332679
+      RockBlack20: 843384861
+      RockBlack21: 1980492878
+      RockBlack22: 1311102748
+      RockBlack3: -953823543
+      RockBlack4: -1679341571
+      RockBlack5: -428299158
+      RockBlack8: 187740472
+      RockBlack9: -309736219
+      RockSmall1: 953010750
+      RockSmall2: 1935696216
+      RockSmall3: 412497064
+      RockSmall4: 1849618412
+      RockSmall5: -1136140005
+      StoneBig: 533150114
+      TreeDead1: -474523629
+      TreeDead2: -642402469
+      TreeDead3: 922703635
+      TreeDead4: 659406060
+      TreeDead5: -763972805
+      TreePin2: -2013061355
+      TreePin3: -1218972723
+      TreePin4: 922902392
+      TreePinBrocken: 2124563412
+      TreeTin1: 1238834430
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
