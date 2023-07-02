@@ -34,9 +34,7 @@ sealed class EcsStartup : MonoBehaviour
         _updateSystems
              // register your systems here, for example:
              .Add(new GenerateWorldSystem())
-             .Add(new PlayerInitSystem())
-             .Add(new PlayerInputSystem())
-             .Add(new PlayerMoveSystem())
+             .Add(new PlayerInitialiseSystem())
              .Add(new PlayerRotationSystem())
              .Add(new PlayerInputShootSystem())
              .Add(new WeaponShootSystem())
@@ -64,13 +62,13 @@ sealed class EcsStartup : MonoBehaviour
             .Inject(runtimeData)
             .Inject(hud);
 
-        //_fixedUpdateSystems
-            //.Add(new PlayerMoveSystem());
-
-        _lateUpdateSystems
+        _fixedUpdateSystems
+            .Add(new PlayerInputSystem())
+            .Add(new PlayerMoveSystem())
             .Add(new CameraFollowSystem())
             .Inject(configuration)
             .Inject(sceneData);
+            
 
         _updateSystems.Init();
         _fixedUpdateSystems.Init();

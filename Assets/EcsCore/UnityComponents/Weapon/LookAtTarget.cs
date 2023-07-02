@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class LookAtTarget : MonoBehaviour
 {
-    Vector2 cursorPosition;
+    [SerializeField] private Vector3 cursorPosition;
+    [SerializeField] private SpriteRenderer render;
 
     void Update()
     {
-        cursorPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x,
-                                            transform.eulerAngles.y,
-                                            cursorPosition.y * 180);
+        Vector3 dir = cursorPosition - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        //if (cursorPosition.y < transform.position.y)
-        //{
-        //    transform.eulerAngles = Vector3.right * 180;
-        //}
-        //else
-        //{
-        //   transform.eulerAngles = Vector3.zero;
-        //}
+        if(cursorPosition.x < transform.position.x)
+        {
+            render.flipY = true;
+        }
+        else
+        {
+            render.flipY = false;
+        }
     }
 }

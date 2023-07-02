@@ -6,6 +6,7 @@ namespace EcsComponent
 {
     public struct Player
     {
-        public Transform transform;
+        public Transform visualTransform;
+        public Transform mainTransform;
     }
 }

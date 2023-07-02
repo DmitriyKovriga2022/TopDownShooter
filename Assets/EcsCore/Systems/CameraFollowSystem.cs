@@ -17,7 +17,7 @@ internal class CameraFollowSystem : IEcsRunSystem
             ref var player = ref filter.Get1(i);
 
             var cameraPos = sceneData.mainCamera.transform.position;
-            var playerPos = player.transform.position;
+            var playerPos = player.mainTransform.position;
             playerPos.z = cameraPos.z;
 
             cameraPos = Vector3.SmoothDamp(cameraPos, playerPos, ref currentVelocity, staticData.smoothTime);

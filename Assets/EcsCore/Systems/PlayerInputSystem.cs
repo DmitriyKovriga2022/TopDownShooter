@@ -10,7 +10,7 @@ internal class PlayerInputSystem : IEcsRunSystem
         foreach (var i in filter)
         {
             ref var input = ref filter.Get2(i);
-            input.direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            input.direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         }
     }
 }

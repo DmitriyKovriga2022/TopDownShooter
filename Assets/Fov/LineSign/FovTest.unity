@@ -1201,7 +1201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024237146}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.78}
 --- !u!114 &746474686
 MonoBehaviour:
@@ -1212,13 +1212,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 746474681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6034488abb0573845ab82ab0a70f176a, type: 3}
+  m_Script: {fileID: 11500000, guid: bb40d338f0e3d034ab1ba77b37bac2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segments: 150
-  radius: 15
-  meshFilter: {fileID: 746474684}
-  meshRenderer: {fileID: 746474683}
+  viewRadius: 5
+  viewAngle: 15
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1
+  visibleTargets: []
+  meshResolution: 3
+  edgeResolveIterations: 4
+  edgeDstThreshold: 0.5
+  maskCutawayDst: 0.1
+  viewMeshFilter: {fileID: 746474684}
 --- !u!1 &1024237143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,8 +1311,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 746474685}
   - {fileID: 1405933413}
+  - {fileID: 746474685}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1369,7 +1379,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024237146}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1405933414
 SpriteRenderer:

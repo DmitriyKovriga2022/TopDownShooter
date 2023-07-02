@@ -14,13 +14,13 @@ internal class PlayerRotationSystem : IEcsRunSystem
 
             Vector2 cursorPosition = sceneData.mainCamera.ScreenToWorldPoint(Input.mousePosition);
             
-            if (cursorPosition.x < player.transform.position.x)
+            if (cursorPosition.x < player.mainTransform.position.x)
             {
-                player.transform.eulerAngles = Vector3.up * 180;
+                player.visualTransform.eulerAngles = Vector3.up * 180;
             }
             else
             {
-                player.transform.eulerAngles = Vector3.zero;
+                player.visualTransform.eulerAngles = Vector3.zero;
             }
 
         }

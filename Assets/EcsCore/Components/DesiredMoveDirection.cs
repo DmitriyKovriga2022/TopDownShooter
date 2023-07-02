@@ -4,6 +4,6 @@ namespace EcsComponent
 {
     internal struct DesiredMoveDirection
     {
-        public Vector3 direction;
+        public Vector2 direction;
     }
 }
