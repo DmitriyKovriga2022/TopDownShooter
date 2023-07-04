@@ -8,6 +8,8 @@ internal class PlayerRotationSystem : IEcsRunSystem
 
     public void Run()
     {
+        if (Cursor.visible) return;
+
         foreach (var i in filter)
         {
             ref var player = ref filter.Get1(i);

@@ -8,6 +8,8 @@ internal class PlayerInputShootSystem : IEcsRunSystem
 
     public void Run()
     {
+        if (Cursor.visible) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             foreach (var i in filter)

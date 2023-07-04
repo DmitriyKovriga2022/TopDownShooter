@@ -22,7 +22,7 @@ internal class WeaponShootSystem : IEcsRunSystem
                 spawnProjectileEvent.spawnPosition = weapon.shootPosition.position;
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
 
-                hud.hudWeapon.ShowAmmo(weapon.currentInMagazine);
+                hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
             }
             else
             {

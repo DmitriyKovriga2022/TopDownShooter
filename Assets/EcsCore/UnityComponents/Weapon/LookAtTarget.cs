@@ -9,6 +9,8 @@ public class LookAtTarget : MonoBehaviour
 
     void Update()
     {
+        if (Cursor.visible) return;
+
         cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 dir = cursorPosition - transform.position;

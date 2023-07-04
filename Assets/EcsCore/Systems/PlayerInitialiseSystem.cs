@@ -36,8 +36,8 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
 
         hasWeapon.weapon = weaponEntity;
 
-        hud.hudWeapon.ShowAmmo(weapon.currentInMagazine);
-        hud.hudWeapon.ShowMagazin(weapon.totalAmmo);
+        hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+        hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
 
         sceneData.fovFollowTarget.Target = player.mainTransform;
     }

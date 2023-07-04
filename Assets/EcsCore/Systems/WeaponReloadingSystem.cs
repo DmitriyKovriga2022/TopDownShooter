@@ -20,8 +20,8 @@ internal class WeaponReloadingSystem : IEcsRunSystem
             weapon.totalAmmo -= needAmmo;
             weapon.totalAmmo = weapon.totalAmmo < 0 ? 0 : weapon.totalAmmo;
 
-            hud.hudWeapon.ShowAmmo(weapon.currentInMagazine);
-            hud.hudWeapon.ShowMagazin(weapon.totalAmmo);
+            hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+            hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
         }
     }
 }

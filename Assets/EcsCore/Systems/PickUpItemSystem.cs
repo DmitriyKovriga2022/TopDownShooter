@@ -20,8 +20,8 @@ public class PickUpItemSystem : IEcsRunSystem
                 if (weapon.owner == playerEntity)
                 {
                     weapon.totalAmmo += 10;
-                    hud.hudWeapon.ShowAmmo(weapon.currentInMagazine);
-                    hud.hudWeapon.ShowMagazin(weapon.totalAmmo);
+                    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+                    hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
                 }
             }
         }
