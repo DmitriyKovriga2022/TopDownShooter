@@ -19,7 +19,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var motion = ref playerEntity.Get<EcsComponent.UnitMotion>();
         ref var inputData = ref playerEntity.Get<EcsComponent.DesiredMoveDirection>();
 
-        var playerGO = Object.Instantiate(staticData.unitPrefab);
+        var playerGO = Object.Instantiate(staticData.unitData.unitPrefab);
         playerGO.name = "Player";
         playerGO.entity = playerEntity;
         player.mainTransform = playerGO.mainTransform;
@@ -31,7 +31,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         
 
         motion.rigidbody = playerGO.rigidbody;
-        motion.speed = staticData.unitSpeed;
+        motion.speed = staticData.unitData.unitSpeed;
 
         sceneData.fovFollowTarget.Target = player.mainTransform;
         sceneData.player = playerGO;

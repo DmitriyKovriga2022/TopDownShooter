@@ -4,7 +4,8 @@ namespace EcsComponent
 {
     public struct ProjectileHitEvent
     {
-        internal Vector2 Position;
-        internal Quaternion Rotation;
+        public Vector2 Position;
+        public Quaternion Rotation;
+        public Collider2D Collider;
     }
 }

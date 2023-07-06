@@ -21,7 +21,7 @@ public class UnitMovePath : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (path.corners.Length == 0) return;
 
@@ -41,7 +41,7 @@ public class UnitMovePath : MonoBehaviour
                 direction = direction.normalized;
             }
 
-            rigidbody.velocity = direction * speed * Time.deltaTime;
+            rigidbody.velocity = direction * speed * Time.fixedDeltaTime;
             //Debug.DrawLine(transform.position, path.corners[currentPoint]);
         }
         else

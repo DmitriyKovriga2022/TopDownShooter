@@ -19,9 +19,9 @@ public class WeaponSettingsData
     [System.Serializable]
     public class SoundClips
     {
-        public AudioClip shootClip;
-        public AudioClip reloadClip;
-        public AudioClip misfireClip;
+        public AudioClip[] shootClip;
+        public AudioClip[] reloadClip;
+        public AudioClip[] misfireClip;
     }
 
 }

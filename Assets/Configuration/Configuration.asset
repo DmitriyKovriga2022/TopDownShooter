@@ -12,22 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512410c72e1269b4c9bf37a189e34a56, type: 3}
   m_Name: Configuration
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 8860612680123976218, guid: 4035f2b7de45edf4f9c6fc23e7a3c240, type: 3}
-  unitSpeed: 60
   followOffset: {x: 0, y: 0, z: 0}
   smoothTime: 0.05
+  unitData:
+    unitPrefab: {fileID: 8860612680123976218, guid: 4035f2b7de45edf4f9c6fc23e7a3c240, type: 3}
+    unitSpeed: 60
+    sound:
+      hit:
+      - {fileID: 8300000, guid: f35344101b277864d8fe2ab56230c831, type: 3}
+      - {fileID: 8300000, guid: ec1b5fbb246b8694f901aeaec1cf0704, type: 3}
+      - {fileID: 8300000, guid: 1f20b1fde14f2084d9556d9c7cdfa56a, type: 3}
+      - {fileID: 8300000, guid: 31dec32fe35dbcd46a44ddd7a148ef4f, type: 3}
+      dead:
+      - {fileID: 8300000, guid: 2adee718aa8973040929e213478df494, type: 3}
+      - {fileID: 8300000, guid: 86dc377e050c52243a366379466bf38d, type: 3}
+      - {fileID: 8300000, guid: a9579003d1a4b704cb12aba28e8ca540, type: 3}
   projectileSetting:
     prefab: {fileID: 9222280101073507360, guid: 72a72930ad7358846af140081064ec3c, type: 3}
     hitEffectPrefab: {fileID: 2447312744532032233, guid: b5f7da774ab096941b05ec8414b9ec0c, type: 3}
     LiveTime: 3
+    sound:
+      groundHit:
+      - {fileID: 8300000, guid: 8db15c8efc6cfe24096f5db3a945667b, type: 3}
+      - {fileID: 8300000, guid: 1a5b21a94431bb24985c3ec92029b173, type: 3}
+      - {fileID: 8300000, guid: 283a88052cb38b343811dca72e14d2f2, type: 3}
+      groundRicochet:
+      - {fileID: 8300000, guid: 93929408f1638734b971ffbcfea93863, type: 3}
+      - {fileID: 8300000, guid: 713fa468b04c95f47b8c94f34e66113d, type: 3}
+      - {fileID: 8300000, guid: 2a54859a6302bd145ab5c706d596ae77, type: 3}
   weaponSettings:
     weaponPrefab: {fileID: -4796381127803406112, guid: 0434b8fa78490ec4093c42a460608834, type: 3}
     projectilePrefab: {fileID: 0}
     projectileSocket: {fileID: 0}
-    gunSound:
-      shootClip: {fileID: 8300000, guid: fab8bd08c8b02ea49b05ad0fd6af9776, type: 3}
-      reloadClip: {fileID: 8300000, guid: 955aa79b2dc3a1f45920aaa5c0907624, type: 3}
-      misfireClip: {fileID: 8300000, guid: a1dfb5a1b1f48374ca3663cc791eb746, type: 3}
+    sound:
+      shootClip:
+      - {fileID: 8300000, guid: fab8bd08c8b02ea49b05ad0fd6af9776, type: 3}
+      - {fileID: 8300000, guid: 29879bcd27f559e468f02142ce0e2d10, type: 3}
+      reloadClip:
+      - {fileID: 8300000, guid: 74041e7eff56c94469fd1ba5283d32b5, type: 3}
+      misfireClip:
+      - {fileID: 8300000, guid: a1dfb5a1b1f48374ca3663cc791eb746, type: 3}
     projectileSpeed: 0
     projectileRadius: 0
     weaponDamage: 5

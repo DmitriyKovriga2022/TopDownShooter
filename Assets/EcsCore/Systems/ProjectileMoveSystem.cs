@@ -18,9 +18,9 @@ internal class ProjectileMoveSystem : IEcsRunSystem
 
             transform.LookAt2D(transform.right, (Vector2)transform.position + projectile.Direction);
 
-            if (RaycastHit(transform, speed, out Vector3 hitPosition))
+            if (RaycastHit(transform, speed, out HitInfo hitInfo))
             {
-                Hit(hitPosition, transform.rotation);
+                Hit(hitInfo, transform.rotation);
                 filter.Get1(i).gameObject.DestroySelf();
                 filter.GetEntity(i).Destroy();
             }
@@ -47,6 +47,16 @@ internal class ProjectileMoveSystem : IEcsRunSystem
         ref var hitEvent = ref entity.Get<EcsComponent.ProjectileHitEvent>();
         hitEvent.Position = position;
         hitEvent.Rotation = rotation;
+        hitEvent.Collider = null;
+    }
+
+    private void Hit(HitInfo hitInfo, Quaternion rotation)
+    {
+        var entity = ecsWorld.NewEntity();
+        ref var hitEvent = ref entity.Get<EcsComponent.ProjectileHitEvent>();
+        hitEvent.Position = hitInfo.hitPosition;
+        hitEvent.Rotation = rotation;
+        hitEvent.Collider = hitInfo.hitCollider;
     }
 
     private bool RaycastHit(Transform transform, float speed, out Vector3 hitPosition)
@@ -62,4 +72,26 @@ internal class ProjectileMoveSystem : IEcsRunSystem
 
         return false;
     }
+
+    private bool RaycastHit(Transform transform, float speed, out HitInfo hitInfo)
+    {
+        hitInfo = new HitInfo();
+        float distance = (transform.right * speed).magnitude;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * speed, distance);
+        if (hit.collider != null)
+        {
+            hitInfo.hitCollider = hit.collider;
+            hitInfo.hitPosition = hit.point;
+            return true;
+        }
+
+        return false;
+    }
+
+    public class HitInfo
+    {
+        public Collider2D hitCollider;
+        public Vector2 hitPosition;
+    }
+
 }

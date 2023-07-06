@@ -19,7 +19,10 @@ internal class WeaponShootSystem : IEcsRunSystem
             if (weapon.currentInMagazine > 0)
             {
                 weapon.currentInMagazine--;
-                SoundController.PlayClipAtPosition(config.weaponSettings.sound.shootClip, weapon.shootPosition.position);
+
+                int rnd = Random.Range(0, config.weaponSettings.sound.shootClip.Length);
+                SoundController.PlayClipAtPosition(config.weaponSettings.sound.shootClip[rnd], weapon.shootPosition.position, 0.2f);
+
                 ref var spawnProjectileEvent = ref ecsWorld.NewEntity().Get<EcsComponent.SpawnProjectileEvent>();
                 spawnProjectileEvent.spawnPosition = weapon.shootPosition.position;
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
@@ -28,7 +31,9 @@ internal class WeaponShootSystem : IEcsRunSystem
             }
             else
             {
-                SoundController.PlayClipAtPosition(config.weaponSettings.sound.misfireClip, weapon.shootPosition.position);
+                int rnd = Random.Range(0, config.weaponSettings.sound.misfireClip.Length);
+                SoundController.PlayClipAtPosition(config.weaponSettings.sound.misfireClip[rnd], weapon.shootPosition.position);
+
                 entity.Get<EcsComponent.TryReloadEvent>();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Leopotam.Ecs;
+using UnityEngine;
 
 internal class WeaponReloadingSystem : IEcsRunSystem
 {
@@ -21,7 +22,8 @@ internal class WeaponReloadingSystem : IEcsRunSystem
             weapon.totalAmmo -= needAmmo;
             weapon.totalAmmo = weapon.totalAmmo < 0 ? 0 : weapon.totalAmmo;
 
-            SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip, weapon.shootPosition.position);
+            int rnd = Random.Range(0, config.weaponSettings.sound.reloadClip.Length);
+            SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip[rnd], weapon.shootPosition.position);
 
             hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
             hud.HudWeapon.ShowMagazin(weapon.totalAmmo);

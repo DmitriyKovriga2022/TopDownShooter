@@ -3,15 +3,31 @@
 [CreateAssetMenu]
 internal class StaticData : ScriptableObject
 {
-    public UnityComponent.Unit unitPrefab;
-    public float unitSpeed;
+    
     public Vector3 followOffset;
     public float smoothTime;
 
+    public UnitData unitData;
     public ProjectileSetting projectileSetting;
     public WeaponSettingsData weaponSettings;
     public GridData gridData;
     public TileData tileData;
+}
+
+[System.Serializable]
+public class UnitData
+{
+    public UnityComponent.Unit unitPrefab;
+    public float unitSpeed;
+    public SoundClips sound;
+
+    [System.Serializable]
+    public class SoundClips
+    {
+        public AudioClip[] hit;
+        public AudioClip[] dead;
+    }
+
 }
 
 [System.Serializable]

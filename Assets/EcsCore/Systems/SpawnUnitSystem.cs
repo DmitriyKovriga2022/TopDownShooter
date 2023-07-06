@@ -17,7 +17,7 @@ public class SpawnUnitSystem : IEcsRunSystem
             var entity = filter.GetEntity(i);
             ref var unit = ref entity.Get<EcsComponent.Unit>();
             ref var spawnUnitEvent = ref filter.Get1(i);
-            var unitGO = Object.Instantiate(staticData.unitPrefab, spawnUnitEvent.position, Quaternion.identity);
+            var unitGO = Object.Instantiate(staticData.unitData.unitPrefab, spawnUnitEvent.position, Quaternion.identity);
             unitGO.entity = entity;
             unit.owner = entity;
             unit.UnitGO = unitGO;
