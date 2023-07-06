@@ -12,6 +12,8 @@ public class CameraChangeSize : MonoBehaviour
 
     private void Start()
     {
+        camera.transparencySortMode = TransparencySortMode.CustomAxis;
+        camera.transparencySortAxis = Vector3.up;
         size = camera.orthographicSize;
     }
 

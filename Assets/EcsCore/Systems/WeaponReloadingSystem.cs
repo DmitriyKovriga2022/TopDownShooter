@@ -2,6 +2,7 @@
 
 internal class WeaponReloadingSystem : IEcsRunSystem
 {
+    private StaticData config;
     private Hud hud;
     private EcsFilter<EcsComponent.TryReloadEvent, EcsComponent.Weapon> filter;
 
@@ -19,6 +20,8 @@ internal class WeaponReloadingSystem : IEcsRunSystem
 
             weapon.totalAmmo -= needAmmo;
             weapon.totalAmmo = weapon.totalAmmo < 0 ? 0 : weapon.totalAmmo;
+
+            SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip, weapon.shootPosition.position);
 
             hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
             hud.HudWeapon.ShowMagazin(weapon.totalAmmo);

@@ -22,7 +22,6 @@ sealed class EcsStartup : MonoBehaviour
         _updateSystems = new EcsSystems(_world);
         _fixedUpdateSystems = new EcsSystems(_world);
         _lateUpdateSystems = new EcsSystems(_world);
-        RuntimeData runtimeData = new RuntimeData();
 
 #if UNITY_EDITOR
         Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
@@ -35,8 +34,10 @@ sealed class EcsStartup : MonoBehaviour
              // register your systems here, for example:
              .Add(new GenerateWorldSystem())
              .Add(new PlayerInitialiseSystem())
+             .Add(new SpawnUnitSystem())
              .Add(new PlayerRotationSystem())
              .Add(new PlayerInputShootSystem())
+             .Add(new EquippingWithWeaponsSystem())
              .Add(new WeaponShootSystem())
              .Add(new WeaponReloadingSystem())
              .Add(new SpawnProjectileSystem())
@@ -55,11 +56,12 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.UnitCollisionEvent>()
              .OneFrame<EcsComponent.ItemCollisionEvent>()
              .OneFrame<EcsComponent.PickUpItemEvent>()
+             .OneFrame<EcsComponent.EquippingWithWeaponsEvent>()
+             .OneFrame<EcsComponent.SpawnUnitEvent>()
 
              // inject service instances here (order doesn't important), for example:
             .Inject(configuration)
             .Inject(sceneData)
-            .Inject(runtimeData)
             .Inject(hud);
 
         _fixedUpdateSystems

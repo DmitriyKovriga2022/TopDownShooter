@@ -1,20 +1,24 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+namespace UnityComponent
 {
-    public EcsEntity entity;
-    public new Rigidbody2D rigidbody;
-    public Transform mainTransform;
-    public Transform visualTransform;
-
-    [SerializeField] private Bag bag;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class Unit : MonoBehaviour
     {
-        if(collision.collider.TryGetComponent(out Item item))
+        public EcsEntity entity;
+        public new Rigidbody2D rigidbody;
+        public Transform mainTransform;
+        public Transform visualTransform;
+        public Transform weaponHolder;
+
+        [SerializeField] private Bag bag;
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            item.OnCollisionUnit(entity);
+            if (collision.collider.TryGetComponent(out Item item))
+            {
+                item.OnCollisionUnit(entity);
+            }
         }
     }
 }

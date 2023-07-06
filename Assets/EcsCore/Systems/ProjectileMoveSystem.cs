@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
-internal class ProjectileMoveSystem: IEcsRunSystem
+internal class ProjectileMoveSystem : IEcsRunSystem
 {
     private EcsWorld ecsWorld;
     private EcsFilter<EcsComponent.Projectile, EcsComponent.ProjectileMotion> filter;

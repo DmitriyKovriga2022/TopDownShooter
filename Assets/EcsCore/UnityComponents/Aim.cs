@@ -20,13 +20,7 @@ public class Aim : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (UnityEngine.Cursor.visible)
-        {
-            aimImage.enabled = false;
-            return;
-        }
-
-        transform.position = Input.mousePosition;
+       transform.position = Input.mousePosition;
     }
 
     
