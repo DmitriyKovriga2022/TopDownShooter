@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : BaseMenu
 {
     public event Action EventOnHideMenu;
+    public event Action EventOnButtonExit;
 
     [SerializeField] private Button returnButton;
     [SerializeField] private Button preferenceButton;
@@ -21,8 +22,7 @@ public class PauseMenu : BaseMenu
 
     private void OnButtonExit()
     {
-        Debug.Log("OnButtonExit");
-        Application.Quit();
+        EventOnButtonExit?.Invoke();
     }
 
     private void OnButtonPreference()

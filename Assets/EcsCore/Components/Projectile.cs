@@ -2,9 +2,10 @@
 
 namespace EcsComponent
 {
-    internal struct Projectile
+    public struct Projectile
     {
         public IGameObject gameObject;
-        public Vector2 TargetPosition;
+        //public Vector2 TargetPosition;
+        public float power;
     }
 }

@@ -7,6 +7,7 @@ public class ProjectileHitSystem : IEcsRunSystem
     private StaticData config;
     private EcsFilter<EcsComponent.ProjectileHitEvent> filter;
 
+    private float power;
     private Vector2 position;
     private Quaternion rotation;
     private Collider2D collider;
@@ -15,6 +16,7 @@ public class ProjectileHitSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
+            power = filter.Get1(i).power;
             position = filter.Get1(i).Position;
             rotation = filter.Get1(i).Rotation;
             collider = filter.Get1(i).Collider;
@@ -38,12 +40,7 @@ public class ProjectileHitSystem : IEcsRunSystem
             {
                 if(collider.TryGetComponent(out UnityComponent.Unit unit))
                 {
-                    int rnd = Random.Range(0, config.unitData.sound.hit.Length);
-                    SoundController.PlayClipAtPosition(config.unitData.sound.hit[rnd], position);
-
-                    //rnd = Random.Range(0, config.projectileSetting.sound.groundHit.Length);
-                    //SoundController.PlayClipAtPosition(config.projectileSetting.sound.groundHit[rnd], position);
-                    
+                    unit.entity.Get<EcsComponent.HitBulletEvent>().hitPower = power;
                 }
             }
 

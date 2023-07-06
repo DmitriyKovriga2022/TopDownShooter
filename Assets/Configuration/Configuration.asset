@@ -24,9 +24,14 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 1f20b1fde14f2084d9556d9c7cdfa56a, type: 3}
       - {fileID: 8300000, guid: 31dec32fe35dbcd46a44ddd7a148ef4f, type: 3}
       dead:
-      - {fileID: 8300000, guid: 2adee718aa8973040929e213478df494, type: 3}
-      - {fileID: 8300000, guid: 86dc377e050c52243a366379466bf38d, type: 3}
-      - {fileID: 8300000, guid: a9579003d1a4b704cb12aba28e8ca540, type: 3}
+      - {fileID: 8300000, guid: 51e3f5e6ab1f4874bbf44b062dfe27ec, type: 3}
+      - {fileID: 8300000, guid: 721f14489a0ad4b47bb7ced8d8ca8371, type: 3}
+      - {fileID: 8300000, guid: 836dfbf264497524a80340c1efce1aed, type: 3}
+      - {fileID: 8300000, guid: 92342c8a78536014f974ffa38802ca1c, type: 3}
+      - {fileID: 8300000, guid: 8d6a0a648d72f1041b2c8981f0b3cde1, type: 3}
+      - {fileID: 8300000, guid: c8e7231ea12dcc740ac782cddb4ffb3c, type: 3}
+      - {fileID: 8300000, guid: 88f2d4cffa150d6469a7d519cec1733e, type: 3}
+      - {fileID: 8300000, guid: 505445452d785b642bd6278cbdfe04b8, type: 3}
   projectileSetting:
     prefab: {fileID: 9222280101073507360, guid: 72a72930ad7358846af140081064ec3c, type: 3}
     hitEffectPrefab: {fileID: 2447312744532032233, guid: b5f7da774ab096941b05ec8414b9ec0c, type: 3}
@@ -42,8 +47,6 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 2a54859a6302bd145ab5c706d596ae77, type: 3}
   weaponSettings:
     weaponPrefab: {fileID: -4796381127803406112, guid: 0434b8fa78490ec4093c42a460608834, type: 3}
-    projectilePrefab: {fileID: 0}
-    projectileSocket: {fileID: 0}
     sound:
       shootClip:
       - {fileID: 8300000, guid: fab8bd08c8b02ea49b05ad0fd6af9776, type: 3}

@@ -6,8 +6,8 @@ using UnityEngine;
 public class WeaponSettingsData
 {
     public UnityComponent.Weapon weaponPrefab;
-    public GameObject projectilePrefab;
-    public Transform projectileSocket;
+    //public GameObject projectilePrefab;
+    //public Transform projectileSocket;
     public SoundClips sound;
     public float projectileSpeed;
     public float projectileRadius;

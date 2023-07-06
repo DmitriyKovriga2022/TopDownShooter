@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IGameObject
+namespace UnityComponent
 {
-    [SerializeField] private GameObject hitPrefab;
-    public Transform Transform => transform;
-    [SerializeField] new Transform transform;
-    public float Speed => speed;
-    [SerializeField] private float speed;
-
-    public void DestroySelf()
+    public class Projectile : MonoBehaviour, IGameObject
     {
-        Destroy(gameObject);
-    }
+        [SerializeField] private GameObject hitPrefab;
+        public Transform Transform => transform;
+        [SerializeField] new Transform transform;
+        public float Speed => speed;
+        [SerializeField] private float speed;
 
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+    }
 }

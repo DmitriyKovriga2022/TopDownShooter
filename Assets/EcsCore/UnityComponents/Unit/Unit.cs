@@ -20,5 +20,12 @@ namespace UnityComponent
                 item.OnCollisionUnit(entity);
             }
         }
+
+        public void Dead()
+        {
+            Debug.Log("Dead: " + this);
+            Destroy(gameObject);
+        }
+
     }
 }

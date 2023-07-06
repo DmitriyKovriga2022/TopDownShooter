@@ -7,17 +7,23 @@ internal class SpawnProjectileSystem : IEcsRunSystem
     private StaticData config;
     private EcsFilter<EcsComponent.SpawnProjectileEvent> filter;
 
+    private float power;
+    private Vector2 spawnPosition;
+    private UnityComponent.Projectile projectileGO;
+
     public void Run()
     {
         foreach (var i in filter)
         {
             ref var spawnProjectileEvent = ref filter.Get1(i);
-            var spawnPosition = spawnProjectileEvent.spawnPosition;
-            var projectileGO = Object.Instantiate(config.projectileSetting.prefab, spawnPosition, Quaternion.identity);
+            power = spawnProjectileEvent.power;
+            spawnPosition = spawnProjectileEvent.spawnPosition;
+            projectileGO = Object.Instantiate(config.projectileSetting.prefab, spawnPosition, Quaternion.identity);
 
             var entity =  ecsWorld.NewEntity();
-
-            entity.Get<EcsComponent.Projectile>().gameObject = projectileGO;
+            ref var projectile = ref entity.Get<EcsComponent.Projectile>();
+            projectile.gameObject = projectileGO;
+            projectile.power = power;
 
             ref var motionComponent = ref entity.Get<EcsComponent.ProjectileMotion>();
             motionComponent.Transform = projectileGO.Transform;

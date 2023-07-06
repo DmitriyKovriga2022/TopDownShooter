@@ -43,9 +43,11 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new SpawnProjectileSystem())
              .Add(new ProjectileMoveSystem())
              .Add(new ProjectileHitSystem())
+             .Add(new UnitHitBulletSystem())
              .Add(new LiveTimeSystem())
              .Add(new ItemCollisionSystem())
              .Add(new PickUpItemSystem())
+             .Add(new UnitDeadSystem())
              
 
              // register one-frame components (order is important), for example:
@@ -58,6 +60,8 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.PickUpItemEvent>()
              .OneFrame<EcsComponent.EquippingWithWeaponsEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
+             .OneFrame<EcsComponent.HitBulletEvent>()
+             .OneFrame<EcsComponent.UnitDeadEvent>()
 
              // inject service instances here (order doesn't important), for example:
             .Inject(configuration)

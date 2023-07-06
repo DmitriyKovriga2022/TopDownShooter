@@ -26,8 +26,12 @@ internal class WeaponShootSystem : IEcsRunSystem
                 ref var spawnProjectileEvent = ref ecsWorld.NewEntity().Get<EcsComponent.SpawnProjectileEvent>();
                 spawnProjectileEvent.spawnPosition = weapon.shootPosition.position;
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
+                spawnProjectileEvent.power = weapon.weaponDamage;
 
-                hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+                if (weapon.owner.Has<EcsComponent.Player>())
+                {
+                    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+                }
             }
             else
             {

@@ -25,8 +25,11 @@ internal class WeaponReloadingSystem : IEcsRunSystem
             int rnd = Random.Range(0, config.weaponSettings.sound.reloadClip.Length);
             SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip[rnd], weapon.shootPosition.position);
 
-            hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
-            hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
+            if (weapon.owner.Has<EcsComponent.Player>())
+            {
+                hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+                hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
+            }
         }
     }
 }

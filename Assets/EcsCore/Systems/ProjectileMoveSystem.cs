@@ -7,16 +7,20 @@ internal class ProjectileMoveSystem : IEcsRunSystem
 
     private float speed;
     private Transform transform;
+    private float power;
 
     public void Run()
     {
         foreach (var i in filter)
         {
-            ref var projectile = ref filter.Get2(i);
-            speed = projectile.Speed;
-            transform = projectile.Transform;
+            ref var projectile = ref filter.Get1(i);
+            power = projectile.power;
 
-            transform.LookAt2D(transform.right, (Vector2)transform.position + projectile.Direction);
+            ref var motion = ref filter.Get2(i);
+            speed = motion.Speed;
+            transform = motion.Transform;
+
+            transform.LookAt2D(transform.right, (Vector2)transform.position + motion.Direction);
 
             if (RaycastHit(transform, speed, out HitInfo hitInfo))
             {
@@ -26,7 +30,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
             }
             else
             {
-                if (projectile.MaxDistance < projectile.CurrentDistance)
+                if (motion.MaxDistance < motion.CurrentDistance)
                 {
                     Hit(transform.position, transform.rotation);
                     filter.Get1(i).gameObject.DestroySelf();
@@ -35,7 +39,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
                 else
                 {
                     transform.position += transform.right * speed;
-                    projectile.CurrentDistance += (transform.right * speed).magnitude;
+                    motion.CurrentDistance += (transform.right * speed).magnitude;
                 }
             }
         }
@@ -45,6 +49,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
     {
         var entity = ecsWorld.NewEntity();
         ref var hitEvent = ref entity.Get<EcsComponent.ProjectileHitEvent>();
+        hitEvent.power = power;
         hitEvent.Position = position;
         hitEvent.Rotation = rotation;
         hitEvent.Collider = null;
@@ -54,6 +59,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
     {
         var entity = ecsWorld.NewEntity();
         ref var hitEvent = ref entity.Get<EcsComponent.ProjectileHitEvent>();
+        hitEvent.power = power;
         hitEvent.Position = hitInfo.hitPosition;
         hitEvent.Rotation = rotation;
         hitEvent.Collider = hitInfo.hitCollider;
