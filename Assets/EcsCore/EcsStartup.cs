@@ -48,6 +48,7 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new ItemCollisionSystem())
              .Add(new PickUpItemSystem())
              .Add(new UnitDeadSystem())
+             .Add(new DropToGroundSystem())
              
 
              // register one-frame components (order is important), for example:
@@ -62,6 +63,7 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.HitBulletEvent>()
              .OneFrame<EcsComponent.UnitDeadEvent>()
+             .OneFrame<EcsComponent.DropToGroundEvent>()
 
              // inject service instances here (order doesn't important), for example:
             .Inject(configuration)

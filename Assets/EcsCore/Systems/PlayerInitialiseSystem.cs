@@ -21,23 +21,24 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var inputData = ref playerEntity.Get<EcsComponent.DesiredMoveDirection>();
         ref var health = ref playerEntity.Get<EcsComponent.Health>();
 
-        var playerGO = Object.Instantiate(staticData.unitData.unitPrefab);
-        playerGO.name = "Player";
-        playerGO.entity = playerEntity;
-        entity.mainTransform = playerGO.mainTransform;
-        entity.visualTransform = playerGO.visualTransform;
+        var unitGo = Object.Instantiate(staticData.unitData.unitPrefab);
+        unitGo.gameObject.AddComponent<UnityComponent.Player>();
+        unitGo.name = "Player";
+        unitGo.entity = playerEntity;
+        entity.mainTransform = unitGo.mainTransform;
+        entity.visualTransform = unitGo.visualTransform;
 
         unit.owner = playerEntity;
-        unit.UnitGO = playerGO;
+        unit.UnitGO = unitGo;
 
         health.value = 100;
         health.maxValue = 100;
 
-        motion.rigidbody = playerGO.rigidbody;
+        motion.rigidbody = unitGo.rigidbody;
         motion.speed = staticData.unitData.unitSpeed;
 
         sceneData.fovFollowTarget.Target = entity.mainTransform;
-        sceneData.player = playerGO;
+        sceneData.player = unitGo;
 
         hud.HudHealth.ShowHealth(health.value, health.maxValue);
 

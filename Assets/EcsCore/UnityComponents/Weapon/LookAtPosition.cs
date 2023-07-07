@@ -3,26 +3,21 @@ using UnityEngine;
 
 namespace UnityComponent
 {
-    public class LookAtTargetPosition : MonoBehaviour
+    public class LookAtPosition : MonoBehaviour
     {
         private SpriteRenderer render;
-        private Vector3 targetPosition;
-
-        public void LookAtTarget(Vector3 targetPosition)
-        {
-            this.targetPosition = targetPosition;
-        }
+        private ILookTarget lookTarget;
 
         private void Awake()
         {
             render = GetComponentInChildren<SpriteRenderer>();
+            lookTarget = GetComponentInParent<ILookTarget>();
+            lookTarget.EventLookAt += LookTarget_EventLookAt;
         }
 
-        private void Update()
+        private void LookTarget_EventLookAt(Vector2 targetPosition)
         {
-            if (Cursor.visible) return;
-
-            Vector3 dir = targetPosition - transform.position;
+            Vector3 dir = (Vector3)targetPosition - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 

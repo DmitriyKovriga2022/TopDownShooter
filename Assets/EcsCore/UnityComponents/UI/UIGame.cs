@@ -7,15 +7,34 @@ using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    private static UIGame instance;
+    public static UIGame Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = GameObject.FindObjectOfType<UIGame>();
+            }
+
+            return instance;
+        }
+        
+
+    }
     public event Action EventOnEscape;
 
+    [SerializeField] private Hud hud;
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private DeadMenu deadMenu;
+    [SerializeField] private LeaveZoneMenu leaveMenu;
     [SerializeField] private Aim aim;
     [SerializeField] private Button showMenuButton;
 
     private void Start()
     {
+        hud.EventShowDeadMenu += Hud_EventShowDeadMenu;
+
         showMenuButton.onClick.AddListener(OnButtonShowMenu);
         pauseMenu.EventOnButtonExit += PauseMenu_EventOnButtonExit;
         pauseMenu.Hide();
@@ -23,13 +42,27 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         deadMenu.EventOnButtonExit += DeadMenu_EventOnButtonExit;
         deadMenu.Hide();
 
+        leaveMenu.EventOnButtonExit += LeaveMenu_EventOnButtonExit;
+        leaveMenu.Hide();
+
         aim.Show();
         Cursor.visible = false;
+    }
+
+    private void Hud_EventShowDeadMenu()
+    {
+        ShowDeadMenu();
     }
 
     private void DeadMenu_EventOnButtonExit()
     {
         deadMenu.EventOnButtonExit -= DeadMenu_EventOnButtonExit;
+        QuitApplication();
+    }
+    
+    private void LeaveMenu_EventOnButtonExit()
+    {
+        leaveMenu.EventOnButtonExit -= LeaveMenu_EventOnButtonExit;
         QuitApplication();
     }
 
@@ -41,34 +74,46 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Update()
     {
+        if (deadMenu.gameObject.activeSelf) return;
+        if (leaveMenu.gameObject.activeSelf) return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseMenu.gameObject.activeSelf)
             {
-                HideMenu();
+                HidePauseMenu();
             }
             else
             {
-                ShowMenu();
+                ShowPauseMenu();
             }
         }
     }
 
-    public void OnButtonShowMenu()
+    private void OnButtonShowMenu()
     {
-        ShowMenu();
+        ShowPauseMenu();
     }
 
-    public void ShowDeadMenu()
+    private void ShowDeadMenu()
+    {
+        pauseMenu.Hide();
+        leaveMenu.Hide();
+        aim.Hide();
+        Cursor.visible = true;
+        deadMenu.Show();
+    }
+
+    public void ShowLeaveMenu()
     {
         pauseMenu.Hide();
         aim.Hide();
         Cursor.visible = true;
-        deadMenu.Show();
-
+        leaveMenu.EventOnHideMenu += LeaveMenu_EventOnHideMenu;
+        leaveMenu.Show();
     }
 
-    private void ShowMenu()
+    private void ShowPauseMenu()
     {
         //Debug.Log("Show Menu");
         aim.Hide();
@@ -77,18 +122,32 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         pauseMenu.EventOnHideMenu += PauseMenu_EventOnHideMenu;
     }
 
-    private void PauseMenu_EventOnHideMenu()
+    private void HideLaeveMenu()
     {
-        HideMenu();
-        pauseMenu.EventOnHideMenu -= PauseMenu_EventOnHideMenu;
+        //Debug.Log("Hide Menu");
+        leaveMenu.Hide();
+        aim.Show();
+        Cursor.visible = false;
     }
 
-    private void HideMenu()
+    private void HidePauseMenu()
     {
         //Debug.Log("Hide Menu");
         pauseMenu.Hide();
         aim.Show();
         Cursor.visible = false;
+    }
+
+    private void LeaveMenu_EventOnHideMenu()
+    {
+        HideLaeveMenu();
+        leaveMenu.EventOnHideMenu -= LeaveMenu_EventOnHideMenu;
+    }
+
+    private void PauseMenu_EventOnHideMenu()
+    {
+        HidePauseMenu();
+        pauseMenu.EventOnHideMenu -= PauseMenu_EventOnHideMenu;
     }
 
     private void QuitApplication()
@@ -116,6 +175,11 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             deadMenu.EventOnButtonExit -= DeadMenu_EventOnButtonExit;
         }
+
+        if (leaveMenu != null)
+        {
+            leaveMenu.EventOnButtonExit -= LeaveMenu_EventOnButtonExit;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -129,4 +193,5 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         aim.Show();
         Cursor.visible = false;
     }
+
 }

@@ -3,13 +3,27 @@
 [CreateAssetMenu]
 internal class StaticData : ScriptableObject
 {
-    
+   private static StaticData instance;
+    public static StaticData Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = Resources.Load("Configuration") as StaticData;
+            }
+
+            return instance;
+        }
+    }
+
     public Vector3 followOffset;
     public float smoothTime;
 
     public UnitData unitData;
     public ProjectileSetting projectileSetting;
     public WeaponSettingsData weaponSettings;
+    public SpriteCollisionData spriteCollisionData;
     public GridData gridData;
     public TileData tileData;
 }
@@ -51,4 +65,10 @@ public struct GridCell
 public class TileData
 {
     public Sprite[] groundGrass;
+}
+
+[System.Serializable]
+public class SpriteCollisionData
+{
+    public Sprite exitPointSprite;
 }

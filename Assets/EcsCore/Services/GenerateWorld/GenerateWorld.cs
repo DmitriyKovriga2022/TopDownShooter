@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class GenerateWorld : MonoBehaviour
 {
     public event Action EventEndGeneration;
-
+    //[SerializeField] private StaticData config;
     [SerializeField] private NavMeshSurface Surface2D;
     [SerializeField] private BuildNavMesh buildNavMesh;
     [SerializeField] private Tilemap groundTilemap;
@@ -21,9 +21,10 @@ public class GenerateWorld : MonoBehaviour
     [SerializeField] private TileBase[] grassTiles;
     [SerializeField] private TileBase[] treeTiles;
     [SerializeField] private TileBase[] stoneTiles;
+    [SerializeField] private TileBase exitPointTile;
     [SerializeField] private TileBase colliderTile;
-    [Space]
-    [SerializeField] private UnityComponent.Unit unitPrefab;
+    //[Space]
+    //[SerializeField] private UnityComponent.Unit unitPrefab;
 
     private GridData gridData;
 
@@ -37,11 +38,11 @@ public class GenerateWorld : MonoBehaviour
         GenerateGround();
         GenerateTree();
         //GenerateStone();
-
+        SpawnExitPoint();
         Surface2D.BuildNavMeshAsync().completed += EndBuildNavMesh;
     }
 
-    public void GenerateGround()
+    private void GenerateGround()
     {
         for (int x = 0; x < gridData.GridSize.x; x++)
         {
@@ -74,7 +75,20 @@ public class GenerateWorld : MonoBehaviour
         }
     }
 
-    public void GenerateTree()
+    private void SpawnExitPoint()
+    {
+        Vector3 position = transform.position;
+        float distance = gridData.GridSize.x/2 - 2;
+        float angle = UnityEngine.Random.Range(0f, Mathf.PI * 2);
+        Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+        Vector3 newPosition = position + direction * distance;
+
+        collisionTilemap.SetTile(new Vector3Int(Mathf.RoundToInt(newPosition.x), Mathf.RoundToInt(newPosition.y), 0), exitPointTile);
+        Debug.Log("ExitPoint:" + new Vector3Int(Mathf.RoundToInt(newPosition.x), Mathf.RoundToInt(newPosition.y), 0));
+        
+    }
+
+    private void GenerateTree()
     {
         for (int x = 0; x < gridData.GridSize.x; x++)
         {
@@ -98,7 +112,7 @@ public class GenerateWorld : MonoBehaviour
         }
     }
 
-    public void GenerateStone()
+    private void GenerateStone()
     {
         for (int x = 0; x < gridData.GridSize.x; x++)
         {
@@ -121,30 +135,6 @@ public class GenerateWorld : MonoBehaviour
             }
         }
     }
-
-    //public void SpawnEnemy()
-    //{
-        
-    //    var iteration = 100;
-    //    var unitCount = 0;//5;
-    //    while (unitCount > 0)
-    //    {
-    //        iteration--;
-    //        if (RandomPoint(out Vector3 position))
-    //        {
-    //            var unit = Instantiate(unitPrefab, (Vector3)position, Quaternion.identity);
-    //            AiCombat aiCombat = unit.gameObject.AddComponent<AiCombat>();
-    //            aiCombat.Initialise(mapsize);
-    //            unitCount--;
-    //        }
-
-    //        if (iteration < 0)
-    //        {
-    //            Debug.LogError("Cant find free position for spawn unit");
-    //            break;
-    //        }
-    //    }
-    //}
 
     private bool GenerateEmptyRandomPositions(float radius, out Vector2 position)
     {

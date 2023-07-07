@@ -1,14 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AiCombat : MonoBehaviour
+public interface ILookTarget
+{
+    event Action<Vector2> EventLookAt;
+}
+
+public class AiCombat : MonoBehaviour, ILookTarget
 {
     [SerializeField] private int layerMask;
 
+    public event Action<Vector2> EventLookAt;
+
     private Vector2Int mapsize;
-    private Vector2 targetPoint;
+    private Vector2 moveTargetPoint;
     private NavMeshPath path;
     private UnitMovePath unitMovePath;
     private UnityComponent.Unit mainTarget;
@@ -31,7 +39,8 @@ public class AiCombat : MonoBehaviour
 
     private bool RandomPoint(out Vector3 position)
     {
-        position = new Vector2(Random.Range(-mapsize.x / 2, mapsize.x / 2), Random.Range(-mapsize.y / 2, mapsize.y / 2));
+        position = new Vector2(UnityEngine.Random.Range(-mapsize.x / 2, mapsize.x / 2),
+                               UnityEngine.Random.Range(-mapsize.y / 2, mapsize.y / 2));
         NavMeshHit hit;
         if (NavMesh.SamplePosition(position, out hit, 10.0f, NavMesh.AllAreas))
         {
@@ -50,6 +59,8 @@ public class AiCombat : MonoBehaviour
                 CalculateRandomPath();
             }
         }
+
+        LookTarget();
     }
 
     private void FindEnemy()
@@ -76,7 +87,7 @@ public class AiCombat : MonoBehaviour
             currentTarget = mainTarget;
             path.ClearCorners();
 
-            if (Random.Range(0, 2) == 0)
+            if (UnityEngine.Random.Range(0, 2) == 0)
             {
                 GetComponentInChildren<UnityComponent.Weapon>().AiShoot(currentTarget.transform.position);
                 Invoke(nameof(FindEnemy), 0.1f);
@@ -86,8 +97,6 @@ public class AiCombat : MonoBehaviour
                 CalculateRandomPath();
                 Invoke(nameof(FindEnemy), 1);
             }
-
-            
         }
         else
         {
@@ -103,10 +112,10 @@ public class AiCombat : MonoBehaviour
     {
         if (RandomPoint(out Vector3 position))
         {
-            targetPoint = position;
+            moveTargetPoint = position;
         }
 
-        if (NavMesh.CalculatePath(transform.position, targetPoint, NavMesh.AllAreas, path))
+        if (NavMesh.CalculatePath(transform.position, moveTargetPoint, NavMesh.AllAreas, path))
         {
             //unitMovePath.SetPath(path);
         }
@@ -128,5 +137,15 @@ public class AiCombat : MonoBehaviour
         }
     }
 
-
+    private void LookTarget()
+    {
+        if (currentTarget != null)
+        {
+            EventLookAt?.Invoke(currentTarget.transform.position);
+        }
+        else
+        {
+            EventLookAt?.Invoke(transform.right);
+        }
+    }
 }

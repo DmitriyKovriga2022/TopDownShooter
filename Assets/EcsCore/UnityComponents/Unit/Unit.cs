@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace UnityComponent
 {
@@ -11,14 +12,13 @@ namespace UnityComponent
         public Transform visualTransform;
         public Transform weaponHolder;
 
+        private SpriteCollisionData spriteCollisionData;
+
         [SerializeField] private Bag bag;
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        public void Initialise(SpriteCollisionData spriteCollisionData)
         {
-            if (collision.collider.TryGetComponent(out Item item))
-            {
-                item.OnCollisionUnit(entity);
-            }
+            this.spriteCollisionData = spriteCollisionData;
         }
 
         public void Dead()

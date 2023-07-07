@@ -27,20 +27,23 @@ internal class EquippingWithWeaponsSystem : IEcsRunSystem
             weapon.currentInMagazine = setting.currentInMagazine;
             weapon.maxInMagazine = setting.maxInMagazine;
             weapon.shootPosition = weaponGO.PointShoot;
+            weapon.weaponGo = weaponGO;
             hasWeapon.weapon = weaponEntity;
             weaponGO.entity = weaponEntity;
 
+            weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
+
             if (unitComponent.owner.Has<EcsComponent.Player>())
             {
-                weaponGO.gameObject.AddComponent<LookAtMousePosition>();
                 hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
                 hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
             }
             else
             {
-                weaponGO.gameObject.AddComponent<LookAtTargetPosition>();
                 weaponGO.RenderTransform.gameObject.layer = 7;
             }
+
+
         }
     }
 }

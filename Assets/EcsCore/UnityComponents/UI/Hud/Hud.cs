@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Hud : MonoBehaviour
 {
+    public event Action EventShowDeadMenu;
+
     [SerializeField] private UIGame uiGame;
 
     public HudWeapon HudWeapon => hudWeapon;
@@ -16,7 +18,7 @@ public class Hud : MonoBehaviour
 
     public void ShowDeadPanel()
     {
-        uiGame.ShowDeadMenu();
+        EventShowDeadMenu?.Invoke();
     }
 
 }

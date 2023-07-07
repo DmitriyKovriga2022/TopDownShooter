@@ -33,9 +33,6 @@ public class GenerateWorldSystem : IEcsInitSystem
             {
                 var entity = ecsWorld.NewEntity();
                 entity.Get<EcsComponent.SpawnUnitEvent>().position = position;
-                //var unit = Object.Instantiate(config.unitPrefab, (Vector3)position, Quaternion.identity);
-                //AiCombat aiCombat = unit.gameObject.AddComponent<AiCombat>();
-                //aiCombat.Initialise(config.gridData);
                 unitCount--;
             }
 

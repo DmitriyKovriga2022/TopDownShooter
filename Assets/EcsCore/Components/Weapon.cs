@@ -11,5 +11,6 @@ namespace EcsComponent
         public int currentInMagazine;
         public int maxInMagazine;
         public Transform shootPosition;
+        public UnityComponent.Weapon weaponGo;
     }
 }

@@ -18,7 +18,13 @@ public class UnitDeadSystem : IEcsRunSystem
             int rnd = Random.Range(0, config.unitData.sound.dead.Length);
             SoundController.PlayClipAtPosition(config.unitData.sound.dead[rnd], unitGo.transform.position);
 
-            if(filter.GetEntity(i).Has<EcsComponent.Player>())
+            if (filter.GetEntity(i).Has<EcsComponent.HasWeapon>())
+            {
+                ref var hasWeapon = ref filter.GetEntity(i).Get<EcsComponent.HasWeapon>();
+                hasWeapon.weapon.Get<EcsComponent.DropToGroundEvent>();
+            }
+
+            if (filter.GetEntity(i).Has<EcsComponent.Player>())
             {
                 hud.ShowDeadPanel();
                 sceneData.fovFollowTarget.Target = null;
