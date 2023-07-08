@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class PickUpItemSystem : IEcsRunSystem
 {
-    private Hud hud;
-    private EcsFilter<EcsComponent.Player, EcsComponent.PickUpItemEvent> playerFilter;
-    private EcsFilter<EcsComponent.Weapon> weaponFilter;
+    private StaticData config;
+    private EcsFilter<EcsComponent.PickUpSceneItemEvent> filter;
 
     public void Run()
     {
-        foreach (var i in playerFilter)
+        foreach (var i in filter)
         {
-            ref var playerEntity = ref playerFilter.GetEntity(i);
+            var itemEntity = filter.GetEntity(i);
+            ref var otherEntity = ref filter.Get1(i).otherEntity;
+            ref var position = ref filter.Get1(i).worldPosition;
 
-            foreach (var s in weaponFilter)
+            ref var conteiner = ref filter.Get1(i).conteiner;
+
+            if (conteiner is AmmoConteiner)
             {
-                ref var weapon = ref weaponFilter.Get1(s);
-                if (weapon.owner == playerEntity)
-                {
-                    weapon.totalAmmo += 10;
-                    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
-                    hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
-                }
+                otherEntity.Get<EcsComponent.EquippingAmmoEvent>().Count = (conteiner as AmmoConteiner).GetContent();
             }
+
+            if (conteiner is MedKitConteiner)
+            {
+               otherEntity.Get<EcsComponent.ApplyMedKitEvent>().Count = (conteiner as MedKitConteiner).GetContent();
+            }
+
+            itemEntity.Get<EcsComponent.DestroyEntityEvent>();
+
+            int rnd = Random.Range(0, config.itemData.sound.inspectItem.Length);
+            SoundController.PlayClipAtPosition(config.itemData.sound.inspectItem[rnd], position);
+
         }
     }
 

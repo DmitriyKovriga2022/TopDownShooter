@@ -35,9 +35,14 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new GenerateWorldSystem())
              .Add(new PlayerInitialiseSystem())
              .Add(new SpawnUnitSystem())
+             .Add(new SpawnSceneItemSystem())
              .Add(new PlayerRotationSystem())
              .Add(new PlayerInputShootSystem())
-             .Add(new EquippingWithWeaponsSystem())
+             .Add(new PickUpItemSystem())
+             .Add(new ApplyMedKitSystem())
+            
+             .Add(new EquippingWeaponSystem())
+             .Add(new EquippingAmmoSystem())
              .Add(new WeaponShootSystem())
              .Add(new WeaponReloadingSystem())
              .Add(new SpawnProjectileSystem())
@@ -45,25 +50,28 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new ProjectileHitSystem())
              .Add(new UnitHitBulletSystem())
              .Add(new LiveTimeSystem())
-             .Add(new ItemCollisionSystem())
-             .Add(new PickUpItemSystem())
+
              .Add(new UnitDeadSystem())
              .Add(new DropToGroundSystem())
-             
+
+             .Add(new DestroySceneItemSystem())
+
 
              // register one-frame components (order is important), for example:
              .OneFrame<EcsComponent.ShootEvent>()
              .OneFrame<EcsComponent.SpawnProjectileEvent>()
              .OneFrame<EcsComponent.TryReloadEvent>()
              .OneFrame<EcsComponent.ProjectileHitEvent>()
-             .OneFrame<EcsComponent.UnitCollisionEvent>()
-             .OneFrame<EcsComponent.ItemCollisionEvent>()
-             .OneFrame<EcsComponent.PickUpItemEvent>()
-             .OneFrame<EcsComponent.EquippingWithWeaponsEvent>()
+             .OneFrame<EcsComponent.PickUpSceneItemEvent>()
+             .OneFrame<EcsComponent.EquippingWeaponEvent>()
+             .OneFrame<EcsComponent.EquippingAmmoEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
+             .OneFrame<EcsComponent.SpawnSceneItemEvent>()
              .OneFrame<EcsComponent.HitBulletEvent>()
              .OneFrame<EcsComponent.UnitDeadEvent>()
              .OneFrame<EcsComponent.DropToGroundEvent>()
+             .OneFrame<EcsComponent.DestroyEntityEvent>()
+             .OneFrame<EcsComponent.ApplyMedKitEvent>()
 
              // inject service instances here (order doesn't important), for example:
             .Inject(configuration)

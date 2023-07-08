@@ -22,7 +22,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var health = ref playerEntity.Get<EcsComponent.Health>();
 
         var unitGo = Object.Instantiate(staticData.unitData.unitPrefab);
-        unitGo.gameObject.AddComponent<UnityComponent.Player>();
+        var playerGo = unitGo.gameObject.AddComponent<UnityComponent.Player>();
         unitGo.name = "Player";
         unitGo.entity = playerEntity;
         entity.mainTransform = unitGo.mainTransform;
@@ -30,6 +30,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
 
         unit.owner = playerEntity;
         unit.UnitGO = unitGo;
+        playerGo.entity = playerEntity;
 
         health.value = 100;
         health.maxValue = 100;
@@ -42,7 +43,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
 
         hud.HudHealth.ShowHealth(health.value, health.maxValue);
 
-        playerEntity.Get<EcsComponent.EquippingWithWeaponsEvent>();
+        playerEntity.Get<EcsComponent.EquippingWeaponEvent>();
 
     }
 

@@ -3,14 +3,17 @@ using UnityEngine;
 internal class ProjectileMoveSystem : IEcsRunSystem
 {
     private EcsWorld ecsWorld;
+    private StaticData config;
     private EcsFilter<EcsComponent.Projectile, EcsComponent.ProjectileMotion> filter;
 
     private float speed;
     private Transform transform;
     private float power;
+    private LayerMask mask;
 
     public void Run()
     {
+        mask = config.projectileSetting.hitMask;
         foreach (var i in filter)
         {
             ref var projectile = ref filter.Get1(i);
@@ -83,7 +86,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
     {
         hitInfo = new HitInfo();
         float distance = (transform.right * speed).magnitude;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * speed, distance);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * speed, distance, mask);
         if (hit.collider != null)
         {
             hitInfo.hitCollider = hit.collider;

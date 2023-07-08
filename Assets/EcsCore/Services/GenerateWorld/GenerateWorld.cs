@@ -17,14 +17,16 @@ public class GenerateWorld : MonoBehaviour
     [SerializeField] private Tilemap treeTilemap;
     [SerializeField] private Tilemap stoneTilemap;
     [SerializeField] private Tilemap collisionTilemap;
+    [SerializeField] private Tilemap itemTilemap;
     [SerializeField] private TileBase[] groundTiles;
     [SerializeField] private TileBase[] grassTiles;
     [SerializeField] private TileBase[] treeTiles;
     [SerializeField] private TileBase[] stoneTiles;
     [SerializeField] private TileBase exitPointTile;
     [SerializeField] private TileBase colliderTile;
-    //[Space]
-    //[SerializeField] private UnityComponent.Unit unitPrefab;
+    [Space]
+    [SerializeField] private Marker markerPrefab;
+    [SerializeField] private ExitPoint exitPointPrefab;
 
     private GridData gridData;
 
@@ -83,9 +85,13 @@ public class GenerateWorld : MonoBehaviour
         Vector3 direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
         Vector3 newPosition = position + direction * distance;
 
-        collisionTilemap.SetTile(new Vector3Int(Mathf.RoundToInt(newPosition.x), Mathf.RoundToInt(newPosition.y), 0), exitPointTile);
-        Debug.Log("ExitPoint:" + new Vector3Int(Mathf.RoundToInt(newPosition.x), Mathf.RoundToInt(newPosition.y), 0));
+        Instantiate(exitPointPrefab, newPosition, Quaternion.identity);
+        Instantiate(markerPrefab, newPosition, Quaternion.identity);
+        Debug.Log("ExitPoint:" + newPosition);
         
+        //Vector3Int roundPosition = new Vector3Int(Mathf.RoundToInt(newPosition.x), Mathf.RoundToInt(newPosition.y), 0);
+        //itemTilemap.SetTile(roundPosition, exitPointTile);
+
     }
 
     private void GenerateTree()
@@ -136,7 +142,7 @@ public class GenerateWorld : MonoBehaviour
         }
     }
 
-    private bool GenerateEmptyRandomPositions(float radius, out Vector2 position)
+    private bool EmptyRandomPositions(float radius, out Vector2 position)
     {
         position = new Vector2(UnityEngine.Random.Range(-gridData.GridSize.x/2, gridData.GridSize.x/2), 
                                UnityEngine.Random.Range(-gridData.GridSize.y/2, gridData.GridSize.y/2));

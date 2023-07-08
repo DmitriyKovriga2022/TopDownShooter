@@ -19,11 +19,8 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
             return instance;
         }
-        
-
     }
-    public event Action EventOnEscape;
-
+    
     [SerializeField] private Hud hud;
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private DeadMenu deadMenu;

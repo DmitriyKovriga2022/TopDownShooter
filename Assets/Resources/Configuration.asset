@@ -36,6 +36,9 @@ MonoBehaviour:
     prefab: {fileID: 9222280101073507360, guid: 72a72930ad7358846af140081064ec3c, type: 3}
     hitEffectPrefab: {fileID: 2447312744532032233, guid: b5f7da774ab096941b05ec8414b9ec0c, type: 3}
     LiveTime: 3
+    hitMask:
+      serializedVersion: 2
+      m_Bits: 2561
     sound:
       groundHit:
       - {fileID: 8300000, guid: 8db15c8efc6cfe24096f5db3a945667b, type: 3}
@@ -63,11 +66,19 @@ MonoBehaviour:
     totalAmmo: 50
   spriteCollisionData:
     exitPointSprite: {fileID: 21300000, guid: 53f9b43033919b049accfaa32d445103, type: 3}
+  itemData:
+    boxSprite: {fileID: 21300000, guid: 103711e4f98e63640801688d9a82ee99, type: 3}
+    medkitSprite: {fileID: 21300000, guid: 2ad45743be8d5284aaa30d332198b238, type: 3}
+    sound:
+      inspectItem:
+      - {fileID: 8300000, guid: 77d00072b70c83a4b9abfb2a40c10a1d, type: 3}
+      destroyItem: []
   gridData:
-    GridSize: {x: 20, y: 20}
+    GridSize: {x: 50, y: 50}
     CellSize: 1
     cellPrefab: {fileID: 5761690819101933614, guid: cf901d1adf3a5514daf916aaa5cd6773, type: 3}
   tileData:
     groundGrass:
     - {fileID: -106362660, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
     - {fileID: 1061885174, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
+  sceneItemPrefab: {fileID: -4381123570635304340, guid: 72973c40ac55d544f81b826d4e5e578b, type: 3}

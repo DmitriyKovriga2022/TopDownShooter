@@ -29,7 +29,7 @@ public class SpawnUnitSystem : IEcsRunSystem
                 unitGO.visualTransform.gameObject.layer = 7;
             }
 
-            entity.Get<EcsComponent.EquippingWithWeaponsEvent>();
+            entity.Get<EcsComponent.EquippingWeaponEvent>();
 
         }
     }

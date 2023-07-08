@@ -7,6 +7,7 @@ public class ProjectileSetting
     public GameObject hitEffectPrefab;
     [Range(0.1f, float.MaxValue)]
     public float LiveTime  = 1;
+    public LayerMask hitMask;
     public SoundClips sound;
 
     [System.Serializable]

@@ -24,9 +24,29 @@ internal class StaticData : ScriptableObject
     public ProjectileSetting projectileSetting;
     public WeaponSettingsData weaponSettings;
     public SpriteCollisionData spriteCollisionData;
+    public ItemData itemData;
     public GridData gridData;
     public TileData tileData;
+    public UnityComponent.SceneItem sceneItemPrefab;
 }
+
+[System.Serializable]
+public class ItemData
+{
+    public Sprite boxSprite;
+    public Sprite medkitSprite;
+    public SoundClips sound;
+
+    [System.Serializable]
+    public class SoundClips
+    {
+        public AudioClip[] inspectItem;
+        public AudioClip[] destroyItem;
+    }
+
+
+}
+
 
 [System.Serializable]
 public class UnitData

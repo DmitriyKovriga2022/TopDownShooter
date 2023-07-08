@@ -23,8 +23,6 @@ public class ProjectileHitSystem : IEcsRunSystem
 
             Object.Instantiate(config.projectileSetting.hitEffectPrefab, position, rotation);
 
-            Debug.Log("Hit Collider = " + collider);
-
             if (collider == null)
             {
                 int rnd = Random.Range(0, config.projectileSetting.sound.groundHit.Length);

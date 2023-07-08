@@ -1,6 +1,4 @@
 ﻿using Leopotam.Ecs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GenerateWorldSystem : IEcsInitSystem
@@ -20,12 +18,14 @@ public class GenerateWorldSystem : IEcsInitSystem
     {
         sceneData.generateWorld.EventEndGeneration -= GenerateWorld_EventEndGeneration;
         SpawnEnemy();
+        SpawnAmmoBox();
+        SpawnMedKit();
     }
 
     private void SpawnEnemy()
     {
         var iteration = 100;
-        var unitCount = 1;
+        var unitCount = 20;
         while (unitCount > 0)
         {
             iteration--;
@@ -34,6 +34,54 @@ public class GenerateWorldSystem : IEcsInitSystem
                 var entity = ecsWorld.NewEntity();
                 entity.Get<EcsComponent.SpawnUnitEvent>().position = position;
                 unitCount--;
+            }
+
+            if (iteration < 0)
+            {
+                Debug.LogError("Cant find free position for spawn unit");
+                break;
+            }
+        }
+    }
+
+    private void SpawnAmmoBox()
+    {
+        var iteration = 100;
+        var itemCount = 10;
+        while (itemCount > 0)
+        {
+            iteration--;
+            if (RandomPoint(out Vector3 position))
+            {
+                var entity = ecsWorld.NewEntity();
+                ref var component = ref entity.Get<EcsComponent.SpawnSceneItemEvent>();
+                component.position = position;
+                component.conteiner = new AmmoConteiner(30);
+                itemCount--;
+            }
+
+            if (iteration < 0)
+            {
+                Debug.LogError("Cant find free position for spawn unit");
+                break;
+            }
+        }
+    }
+
+    private void SpawnMedKit()
+    {
+        var iteration = 100;
+        var itemCount = 10;
+        while (itemCount > 0)
+        {
+            iteration--;
+            if (RandomPoint(out Vector3 position))
+            {
+                var entity = ecsWorld.NewEntity();
+                ref var component = ref entity.Get<EcsComponent.SpawnSceneItemEvent>();
+                component.position = position;
+                component.conteiner = new MedKitConteiner(40);
+                itemCount--;
             }
 
             if (iteration < 0)

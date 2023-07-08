@@ -12,19 +12,17 @@ namespace UnityComponent
         public Transform visualTransform;
         public Transform weaponHolder;
 
-        private SpriteCollisionData spriteCollisionData;
-
         [SerializeField] private Bag bag;
-
-        public void Initialise(SpriteCollisionData spriteCollisionData)
-        {
-            this.spriteCollisionData = spriteCollisionData;
-        }
 
         public void Dead()
         {
             Debug.Log("Dead: " + this);
             Destroy(gameObject);
+        }
+
+        public void DebugSetHealth()
+        {
+            entity.Get<EcsComponent.HitBulletEvent>().hitPower = 10;
         }
 
     }
