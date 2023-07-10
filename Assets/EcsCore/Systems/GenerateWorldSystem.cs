@@ -56,7 +56,7 @@ public class GenerateWorldSystem : IEcsInitSystem
                 var entity = ecsWorld.NewEntity();
                 ref var component = ref entity.Get<EcsComponent.SpawnSceneItemEvent>();
                 component.position = position;
-                component.conteiner = new AmmoConteiner(30);
+                component.conteiners = new ItemConteiner[1]{new AmmoConteiner(30)};
                 itemCount--;
             }
 
@@ -80,7 +80,7 @@ public class GenerateWorldSystem : IEcsInitSystem
                 var entity = ecsWorld.NewEntity();
                 ref var component = ref entity.Get<EcsComponent.SpawnSceneItemEvent>();
                 component.position = position;
-                component.conteiner = new MedKitConteiner(40);
+                component.conteiners = new ItemConteiner[1] {new MedKitConteiner(50)};
                 itemCount--;
             }
 

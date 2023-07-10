@@ -5,30 +5,28 @@ using UnityEngine;
 public class PickUpItemSystem : IEcsRunSystem
 {
     private StaticData config;
-    private EcsFilter<EcsComponent.PickUpSceneItemEvent> filter;
+    private EcsFilter<EcsComponent.SceneItem, EcsComponent.PickUpSceneItemEvent, EcsComponent.Bag> filter;
+    private Hud hud;
 
     public void Run()
     {
         foreach (var i in filter)
         {
-            var itemEntity = filter.GetEntity(i);
-            ref var otherEntity = ref filter.Get1(i).otherEntity;
-            ref var position = ref filter.Get1(i).worldPosition;
+            var entity = filter.GetEntity(i);
+            ref var otherEntity = ref filter.Get2(i).otherEntity;
+            var position = filter.Get1(i).itemGo.transform.position;
+            ref var conteiners = ref filter.Get3(i).conteiners;
+            //hud.UIBag.Show(conteiners, entity, otherEntity);
 
-            ref var conteiner = ref filter.Get1(i).conteiner;
-
-            if (conteiner is AmmoConteiner)
+            if(otherEntity.Has<EcsComponent.Player>())
             {
-                otherEntity.Get<EcsComponent.EquippingAmmoEvent>().Count = (conteiner as AmmoConteiner).GetContent();
+                //entity.Get<EcsComponent.ShowUIBagEvent>();
+                hud.UIBag.Show(entity, otherEntity, conteiners);
             }
-
-            if (conteiner is MedKitConteiner)
+            else
             {
-               otherEntity.Get<EcsComponent.ApplyMedKitEvent>().Count = (conteiner as MedKitConteiner).GetContent();
+                //Логика переноса предметов между npc
             }
-
-            itemEntity.Get<EcsComponent.DestroyEntityEvent>();
-
             int rnd = Random.Range(0, config.itemData.sound.inspectItem.Length);
             SoundController.PlayClipAtPosition(config.itemData.sound.inspectItem[rnd], position);
 

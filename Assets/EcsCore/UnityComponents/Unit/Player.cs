@@ -41,6 +41,11 @@ namespace UnityComponent
                lookAtItem.PickUp(entity);
             }
 
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                entity.Get<EcsComponent.ShowUIBagEvent>().entity = entity;
+            }
+
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

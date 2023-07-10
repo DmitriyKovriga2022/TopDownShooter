@@ -52,7 +52,10 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new LiveTimeSystem())
 
              .Add(new UnitDeadSystem())
-             .Add(new DropToGroundSystem())
+             .Add(new DropToGroundWeaponSystem())
+             .Add(new DropToGroundBagSystem())
+             
+             .Add(new ShowBagUISystem())
 
              .Add(new DestroySceneItemSystem())
 
@@ -65,6 +68,7 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.PickUpSceneItemEvent>()
              .OneFrame<EcsComponent.EquippingWeaponEvent>()
              .OneFrame<EcsComponent.EquippingAmmoEvent>()
+             .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.SpawnSceneItemEvent>()
              .OneFrame<EcsComponent.HitBulletEvent>()

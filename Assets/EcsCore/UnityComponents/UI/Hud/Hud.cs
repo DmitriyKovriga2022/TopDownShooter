@@ -8,7 +8,11 @@ public class Hud : MonoBehaviour
 {
     public event Action EventShowDeadMenu;
 
-    [SerializeField] private UIGame uiGame;
+    public UIBag UIInventaryBag => uiInventaryBag;
+    [SerializeField] private UIBag uiInventaryBag;
+    
+    public UIBag UIBag => uiBag;
+    [SerializeField] private UIBag uiBag;
 
     public HudWeapon HudWeapon => hudWeapon;
     [SerializeField] private HudWeapon hudWeapon;

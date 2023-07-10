@@ -13,24 +13,24 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         InitialisePlayerUnit(ecsWorld.NewEntity());
     }
 
-    private void InitialisePlayerUnit(EcsEntity playerEntity)
+    private void InitialisePlayerUnit(EcsEntity entity)
     {
-        ref var entity = ref playerEntity.Get<EcsComponent.Player>();
-        ref var unit = ref playerEntity.Get<EcsComponent.Unit>();
-        ref var motion = ref playerEntity.Get<EcsComponent.UnitMotion>();
-        ref var inputData = ref playerEntity.Get<EcsComponent.DesiredMoveDirection>();
-        ref var health = ref playerEntity.Get<EcsComponent.Health>();
+        ref var player = ref entity.Get<EcsComponent.Player>();
+        ref var unit = ref entity.Get<EcsComponent.Unit>();
+        ref var motion = ref entity.Get<EcsComponent.UnitMotion>();
+        ref var inputData = ref entity.Get<EcsComponent.DesiredMoveDirection>();
+        ref var health = ref entity.Get<EcsComponent.Health>();
 
         var unitGo = Object.Instantiate(staticData.unitData.unitPrefab);
         var playerGo = unitGo.gameObject.AddComponent<UnityComponent.Player>();
         unitGo.name = "Player";
-        unitGo.entity = playerEntity;
-        entity.mainTransform = unitGo.mainTransform;
-        entity.visualTransform = unitGo.visualTransform;
+        unitGo.entity = entity;
+        player.mainTransform = unitGo.mainTransform;
+        player.visualTransform = unitGo.visualTransform;
 
-        unit.owner = playerEntity;
+        unit.owner = entity;
         unit.UnitGO = unitGo;
-        playerGo.entity = playerEntity;
+        playerGo.entity = entity;
 
         health.value = 100;
         health.maxValue = 100;
@@ -38,12 +38,20 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         motion.rigidbody = unitGo.rigidbody;
         motion.speed = staticData.unitData.unitSpeed;
 
-        sceneData.fovFollowTarget.Target = entity.mainTransform;
+        sceneData.fovFollowTarget.Target = player.mainTransform;
         sceneData.player = unitGo;
 
         hud.HudHealth.ShowHealth(health.value, health.maxValue);
 
-        playerEntity.Get<EcsComponent.EquippingWeaponEvent>();
+        ref var bag = ref entity.Get<EcsComponent.Bag>();
+        bag.conteiners = new ItemConteiner[3]
+         {
+                new AmmoConteiner(30),
+                new MedKitConteiner(50),
+                new FoodConteiner(1),
+         };
+
+        entity.Get<EcsComponent.EquippingWeaponEvent>();
 
     }
 

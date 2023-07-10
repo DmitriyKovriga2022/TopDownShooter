@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitDeadSystem : IEcsRunSystem
 {
+    private EcsWorld ecsWorld;
     private StaticData config;
     private Hud hud;
     private SceneData sceneData;
@@ -17,6 +18,14 @@ public class UnitDeadSystem : IEcsRunSystem
 
             int rnd = Random.Range(0, config.unitData.sound.dead.Length);
             SoundController.PlayClipAtPosition(config.unitData.sound.dead[rnd], unitGo.transform.position);
+
+            if (filter.GetEntity(i).Has<EcsComponent.Bag>())
+            {
+                var entity = ecsWorld.NewEntity();
+                ref var bag = ref filter.GetEntity(i).Get<EcsComponent.Bag>();
+                entity.Replace(bag);
+                entity.Get<EcsComponent.DropToGroundEvent>().position = unitGo.transform.position;
+            }
 
             if (filter.GetEntity(i).Has<EcsComponent.HasWeapon>())
             {

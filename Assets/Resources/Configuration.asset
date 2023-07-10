@@ -69,6 +69,11 @@ MonoBehaviour:
   itemData:
     boxSprite: {fileID: 21300000, guid: 103711e4f98e63640801688d9a82ee99, type: 3}
     medkitSprite: {fileID: 21300000, guid: 2ad45743be8d5284aaa30d332198b238, type: 3}
+    bagSprite: {fileID: 21300000, guid: de1834ce7b4e8f24384c306be3da57bd, type: 3}
+    bulletSprite: {fileID: 21300000, guid: 3f15f95ee10fda641a27c002956d55ef, type: 3}
+    foodSprite: {fileID: 1999369447, guid: 6eb8d01ecaa7c5f44a9f7871179a5af0, type: 3}
+    jacketSprite: {fileID: 21300000, guid: 53b7951e0692d884c81ac8c34e4bedbe, type: 3}
+    weaponSprite: {fileID: 1472445859, guid: 57d18ea758bdd3e4cbb555f6260f3d86, type: 3}
     sound:
       inspectItem:
       - {fileID: 8300000, guid: 77d00072b70c83a4b9abfb2a40c10a1d, type: 3}

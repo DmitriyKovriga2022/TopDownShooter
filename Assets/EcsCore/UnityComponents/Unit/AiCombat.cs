@@ -14,6 +14,7 @@ public class AiCombat : MonoBehaviour, ILookTarget
     [SerializeField] private int layerMask;
 
     public event Action<Vector2> EventLookAt;
+    public event Action<Vector2> EventDesireToAttack;
 
     private Vector2Int mapsize;
     private Vector2 moveTargetPoint;
@@ -89,7 +90,7 @@ public class AiCombat : MonoBehaviour, ILookTarget
 
             if (UnityEngine.Random.Range(0, 2) == 0)
             {
-                GetComponentInChildren<UnityComponent.Weapon>().AiShoot(currentTarget.transform.position);
+                EventDesireToAttack?.Invoke(currentTarget.transform.position);
                 Invoke(nameof(FindEnemy), 0.1f);
             }
             else

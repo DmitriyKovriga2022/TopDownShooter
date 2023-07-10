@@ -35,7 +35,13 @@ public class ItemData
 {
     public Sprite boxSprite;
     public Sprite medkitSprite;
+    public Sprite bagSprite;
+    public Sprite bulletSprite;
+    public Sprite foodSprite;
+    public Sprite jacketSprite;
+    public Sprite weaponSprite;
     public SoundClips sound;
+    
 
     [System.Serializable]
     public class SoundClips

@@ -36,22 +36,11 @@ namespace UnityComponent
 
         public void PickUp(EcsEntity other)
         {
-            ref var conteiner = ref entity.Get<EcsComponent.SceneItem>().conteiner;
             ref var component = ref entity.Get<EcsComponent.PickUpSceneItemEvent>();
             component.otherEntity = other;
-            component.worldPosition = transform.position;
-
-            if(conteiner is AmmoConteiner)
-            {
-                component.conteiner = new AmmoConteiner((conteiner as AmmoConteiner).GetContent());
-            }
-
-            if (conteiner is MedKitConteiner)
-            {
-                component.conteiner = new MedKitConteiner((conteiner as MedKitConteiner).GetContent());
-            }
-
-
+            //component.worldPosition = transform.position;
+            //ref var conteiners = ref entity.Get<EcsComponent.Bag>().conteiners;
+            //component.conteiners = conteiners;
         }
 
         public void DestroySelf()

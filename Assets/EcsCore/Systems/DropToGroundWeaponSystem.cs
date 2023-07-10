@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class DropToGroundSystem : IEcsRunSystem
+public class DropToGroundWeaponSystem : IEcsRunSystem
 {
     private EcsFilter<EcsComponent.DropToGroundEvent, EcsComponent.Weapon> filter;
 
@@ -25,7 +25,13 @@ public class DropToGroundSystem : IEcsRunSystem
 
             ref var item = ref itemGO.entity.Get<EcsComponent.SceneItem>();
             item.itemGo = itemGO;
-            item.conteiner = new AmmoConteiner(15);
+
+            ref var bag = ref itemGO.entity.Get<EcsComponent.Bag>();
+            bag.conteiners = new ItemConteiner[1]
+            {
+                new WeaponConteiner(1),
+            };
+
 
             if (weaponGo.gameObject.TryGetComponent(out UnityComponent.LookAtPosition component))
             {

@@ -26,17 +26,9 @@ public class SpawnSceneItemSystem : IEcsRunSystem
             item.itemGo = gameObject;
             item.itemGo.entity = entity;
 
-            ref var conteiner = ref filter.Get1(i).conteiner;
-            if (conteiner is AmmoConteiner)
-            {
-                item.conteiner = new AmmoConteiner((conteiner as AmmoConteiner).GetContent());
-                gameObject.SetSprite(staticData.itemData.boxSprite);
-            }
-            if (conteiner is MedKitConteiner)
-            {
-                item.conteiner = new MedKitConteiner((conteiner as MedKitConteiner).GetContent());
-                gameObject.SetSprite(staticData.itemData.medkitSprite);
-            }
+            ref var conteiners = ref filter.Get1(i).conteiners;
+            ref var bag = ref entity.Get<EcsComponent.Bag>();
+            bag.conteiners = conteiners;
 
         }
     }

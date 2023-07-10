@@ -7,7 +7,7 @@ namespace EcsComponent
     public struct PickUpSceneItemEvent
     {
         public EcsEntity otherEntity;
-        public Vector2 worldPosition;
-        public ItemConteiner conteiner;
+        //public Vector2 worldPosition;
+        //public ItemConteiner[] conteiners;
     }
 }

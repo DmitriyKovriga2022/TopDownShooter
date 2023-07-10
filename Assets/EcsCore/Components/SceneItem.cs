@@ -4,10 +4,12 @@ using UnityEngine;
 
 namespace EcsComponent
 {
+    /// <summary>
+    /// Ссылка на GameObject
+    /// </summary>
     public struct SceneItem
     {
         public UnityComponent.SceneItem itemGo;
-        public ItemConteiner conteiner;
         
     }
 }
