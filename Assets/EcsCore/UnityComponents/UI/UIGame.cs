@@ -76,6 +76,14 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(hud.ShowInventory())
+            {
+                hud.Inventory.Hide();
+                aim.Show();
+                Cursor.visible = false;
+                return;
+            }
+
             if (pauseMenu.gameObject.activeSelf)
             {
                 HidePauseMenu();

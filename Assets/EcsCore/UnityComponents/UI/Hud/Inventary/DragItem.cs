@@ -1,3 +1,4 @@
+using Leopotam.Ecs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,16 +6,16 @@ using UnityEngine.UI;
 
 public class DragItem : MonoBehaviour
 {
-    private Image image;
+    [SerializeField] private EcsWorld ecsWorld;
+    [SerializeField] private Image image;
     private Sprite defaultSprite;
     public ItemConteiner Conteiner => conteiner;
     private ItemConteiner conteiner;
+    
 
-    private void Awake()
+    public void Initialise()
     {
-        image = GetComponent<Image>();
         defaultSprite = image.sprite;
-        Clear();
     }
 
     public void SetConteiner(ItemConteiner conteiner)
@@ -41,6 +42,17 @@ public class DragItem : MonoBehaviour
         conteiner = null;
         image.sprite = defaultSprite;
         gameObject.SetActive(false);
+    }
+
+    public void DropToGroundItem()
+    {
+        if (conteiner == null) return;
+        var entity = ecsWorld.NewEntity();
+        ref var bag = ref entity.Get<EcsComponent.Bag>();
+        bag.conteiners = new ItemConteiner[1];
+        bag.conteiners[0] = conteiner;
+        entity.Get<EcsComponent.DropToGroundEvent>().position = (Vector2)Camera.main.transform.position;
+
     }
 
     private void LateUpdate()

@@ -14,7 +14,7 @@ public class ShowBagUISystem : IEcsRunSystem
             var entity = filter.GetEntity(i);
             ref var containers = ref filter.Get2(i).conteiners;
             var otherEntity = filter.Get1(i).entity;
-            hud.UIBag.Show(entity, otherEntity, containers);
+            hud.Inventory.ShowSelfBag(entity, containers);
         }
     }
 }

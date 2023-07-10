@@ -10,13 +10,13 @@ public class UIBagCell : MonoBehaviour
     public event Action<ItemConteiner> EventGetItem;
 
     [SerializeField] private DragItem dragCell;
+    [SerializeField] private Image image;
+    [SerializeField] private Button button;
 
-    private Image image;
-    private Button button;
     private Sprite defaultSprite;
     private ItemConteiner conteiner;
 
-    private void Awake()
+    public void Initialise()
     {
         image = GetComponent<Image>();
         button = GetComponent<Button>();
@@ -32,7 +32,6 @@ public class UIBagCell : MonoBehaviour
             if (dragCell.Conteiner != null)
             {
                 EventSetItem?.Invoke(dragCell.Conteiner);
-                dragCell.Clear();
             }
         }
         else

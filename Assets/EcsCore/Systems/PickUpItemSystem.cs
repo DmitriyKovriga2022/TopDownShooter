@@ -16,12 +16,11 @@ public class PickUpItemSystem : IEcsRunSystem
             ref var otherEntity = ref filter.Get2(i).otherEntity;
             var position = filter.Get1(i).itemGo.transform.position;
             ref var conteiners = ref filter.Get3(i).conteiners;
-            //hud.UIBag.Show(conteiners, entity, otherEntity);
 
             if(otherEntity.Has<EcsComponent.Player>())
             {
-                //entity.Get<EcsComponent.ShowUIBagEvent>();
-                hud.UIBag.Show(entity, otherEntity, conteiners);
+                otherEntity.Get<EcsComponent.ShowUIBagEvent>().entity = otherEntity;
+                hud.Inventory.ShowOtherBag(entity, conteiners);
             }
             else
             {
