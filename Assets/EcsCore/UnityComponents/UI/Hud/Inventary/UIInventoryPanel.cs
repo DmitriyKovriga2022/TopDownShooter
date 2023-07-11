@@ -8,12 +8,27 @@ public class UIInventoryPanel : MonoBehaviour
     [SerializeField] private UIBag uiOtherBag;
     [SerializeField] private DragItem dragCell;
 
+    private EcsWorld ecsWorld;
+
     private void Awake()
     {
         uiSelfBag.Initialise();
+        uiSelfBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
         uiOtherBag.Initialise();
+        uiOtherBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
         dragCell.Initialise();
         Hide();
+    }
+
+    private void UiSelfBag_EventIntentHideBag()
+    {
+        if (uiSelfBag.gameObject.activeSelf == false &&
+           uiOtherBag.gameObject.activeSelf == false)
+        {
+            dragCell.ReturnToBag();
+            dragCell.Clear();
+            gameObject.SetActive(false);
+        }
     }
 
     public void ShowSelfBag(EcsEntity bagEntity, ItemConteiner[] conteiners)
@@ -32,7 +47,8 @@ public class UIInventoryPanel : MonoBehaviour
     {
         uiSelfBag.Hide();
         uiOtherBag.Hide();
-        dragCell.DropToGroundItem();
+        dragCell.ReturnToBag();
+        dragCell.Clear();
         gameObject.SetActive(false);
     }
 

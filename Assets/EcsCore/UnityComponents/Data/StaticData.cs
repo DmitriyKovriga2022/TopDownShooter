@@ -28,6 +28,7 @@ internal class StaticData : ScriptableObject
     public GridData gridData;
     public TileData tileData;
     public UnityComponent.SceneItem sceneItemPrefab;
+    public InteractionObject interactionObjectPrefab;
 }
 
 [System.Serializable]

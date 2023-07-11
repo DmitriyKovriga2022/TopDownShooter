@@ -1,0 +1,2291 @@
+fileFormatVersion: 2
+guid: 85fda78f51f58df49bbbeeb6334cc8c0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 477
+        width: 54
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eadcb83861d29646b9ec51edc73982f
+      internalID: -1687646500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 477
+        width: 42
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ea0743afb27914aae547d905036a24
+      internalID: 1185441981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 465
+        width: 92
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787b666965822f04bb5e3c977f871eb2
+      internalID: 1777525661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 62
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe3edd6e55fe8549b2f4628fbdd9763
+      internalID: 883759089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 461
+        width: 55
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc90cfee9116b94f99a1ede1a5bb06c
+      internalID: -811865722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_5
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 462
+        width: 55
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0554cf1eb46ae4a9c1f7f3e0d9df24
+      internalID: -1848165869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_6
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 462
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba349373e13d504ca839e2460e475e2
+      internalID: -550190172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 466
+        width: 69
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55896d8822f0ed143b78a7c48b18a6ed
+      internalID: -1354335316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_8
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 465
+        width: 71
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc93b4c9b00815c4d9340f1448ce97ed
+      internalID: -1501230470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_9
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 317
+        width: 115
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82cb8b113a33c6a4cbac77b5da97394d
+      internalID: -453767590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_10
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 458
+        width: 62
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f8cc0d74abd78468e312e2294c5872
+      internalID: -1284986513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_11
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 465
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66871a9c1cd74e498f7e4d5e3bde2cf
+      internalID: 735482572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 316
+        width: 62
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180ccea600843484f9a98fb477c10671
+      internalID: 1952713801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_13
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 316
+        width: 48
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c453f2f6b75e845b3d29ff72d95a08
+      internalID: -768313535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_14
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 315
+        width: 79
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506a8bcc270b6fc4bac0b3cd8f638408
+      internalID: 2022513140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_15
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 320
+        width: 26
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cc024c4b29aef45ab4e32a6d186093
+      internalID: 862148615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_16
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 321
+        width: 93
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23d60e88a0a315438fa6b56bd681ff4
+      internalID: -1086898432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 314
+        width: 58
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094baf88b0fc5f646be26b3bef50b6fc
+      internalID: 424781035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_18
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 316
+        width: 49
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0902fe51c41101498ed8a8e629c64ab
+      internalID: -1379875861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_19
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 317
+        width: 43
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e607ef34a062b4c8f80243bf2a008f
+      internalID: 611170485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_20
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 318
+        width: 115
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f34505ff4967846ab43e06187cf9fb
+      internalID: -58827898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_21
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 259
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1677ed71acf8c142a9a65cd1d64fac0
+      internalID: -1357518503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 236
+        width: 66
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11611135fe3dcdd458730b0c6d2bd5d2
+      internalID: -1030638827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_23
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 269
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73272367376e75b4ba089b895aa1ef9e
+      internalID: -1486951438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_24
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 270
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5736943fbdd4648ab9c15fdc1b3c7d
+      internalID: -1630681724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_25
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 267
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f90d012984d31b4ca56361900eebf78
+      internalID: -656806552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_26
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 276
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67047c102f6ed74c90adc6df771e57a
+      internalID: -802246587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_27
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 283
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860bf23a61c88fc45b9f55e4fa6871c2
+      internalID: 243830776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_28
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 282
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71586f3f2e6f1e4fb1aca75015e6015
+      internalID: 371015954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_29
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 282
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f48c135eba5714caa809f4275b9c27
+      internalID: -1126486664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_30
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 282
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23caf075b4da4774b9c3fe5b63316deb
+      internalID: 1396253160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_31
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 287
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9905728674cb4ce43bf3ce61aefd2702
+      internalID: 1726772991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_32
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 288
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b374f5b3552b340974b2d5b3f8e8a5
+      internalID: -1547743413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_33
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 284
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d703012379817479d3277011925d8c
+      internalID: -530023385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_34
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 285
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1768c157a3d1e24a9ad23560050effd
+      internalID: 900048879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_35
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 285
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4038ef82b75c240902f2da458f8fd8
+      internalID: -520567712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_36
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 285
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e120f5537d22ad74c8b89e7f0c02ea4d
+      internalID: -1615233379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_37
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 285
+        width: 5
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6e8eb00667ed84d830da58987f32bb
+      internalID: -1723511580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_38
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 273
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffd9712a816f2a4bb821cad89e4b7ae
+      internalID: -316262996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_39
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 270
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c6713ca7c611e04b86e9dbc99e38d80
+      internalID: -472334703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_40
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 275
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a5923a88ac7a24c92e41685ab14d01
+      internalID: 149005616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_41
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 270
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b18a0e45601c39489e2b8bfe60e8d47
+      internalID: 1228916932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_42
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 270
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98eafc56c7438c4ca51d737d8c1bfad
+      internalID: -1620261292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_43
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 266
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4731f6dbcefc1714b9ee70793915bade
+      internalID: 2086178372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_44
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 266
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4420583596155e45835492e94d850c4
+      internalID: -691263466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_45
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 267
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9056424c1337cc6479e513eaf9cececf
+      internalID: -1305986280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_46
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 248
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3352464f03ee6d4d8326bc9ebae8008
+      internalID: -398034649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_47
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 267
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c6d30cd96211b4b9916fd42af8e5be
+      internalID: -684487791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_48
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 268
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9eec94dfc4b86a4499cefdff681473b
+      internalID: -1969053235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_49
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 256
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1beb22ec7c96dbd40a28f589a838a267
+      internalID: -1714029792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_50
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 264
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64ccb1eb15fad04591cff9fe50231b6
+      internalID: 970786103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_51
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 267
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac94ecc65d2163448b314d21fd39aed
+      internalID: 1653152320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_52
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 228
+        width: 45
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d2f7f29a5ec4b4bbad6cb503ecb019
+      internalID: 1487963214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_53
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 219
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9171f8507b67a864796bdb6949c9edcd
+      internalID: 936973741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_54
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 221
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51274e5422685bf45b10313606060b59
+      internalID: 1097721050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_55
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 258
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e4c48275323564599d5ca032eb37d5
+      internalID: 1159416031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_56
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 258
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42adfec0c0f97cb4291d65af3fed636e
+      internalID: 1201873809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_57
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 256
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffad59d3830df2c438352e6ffb358c0f
+      internalID: -1753669149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_58
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 254
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9e65bbfea4b124b8efa210e3f3ec09
+      internalID: 703807282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_59
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 254
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e806808b99f902e429ad6a91d376e91b
+      internalID: 1118238336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_60
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 256
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe93012b661041f4bbacf8900b6a12ed
+      internalID: -1876460478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_61
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 252
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3e01a047c8c3d43a1b87ff65b20ad6
+      internalID: 1178097959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_62
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 228
+        width: 6
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd481280cbc20a45b2fff3653f3e8d1
+      internalID: -175460819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_63
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 250
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db06121a764db1e4185a44900b6d101d
+      internalID: 1283830155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_64
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 249
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040d64ec7f62aea4bba8adf0e7e72c98
+      internalID: -748542514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_65
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 202
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa0556162bbd234a8747a15e6e6eea7
+      internalID: -1521098086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_66
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 250
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc3cd4c84ee333458af3a0556421db2
+      internalID: 118767814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_67
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 248
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f594bb346673be34cae791c867831e9d
+      internalID: -182924785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_68
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 245
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39cf5c92ea48b2243ac466226df989df
+      internalID: 1026223544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_69
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 247
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed35e380602b9f241bd52b24481e976b
+      internalID: 832389945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_70
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 248
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ccf2693787750449e31f2b6747009a
+      internalID: 1703404761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_71
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 243
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31b2cdc66c12b146a896be96cebab0e
+      internalID: -1780428184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_72
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 244
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff95bc61995d8c45868519652350d3e
+      internalID: -430728301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_73
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 231
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150bdca0ec8aa304eb61ad5170eb1d4f
+      internalID: -2047211790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_74
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 231
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52e2c995d29f454688332bbae5261c0
+      internalID: -1109424749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_75
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 231
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea445d12929de547b9371e622397ef8
+      internalID: -684165346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_76
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 239
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385b38bcc8142404f8d1a6cddcd95f26
+      internalID: -430590227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_77
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 230
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f058f15fdae2042a4dff128c1faee2
+      internalID: -392466482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_78
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 147
+        width: 69
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a96bfe5fcbe6d4781b62bfb07e630f
+      internalID: 1070105194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_79
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 72
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25c4e82de1e92f489f7f48d125b5fa7
+      internalID: 612032922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_80
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 160
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807e8a70026abf940bd2bfac4caf7578
+      internalID: 1779931388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_81
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 159
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e92e00eed9ea6b4188a63f0cfd1c246
+      internalID: -2031812691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_82
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 78
+        width: 60
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fed69000f7d6994e94ee6e994dbb36d
+      internalID: -1419011254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_83
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 84
+        width: 71
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a06774b85725c429850511d73c8ba1
+      internalID: -391247930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_84
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 99
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a7825b20d95d041ba303d243a0d8e7
+      internalID: 455684876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_85
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 97
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8789656e7d61bdb4fa6bd8c018eb6b2f
+      internalID: -2123124931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_86
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 101
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62f663703870aa49a7071e640d28710
+      internalID: -1979862718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_87
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8
+        width: 72
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5230d74506716da49aea8e257d47b42a
+      internalID: -1738406653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_88
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 7
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46aef00843e3bee4d822fcf5df355d89
+      internalID: -2028116940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_89
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 66
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf26cdf8359465f43ae3ab0388c23d81
+      internalID: 1596684280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_90
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 64
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a543071de93c3f45bc63042454dfb89
+      internalID: -2141260421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_91
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 62
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6399f5f88b8320c42864c733ef764dd9
+      internalID: 618084514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_92
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 64
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f300e17c5f2f6b84aadb2e51cd061aac
+      internalID: 1312234760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_93
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 9
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e310ae0e47b014b8fb52553232f971
+      internalID: -682754207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_94
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 22
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b05d015e358ac45b49789acb336e51
+      internalID: 1707523250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_95
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 21
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea4bb80b4747e2448368c0c549b28bb
+      internalID: 1824260447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_96
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 18
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffeab2988b1b97409582cb6348dfee5
+      internalID: 1882955246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ForestEnvironmentTiles_97
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 18
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9230315bdf9a4d46b662a878b112ca7
+      internalID: 1153074082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ForestEnvironmentTiles_0: -1687646500
+      ForestEnvironmentTiles_1: 1185441981
+      ForestEnvironmentTiles_10: -1284986513
+      ForestEnvironmentTiles_11: 735482572
+      ForestEnvironmentTiles_12: 1952713801
+      ForestEnvironmentTiles_13: -768313535
+      ForestEnvironmentTiles_14: 2022513140
+      ForestEnvironmentTiles_15: 862148615
+      ForestEnvironmentTiles_16: -1086898432
+      ForestEnvironmentTiles_17: 424781035
+      ForestEnvironmentTiles_18: -1379875861
+      ForestEnvironmentTiles_19: 611170485
+      ForestEnvironmentTiles_2: 1777525661
+      ForestEnvironmentTiles_20: -58827898
+      ForestEnvironmentTiles_21: -1357518503
+      ForestEnvironmentTiles_22: -1030638827
+      ForestEnvironmentTiles_23: -1486951438
+      ForestEnvironmentTiles_24: -1630681724
+      ForestEnvironmentTiles_25: -656806552
+      ForestEnvironmentTiles_26: -802246587
+      ForestEnvironmentTiles_27: 243830776
+      ForestEnvironmentTiles_28: 371015954
+      ForestEnvironmentTiles_29: -1126486664
+      ForestEnvironmentTiles_3: 883759089
+      ForestEnvironmentTiles_30: 1396253160
+      ForestEnvironmentTiles_31: 1726772991
+      ForestEnvironmentTiles_32: -1547743413
+      ForestEnvironmentTiles_33: -530023385
+      ForestEnvironmentTiles_34: 900048879
+      ForestEnvironmentTiles_35: -520567712
+      ForestEnvironmentTiles_36: -1615233379
+      ForestEnvironmentTiles_37: -1723511580
+      ForestEnvironmentTiles_38: -316262996
+      ForestEnvironmentTiles_39: -472334703
+      ForestEnvironmentTiles_4: -811865722
+      ForestEnvironmentTiles_40: 149005616
+      ForestEnvironmentTiles_41: 1228916932
+      ForestEnvironmentTiles_42: -1620261292
+      ForestEnvironmentTiles_43: 2086178372
+      ForestEnvironmentTiles_44: -691263466
+      ForestEnvironmentTiles_45: -1305986280
+      ForestEnvironmentTiles_46: -398034649
+      ForestEnvironmentTiles_47: -684487791
+      ForestEnvironmentTiles_48: -1969053235
+      ForestEnvironmentTiles_49: -1714029792
+      ForestEnvironmentTiles_5: -1848165869
+      ForestEnvironmentTiles_50: 970786103
+      ForestEnvironmentTiles_51: 1653152320
+      ForestEnvironmentTiles_52: 1487963214
+      ForestEnvironmentTiles_53: 936973741
+      ForestEnvironmentTiles_54: 1097721050
+      ForestEnvironmentTiles_55: 1159416031
+      ForestEnvironmentTiles_56: 1201873809
+      ForestEnvironmentTiles_57: -1753669149
+      ForestEnvironmentTiles_58: 703807282
+      ForestEnvironmentTiles_59: 1118238336
+      ForestEnvironmentTiles_6: -550190172
+      ForestEnvironmentTiles_60: -1876460478
+      ForestEnvironmentTiles_61: 1178097959
+      ForestEnvironmentTiles_62: -175460819
+      ForestEnvironmentTiles_63: 1283830155
+      ForestEnvironmentTiles_64: -748542514
+      ForestEnvironmentTiles_65: -1521098086
+      ForestEnvironmentTiles_66: 118767814
+      ForestEnvironmentTiles_67: -182924785
+      ForestEnvironmentTiles_68: 1026223544
+      ForestEnvironmentTiles_69: 832389945
+      ForestEnvironmentTiles_7: -1354335316
+      ForestEnvironmentTiles_70: 1703404761
+      ForestEnvironmentTiles_71: -1780428184
+      ForestEnvironmentTiles_72: -430728301
+      ForestEnvironmentTiles_73: -2047211790
+      ForestEnvironmentTiles_74: -1109424749
+      ForestEnvironmentTiles_75: -684165346
+      ForestEnvironmentTiles_76: -430590227
+      ForestEnvironmentTiles_77: -392466482
+      ForestEnvironmentTiles_78: 1070105194
+      ForestEnvironmentTiles_79: 612032922
+      ForestEnvironmentTiles_8: -1501230470
+      ForestEnvironmentTiles_80: 1779931388
+      ForestEnvironmentTiles_81: -2031812691
+      ForestEnvironmentTiles_82: -1419011254
+      ForestEnvironmentTiles_83: -391247930
+      ForestEnvironmentTiles_84: 455684876
+      ForestEnvironmentTiles_85: -2123124931
+      ForestEnvironmentTiles_86: -1979862718
+      ForestEnvironmentTiles_87: -1738406653
+      ForestEnvironmentTiles_88: -2028116940
+      ForestEnvironmentTiles_89: 1596684280
+      ForestEnvironmentTiles_9: -453767590
+      ForestEnvironmentTiles_90: -2141260421
+      ForestEnvironmentTiles_91: 618084514
+      ForestEnvironmentTiles_92: 1312234760
+      ForestEnvironmentTiles_93: -682754207
+      ForestEnvironmentTiles_94: 1707523250
+      ForestEnvironmentTiles_95: 1824260447
+      ForestEnvironmentTiles_96: 1882955246
+      ForestEnvironmentTiles_97: 1153074082
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

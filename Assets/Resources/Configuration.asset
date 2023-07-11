@@ -87,3 +87,4 @@ MonoBehaviour:
     - {fileID: -106362660, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
     - {fileID: 1061885174, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
   sceneItemPrefab: {fileID: -4381123570635304340, guid: 72973c40ac55d544f81b826d4e5e578b, type: 3}
+  interactionObjectPrefab: {fileID: 564673014926776961, guid: 00de02232fcfa7149adfde7257f21f13, type: 3}

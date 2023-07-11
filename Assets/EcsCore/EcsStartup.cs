@@ -8,7 +8,6 @@ sealed class EcsStartup : MonoBehaviour
     public SceneData sceneData;
     public Hud hud;
 
-    public EcsWorld World => _world;
     EcsWorld _world;
     EcsSystems _updateSystems;
     EcsSystems _fixedUpdateSystems;

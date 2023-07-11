@@ -39,6 +39,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         motion.speed = staticData.unitData.unitSpeed;
 
         sceneData.fovFollowTarget.Target = player.mainTransform;
+        sceneData.fovFollowTarget.transform.parent = player.mainTransform;
         sceneData.player = unitGo;
 
         hud.HudHealth.ShowHealth(health.value, health.maxValue);

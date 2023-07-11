@@ -11,8 +11,14 @@ namespace UnityComponent
         public Transform mainTransform;
         public Transform visualTransform;
         public Transform weaponHolder;
+        
 
         [SerializeField] private Bag bag;
+
+        private void Awake()
+        {
+           
+        }
 
         public void Dead()
         {
@@ -25,5 +31,6 @@ namespace UnityComponent
             entity.Get<EcsComponent.HitBulletEvent>().hitPower = 10;
         }
 
+        
     }
 }

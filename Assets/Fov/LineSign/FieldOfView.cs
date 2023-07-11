@@ -10,20 +10,25 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private MeshFilter meshFilter;
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private LayerMask mask;
+    [SerializeField] private float lerp = 1;
 
     private Vector3[] points;
     private List<int> triangles;
     private Mesh mesh;
 
+    private void Awake()
+    {
+        points = new Vector3[segments + 1];
+    }
+
     private void LateUpdate()
     {
-        points = CreatePoints(segments, radius);
+        points = CreatePoints(points, segments, radius);
         DrawMesh(points);
     }
 
-    private Vector3[] CreatePoints(int segments, float radius)
+    private Vector3[] CreatePoints(Vector3[] points, int segments, float radius)
     {
-        Vector3[] points = new Vector3[segments + 1];
         float x = 0;
         float y = 0;
         float angle = 0;
@@ -31,16 +36,37 @@ public class FieldOfView : MonoBehaviour
 
         for (int i = 0; i < points.Length; i++)
         {
-            points[i] = new Vector3(x, y, 0);
+            points[i] = Vector3.Lerp(points[i], new Vector3(x, y, 0), lerp * Time.fixedDeltaTime);
             leight = RayHit(points[i], radius);
             x = Mathf.Sin(Mathf.Deg2Rad * angle) * leight;
             y = Mathf.Cos(Mathf.Deg2Rad * angle) * leight;
             angle += (360f / segments);
-            
+
         }
 
         return points;
     }
+
+    //private Vector3[] CreatePoints(int segments, float radius)
+    //{
+    //    Vector3[] points = new Vector3[segments + 1];
+    //    float x = 0;
+    //    float y = 0;
+    //    float angle = 0;
+    //    float leight = 0;
+
+    //    for (int i = 0; i < points.Length; i++)
+    //    {
+    //        points[i] = new Vector3(x, y, 0);
+    //        leight = RayHit(points[i], radius);
+    //        x = Mathf.Sin(Mathf.Deg2Rad * angle) * leight;
+    //        y = Mathf.Cos(Mathf.Deg2Rad * angle) * leight;
+    //        angle += (360f / segments);
+
+    //    }
+
+    //    return points;
+    //}
 
     private float RayHit(Vector3 targetPoint, float distanceToHit)
     {

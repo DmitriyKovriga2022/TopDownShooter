@@ -9,32 +9,17 @@ namespace UnityComponent
     public class SceneItem : SceneObject, IGameObject
     {
         public EcsEntity entity;
-        private Canvas canvas;
         private new SpriteRenderer renderer;
+        private InteractionObject interactionObject;
 
         private void Awake()
         {
             renderer = GetComponentInChildren<SpriteRenderer>(true);
-            canvas = GetComponentInChildren<Canvas>(true);
-            canvas.gameObject.SetActive(false);
+            interactionObject = Instantiate(StaticData.Instance.interactionObjectPrefab, transform);
+            interactionObject.EventToInteract += InteractionObject_EventToInteract;
         }
 
-        public void SetSprite(Sprite sprite)
-        {
-            renderer.sprite = sprite;
-        }
-
-        public void ShowInfo()
-        {
-            canvas.gameObject.SetActive(true);
-        }
-
-        public void HideInfo()
-        {
-            canvas.gameObject.SetActive(false);
-        }
-
-        public void PickUp(EcsEntity other)
+        private void InteractionObject_EventToInteract(EcsEntity other)
         {
             ref var component = ref entity.Get<EcsComponent.PickUpSceneItemEvent>();
             component.otherEntity = other;
@@ -43,10 +28,24 @@ namespace UnityComponent
             //component.conteiners = conteiners;
         }
 
+        public void SetSprite(Sprite sprite)
+        {
+            renderer.sprite = sprite;
+        }
+
         public void DestroySelf()
         {
             Debug.Log("DestroySelf:" + this);
             Destroy(gameObject);
         }
+
+        private void OnDestroy()
+        {
+            if (interactionObject != null)
+            {
+                interactionObject.EventToInteract -= InteractionObject_EventToInteract;
+            }
+        }
+
     }
 }

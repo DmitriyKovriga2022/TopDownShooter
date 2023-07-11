@@ -11,11 +11,11 @@ namespace UnityComponent
         public event Action<Vector2> EventLookAt;
         public EcsEntity entity;
         private Vector2 targetPosition;
-        private LookAtItem lookAtItem;
+        private LookAtInteractionObject interactionObject;
 
         public void Awake()
         {
-            lookAtItem = new LookAtItem();
+            interactionObject = new LookAtInteractionObject();
         }
 
         private void Update()
@@ -38,7 +38,7 @@ namespace UnityComponent
             
             if(Input.GetKeyDown(KeyCode.F))
             {
-               lookAtItem.PickUp(entity);
+                interactionObject.ToInteract(entity);
             }
 
             if (Input.GetKeyDown(KeyCode.I))
@@ -64,10 +64,9 @@ namespace UnityComponent
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.TryGetComponent(out SceneItem item))
+            if (collider.TryGetComponent(out InteractionObject interactionObject))
             {
-                // item.ShowInfo();
-                lookAtItem.Item = item;
+                this.interactionObject.InteractObject = interactionObject;
             }
 
             if (collider.TryGetComponent(out ExitPoint point))
@@ -80,41 +79,42 @@ namespace UnityComponent
         {
             if (collider.TryGetComponent(out SceneItem item))
             {
-                // item.HideInfo();
-                lookAtItem.Item = null;
+                interactionObject.InteractObject = null;
             }
         }
 
     }
 
     [System.Serializable]
-    public class LookAtItem
+    public class LookAtInteractionObject
     {
-        public SceneItem Item
+        public InteractionObject InteractObject
         {
             set
             {
-                if (item != null)
+                if (currentObject != null)
                 {
-                    item.HideInfo();
+                    currentObject.HideInfo();
                 }
 
-                item = value;
+                currentObject = value;
 
-                if(item != null)
+                if(currentObject != null)
                 {
-                    item.ShowInfo();
+                    currentObject.ShowInfo();
                 }
             }
         }
-        private SceneItem item;
+        private InteractionObject currentObject;
 
-        public void PickUp(EcsEntity other)
+        public void ToInteract(EcsEntity other)
         {
-            if(item != null)
+            if(currentObject != null)
             {
-                item.PickUp(other);
+                currentObject.ToInteract(other);
             }
         }
     }
+
+
 }

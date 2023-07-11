@@ -8,12 +8,12 @@ using UnityEngine.UI;
 
 public class UIBag : MonoBehaviour
 {
+    public event Action EventOnHideBag;
     [SerializeField] private UIBagCell[] cells;
     [SerializeField] private DragItem dragCell;
     [SerializeField] private Button closeButton;
 
     private EcsEntity bagEntity;
-    //private EcsEntity otherEntity;
     private ItemConteiner[] conteiners;
 
     public void Initialise()
@@ -39,7 +39,7 @@ public class UIBag : MonoBehaviour
     private void Item_EventGetCellItem(ItemConteiner value)
     {
         if (dragCell.Conteiner != null) return;
-        dragCell.SetConteiner(value);
+        dragCell.SetConteiner(value, bagEntity);
 
         conteiners = conteiners.Where(val => val != value).ToArray();
 
@@ -73,6 +73,7 @@ public class UIBag : MonoBehaviour
     {
         ClearCell();
         gameObject.SetActive(false);
+        EventOnHideBag?.Invoke();
     }
 
     private void ClearCell()
