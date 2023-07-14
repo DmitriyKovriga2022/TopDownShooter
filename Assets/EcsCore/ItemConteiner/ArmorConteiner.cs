@@ -15,6 +15,11 @@ public class ArmorConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.jacketSprite;
+        return StaticData.Instance.itemData.Jacket.Sprite;
+    }
+
+    public override int GetPrice()
+    {
+        return StaticData.Instance.itemData.Jacket.Price;
     }
 }

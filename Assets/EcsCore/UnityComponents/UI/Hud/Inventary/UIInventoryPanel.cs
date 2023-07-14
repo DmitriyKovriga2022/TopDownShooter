@@ -1,53 +1,92 @@
 ﻿using Leopotam.Ecs;
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIInventoryPanel : MonoBehaviour
 {
     [SerializeField] private UIBag uiSelfBag;
     [SerializeField] private UIBag uiOtherBag;
+    [SerializeField] private UITradePanel uiTradePanel;
     [SerializeField] private DragItem dragCell;
-
-    private EcsWorld ecsWorld;
+    [SerializeField] private Button swapButton;
+    [SerializeField] private Button closeButton;
 
     private void Awake()
     {
-        uiSelfBag.Initialise();
+        uiSelfBag.Initialise(this);
         uiSelfBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
-        uiOtherBag.Initialise();
+        uiOtherBag.Initialise(this);
         uiOtherBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
         dragCell.Initialise();
+        uiTradePanel.Initialise();
+        swapButton.onClick.AddListener(OnSwap);
+        closeButton.onClick.AddListener(OnButtonClose);
         Hide();
+    }
+
+    private void OnSwap()
+    {
+        if (dragCell.Conteiner != null) return;
+
+        if (uiTradePanel.ProfitableExchange() == false) return;
+
+        uiTradePanel.OnSwap();
+        uiSelfBag.ReShow();
+        uiOtherBag.ReShow();
     }
 
     private void UiSelfBag_EventIntentHideBag()
     {
         if (uiSelfBag.gameObject.activeSelf == false &&
-           uiOtherBag.gameObject.activeSelf == false)
+            uiOtherBag.gameObject.activeSelf == false)
         {
-            dragCell.ReturnToBag();
+            dragCell.ReturnItemToBag();
             dragCell.Clear();
             gameObject.SetActive(false);
         }
     }
 
-    public void ShowSelfBag(EcsEntity bagEntity, ItemConteiner[] conteiners)
+    public void ShowSelfBag(EcsEntity bagEntity)
     {
-        uiSelfBag.Show(bagEntity, conteiners);
+        uiSelfBag.Show(bagEntity);
         gameObject.SetActive(true);
     }
     
-    public void ShowOtherBag(EcsEntity bagEntity, ItemConteiner[] conteiners)
+    public void ShowOtherBag(EcsEntity bagEntity)
     {
-        uiOtherBag.Show(bagEntity, conteiners);
+        uiOtherBag.Show(bagEntity);
         gameObject.SetActive(true);
+    }
+
+    public void ShowTradeBag(EcsEntity bagEntity, EcsEntity otherEntity)
+    {
+        uiOtherBag.Show(bagEntity);
+        uiTradePanel.Show(bagEntity, otherEntity);
+        gameObject.SetActive(true);
+    }
+
+    public bool IsTradeState
+    {
+        get
+        {
+            return uiTradePanel.gameObject.activeSelf;
+        }
+    }
+
+    private void OnButtonClose()
+    {
+        if (dragCell.Conteiner != null) return;
+        Hide();
     }
 
     public void Hide()
     {
         uiSelfBag.Hide();
         uiOtherBag.Hide();
-        dragCell.ReturnToBag();
+        uiTradePanel.Hide();
+        dragCell.ReturnItemToBag();
         dragCell.Clear();
         gameObject.SetActive(false);
     }

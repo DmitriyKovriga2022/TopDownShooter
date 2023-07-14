@@ -8,6 +8,7 @@ sealed class EcsStartupBase : MonoBehaviour
     public Hud hud;
 
     EcsWorld _world;
+    EcsSystems _initSystems;
     EcsSystems _updateSystems;
     EcsSystems _fixedUpdateSystems;
     EcsSystems _lateUpdateSystems;
@@ -17,6 +18,8 @@ sealed class EcsStartupBase : MonoBehaviour
         // void can be switched to IEnumerator for support coroutines.
 
         _world = new EcsWorld();
+        EcsWorldsProvider.SetWorld(_world);
+        _initSystems = new EcsSystems(_world);
         _updateSystems = new EcsSystems(_world);
         _fixedUpdateSystems = new EcsSystems(_world);
         _lateUpdateSystems = new EcsSystems(_world);
@@ -28,9 +31,20 @@ sealed class EcsStartupBase : MonoBehaviour
         Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_lateUpdateSystems);
 #endif
 
+        _initSystems
+                .Add(new FindSceneItemMarker())
+                .Add(new FindUnitSceneMarkerSystem())
+                .Add(new PlayerInitialiseSystem())
+
+                .Inject(configuration)
+                .Inject(sceneData)
+                .Inject(hud);
+
+
         _updateSystems
              // register your systems here, for example:
-             .Add(new PlayerInitialiseSystem())
+
+
              .Add(new SpawnUnitSystem())
              .Add(new SpawnSceneItemSystem())
              .Add(new PlayerRotationSystem())
@@ -52,6 +66,7 @@ sealed class EcsStartupBase : MonoBehaviour
              .Add(new DropToGroundWeaponSystem())
              .Add(new DropToGroundBagSystem())
 
+             .Add(new ShowTradeMenuSystem())
              .Add(new ShowBagUISystem())
 
              .Add(new DestroySceneItemSystem())
@@ -65,6 +80,7 @@ sealed class EcsStartupBase : MonoBehaviour
              .OneFrame<EcsComponent.PickUpSceneItemEvent>()
              .OneFrame<EcsComponent.EquippingWeaponEvent>()
              .OneFrame<EcsComponent.EquippingAmmoEvent>()
+             .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.SpawnSceneItemEvent>()
@@ -87,7 +103,7 @@ sealed class EcsStartupBase : MonoBehaviour
             .Inject(configuration)
             .Inject(sceneData);
 
-
+        _initSystems.Init();
         _updateSystems.Init();
         _fixedUpdateSystems.Init();
         _lateUpdateSystems.Init();
@@ -111,6 +127,12 @@ sealed class EcsStartupBase : MonoBehaviour
 
     void OnDestroy()
     {
+        if (_initSystems != null)
+        {
+            _initSystems.Destroy();
+            _initSystems = null;
+        }
+
         if (_updateSystems != null)
         {
             _updateSystems.Destroy();

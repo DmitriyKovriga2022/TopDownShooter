@@ -21,11 +21,14 @@ namespace UnityComponent
 
         private void InteractionObject_EventToInteract(EcsEntity other)
         {
+            if(entity == null)
+            {
+                Debug.LogError("SelfEntity is null");
+                return;
+            }
+
             ref var component = ref entity.Get<EcsComponent.PickUpSceneItemEvent>();
             component.otherEntity = other;
-            //component.worldPosition = transform.position;
-            //ref var conteiners = ref entity.Get<EcsComponent.Bag>().conteiners;
-            //component.conteiners = conteiners;
         }
 
         public void SetSprite(Sprite sprite)

@@ -1,7 +1,5 @@
 using Leopotam.Ecs;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,49 +9,64 @@ public class UIBag : MonoBehaviour
     public event Action EventOnHideBag;
     [SerializeField] private UIBagCell[] cells;
     [SerializeField] private DragItem dragCell;
-    [SerializeField] private Button closeButton;
 
-    private EcsEntity bagEntity;
+    private EcsEntity entityOwner;
     private ItemConteiner[] conteiners;
+    private UIInventoryPanel inventoryPanel;
 
-    public void Initialise()
+    public void Initialise(UIInventoryPanel inventoryPanel)
     {
+        this.inventoryPanel = inventoryPanel;
         foreach (var item in cells)
         {
             item.Initialise();
             item.EventGetItem += Item_EventGetCellItem;
             item.EventSetItem += Item_EventSetCellItem;
         }
-        closeButton.onClick.AddListener(Hide);
     }
 
     private void Item_EventSetCellItem(ItemConteiner value)
     {
+        if(inventoryPanel.IsTradeState)
+        {
+            if (dragCell.Entity != entityOwner) return;
+        }
+
         conteiners = conteiners.Append(value).ToArray();
-        ref var bag = ref bagEntity.Get<EcsComponent.Bag>();
-        bag.conteiners = conteiners;
+        if (entityOwner.Has<EcsComponent.Bag>())
+        {
+            entityOwner.Get<EcsComponent.Bag>().conteiners = conteiners;
+        }
+
         dragCell.Clear();
-        Show(bagEntity, conteiners);
+        Show(entityOwner);
     }
 
     private void Item_EventGetCellItem(ItemConteiner value)
     {
         if (dragCell.Conteiner != null) return;
-        dragCell.SetConteiner(value, bagEntity);
+        dragCell.SetConteiner(value, entityOwner);
 
         conteiners = conteiners.Where(val => val != value).ToArray();
 
-        ref var bag = ref bagEntity.Get<EcsComponent.Bag>();
-        bag.conteiners = conteiners;
-        Show(bagEntity, conteiners);
+        if (entityOwner.Has<EcsComponent.Bag>())
+        {
+            entityOwner.Get<EcsComponent.Bag>().conteiners = conteiners;
+        }
+
+        Show(entityOwner);
     }
 
-    public void Show(EcsEntity bagEntity,  ItemConteiner[] conteiners)
+    public void Show(EcsEntity bagEntity)
     {
         ClearCell();
-        
-        this.conteiners = conteiners;
-        this.bagEntity = bagEntity;
+
+        entityOwner = bagEntity;
+
+        if (entityOwner.Has<EcsComponent.Bag>())
+        {
+            conteiners = entityOwner.Get<EcsComponent.Bag>().conteiners;
+        }
 
         if (cells.Length < conteiners.Length)
         {
@@ -67,6 +80,11 @@ public class UIBag : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+    }
+
+    public void ReShow()
+    {
+        Show(entityOwner);
     }
 
     public void Hide()

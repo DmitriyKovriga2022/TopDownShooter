@@ -11,14 +11,6 @@ namespace UnityComponent
         public Transform mainTransform;
         public Transform visualTransform;
         public Transform weaponHolder;
-        
-
-        [SerializeField] private Bag bag;
-
-        private void Awake()
-        {
-           
-        }
 
         public void Dead()
         {

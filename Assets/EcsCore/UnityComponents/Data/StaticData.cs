@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DialogueEditor;
+using UnityEngine;
 
 [CreateAssetMenu]
 internal class StaticData : ScriptableObject
@@ -29,18 +30,20 @@ internal class StaticData : ScriptableObject
     public TileData tileData;
     public UnityComponent.SceneItem sceneItemPrefab;
     public InteractionObject interactionObjectPrefab;
+    public NPCConversation merchantConversation;
+
 }
 
 [System.Serializable]
 public class ItemData
 {
-    public Sprite boxSprite;
-    public Sprite medkitSprite;
-    public Sprite bagSprite;
-    public Sprite bulletSprite;
-    public Sprite foodSprite;
-    public Sprite jacketSprite;
-    public Sprite weaponSprite;
+    public ItemConfig Box;
+    public ItemConfig Medkit;
+    public ItemConfig Bag;
+    public ItemConfig Bullet;
+    public ItemConfig Food;
+    public ItemConfig Jacket;
+    public ItemConfig Weapon;
     public SoundClips sound;
     
 
@@ -51,6 +54,14 @@ public class ItemData
         public AudioClip[] destroyItem;
     }
 
+    [System.Serializable]
+    public class ItemConfig
+    {
+        public string Name;
+        public Sprite Sprite;
+        public int Price;
+
+    }
 
 }
 

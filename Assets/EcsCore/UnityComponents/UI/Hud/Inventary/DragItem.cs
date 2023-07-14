@@ -10,6 +10,7 @@ public class DragItem : MonoBehaviour
     [SerializeField] private Image image;
     public ItemConteiner Conteiner => conteiner;
     private ItemConteiner conteiner;
+    public EcsEntity Entity => entity;
     private EcsEntity entity;
     private Sprite defaultSprite;
 
@@ -45,7 +46,7 @@ public class DragItem : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ReturnToBag()
+    public void ReturnItemToBag()
     {
         if (conteiner == null) return;
         ref var bagConteiner = ref entity.Get<EcsComponent.Bag>().conteiners;

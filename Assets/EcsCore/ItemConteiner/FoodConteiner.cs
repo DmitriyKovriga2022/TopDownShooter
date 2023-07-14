@@ -15,7 +15,11 @@ public class FoodConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.foodSprite;
+        return StaticData.Instance.itemData.Food.Sprite;
     }
 
+    public override int GetPrice()
+    {
+        return StaticData.Instance.itemData.Food.Price;
+    }
 }

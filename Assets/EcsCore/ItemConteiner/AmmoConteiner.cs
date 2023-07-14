@@ -7,7 +7,7 @@ public class AmmoConteiner : ItemConteiner
     {
         this.count = count;
     }
-    private int count;
+    [SerializeField] private int count;
     public override int GetContent()
     {
         return count;
@@ -15,6 +15,11 @@ public class AmmoConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-       return StaticData.Instance.itemData.bulletSprite;
+       return StaticData.Instance.itemData.Bullet.Sprite;
+    }
+
+    public override int GetPrice()
+    {
+        return StaticData.Instance.itemData.Bullet.Price;
     }
 }

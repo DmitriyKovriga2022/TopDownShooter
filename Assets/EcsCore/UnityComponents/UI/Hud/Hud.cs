@@ -19,15 +19,18 @@ public class Hud : MonoBehaviour
         EventShowDeadMenu?.Invoke();
     }
 
-    public bool ShowInventory()
+    public bool InventoryIsEnable
     {
-        if(inventory.isActiveAndEnabled)
+        get
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            if (inventory.isActiveAndEnabled)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

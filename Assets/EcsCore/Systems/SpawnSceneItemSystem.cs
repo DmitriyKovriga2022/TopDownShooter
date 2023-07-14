@@ -19,9 +19,9 @@ public class SpawnSceneItemSystem : IEcsRunSystem
 
             var gameObject = Object.Instantiate(staticData.sceneItemPrefab, spawnUnitEvent.position, Quaternion.identity);
             gameObject.gameObject.layer = LayerMask.NameToLayer("Item");
-            CircleCollider2D collider = gameObject.gameObject.AddComponent<CircleCollider2D>();
-            collider.radius = 0.5f;
-            collider.isTrigger = true;
+            //CircleCollider2D collider = gameObject.gameObject.AddComponent<CircleCollider2D>();
+            //collider.radius = 0.5f;
+            //collider.isTrigger = true;
 
             item.itemGo = gameObject;
             item.itemGo.entity = entity;

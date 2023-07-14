@@ -15,6 +15,11 @@ public class WeaponConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.weaponSprite;
+        return StaticData.Instance.itemData.Weapon.Sprite;
+    }
+
+    public override int GetPrice()
+    {
+        return StaticData.Instance.itemData.Weapon.Price;
     }
 }

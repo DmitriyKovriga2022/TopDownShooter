@@ -7,4 +7,6 @@ public abstract class ItemConteiner
 {
     public abstract int GetContent();
     public abstract Sprite GetIcon();
+    public abstract int GetPrice();
+    
 }

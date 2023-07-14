@@ -13,26 +13,31 @@ public class SpawnUnitSystem : IEcsRunSystem
         {
             var entity = filter.GetEntity(i);
             ref var unit = ref entity.Get<EcsComponent.Unit>();
-            ref var health = ref entity.Get<EcsComponent.Health>();
-            ref var purse = ref entity.Get<EcsComponent.Purse>();
-            ref var spawnUnitEvent = ref filter.Get1(i);
 
-            var unitGO = Object.Instantiate(staticData.unitData.unitPrefab, spawnUnitEvent.position, Quaternion.identity);
-            unitGO.entity = entity;
-            unit.owner = entity;
-            unit.UnitGO = unitGO;
+            ref var health = ref entity.Get<EcsComponent.Health>();
             health.value = 100;
             health.maxValue = 100;
 
-            if (unit.owner.Has<EcsComponent.Player>() == false)
-            {
-                AiCombat aiCombat = unitGO.gameObject.AddComponent<AiCombat>();
-                aiCombat.Initialise(staticData.gridData.GridSize, sceneData.player);
-                unitGO.visualTransform.gameObject.layer = 7;
+            ref var purse = ref entity.Get<EcsComponent.Purse>();
+            ref var position = ref filter.Get1(i).position;
+            ref var unitType = ref filter.Get1(i).unitType;
 
-                purse.value = Random.Range(0, 10);
+            var unitGO = Object.Instantiate(staticData.unitData.unitPrefab, position, Quaternion.identity);
+            unitGO.entity = entity;
+            unit.owner = entity;
+            unit.UnitGO = unitGO;
+            
 
-            }
+            if (unit.owner.Has<EcsComponent.Player>() == true) continue;
+
+            //AiCombat aiCombat = unitGO.gameObject.AddComponent<AiCombat>();
+            //aiCombat.Initialise(staticData.gridData.GridSize, sceneData.player);
+            //unitGO.visualTransform.gameObject.layer = 7;
+            //purse.value = Random.Range(0, 10);
+
+            var merchant = unitGO.gameObject.AddComponent<AiMerchant>();
+            merchant.Initialise(StaticData.Instance.gridData.GridSize,
+                                StaticData.Instance.merchantConversation);
 
             ref var bag = ref entity.Get<EcsComponent.Bag>();
             bag.conteiners = new ItemConteiner[5]
@@ -43,9 +48,15 @@ public class SpawnUnitSystem : IEcsRunSystem
                 new ArmorConteiner(1),
                 new FoodConteiner(Random.Range(1, 50)),
              };
+
             //entity.Get<EcsComponent.EquippingWeaponEvent>();
 
         }
+    }
+
+    private void InstantiateGo()
+    {
+
     }
 
 }

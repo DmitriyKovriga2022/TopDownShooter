@@ -13,23 +13,24 @@ public class AiMerchant : MonoBehaviour
     private NavMeshPath path;
     private UnitMovePath unitMovePath;
     private InteractionObject interactionObject;
+    private NPCConversation conversation;
+    private EcsEntity otherEntity;
 
-    [SerializeField] private NPCConversation conversation;
-
-    private void Start()
-    {
-        interactionObject = Instantiate(StaticData.Instance.interactionObjectPrefab, transform);
-        interactionObject.EventToInteract += InteractionObject_EventToInteract;
-        Initialise(StaticData.Instance.gridData.GridSize);
-    }
-
-    public void Initialise(Vector2Int mapsize)
+    public void Initialise(Vector2Int mapsize, NPCConversation conversation)
     {
         this.mapsize = mapsize;
         livePoint = transform.position;
         path = new NavMeshPath();
         unitMovePath = gameObject.AddComponent<UnitMovePath>();
         unitMovePath.Initialise(path);
+
+        interactionObject = Instantiate(StaticData.Instance.interactionObjectPrefab, transform);
+        interactionObject.EventToInteract += InteractionObject_EventToInteract;
+
+        this.conversation = conversation;
+        NodeEventHolder node = this.conversation.GetNodeData(1);
+        node.Event.AddListener(ShowTradeInventary);
+
 
         Invoke(nameof(CalculateRandomPath), 1);
     }
@@ -65,18 +66,28 @@ public class AiMerchant : MonoBehaviour
 
     private void InteractionObject_EventToInteract(EcsEntity other)
     {
-        ConversationManager.Instance.StartConversation(conversation);
-        // ref var component = ref entity.Get<EcsComponent.PickUpSceneItemEvent>();
-        // component.otherEntity = other;
+        otherEntity = other;
+        if (ConversationManager.Instance == null)
+        {
+            Debug.Log("ConversationManager is null");
+            return;
+        }
 
-        //component.worldPosition = transform.position;
-        //ref var conteiners = ref entity.Get<EcsComponent.Bag>().conteiners;
-        //component.conteiners = conteiners;
+        ConversationManager.Instance.StartConversation(conversation);
     }
 
-    public void ShowInventary()
+    public void ShowTradeInventary()
     {
+        if (otherEntity == null)
+        {
+            Debug.LogError("Other entity is null");
+            return;
+        }
 
+        Debug.Log("ShowTradeInventary");
+        EcsEntity entity = GetComponent<UnityComponent.Unit>().entity;
+        ref var component = ref entity.Get<EcsComponent.ShowTradeMenuEvent>();
+        component.otherEntity = otherEntity;
     }
 
     private void OnDrawGizmosSelected()

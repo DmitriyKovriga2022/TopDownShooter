@@ -18,6 +18,7 @@ sealed class EcsStartup : MonoBehaviour
         // void can be switched to IEnumerator for support coroutines.
 
         _world = new EcsWorld();
+        EcsWorldsProvider.SetWorld(_world);
         _updateSystems = new EcsSystems(_world);
         _fixedUpdateSystems = new EcsSystems(_world);
         _lateUpdateSystems = new EcsSystems(_world);
@@ -54,6 +55,7 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new DropToGroundWeaponSystem())
              .Add(new DropToGroundBagSystem())
              
+             .Add(new ShowTradeMenuSystem())
              .Add(new ShowBagUISystem())
 
              .Add(new DestroySceneItemSystem())
@@ -67,6 +69,7 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.PickUpSceneItemEvent>()
              .OneFrame<EcsComponent.EquippingWeaponEvent>()
              .OneFrame<EcsComponent.EquippingAmmoEvent>()
+             .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.SpawnSceneItemEvent>()

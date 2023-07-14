@@ -15,7 +15,11 @@ public class MedKitConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.medkitSprite;
+        return StaticData.Instance.itemData.Medkit.Sprite;
     }
 
+    public override int GetPrice()
+    {
+        return StaticData.Instance.itemData.Medkit.Price;
+    }
 }

@@ -76,7 +76,7 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(hud.ShowInventory())
+            if(hud.InventoryIsEnable == true)
             {
                 hud.Inventory.Hide();
                 aim.Show();
