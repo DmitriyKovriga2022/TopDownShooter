@@ -9,7 +9,7 @@ public class UITradeProduct : MonoBehaviour
 {
     [SerializeField] private Text selfPrice;
     [SerializeField] private DragItem dragCell;
-    [SerializeField] private UIBagCell[] cells;
+    [SerializeField] private UIInventoryCell[] cells;
 
     public EcsEntity EntityOwner => entityOwner;
     private EcsEntity entityOwner;

@@ -45,11 +45,14 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         hud.HudHealth.ShowHealth(health.value, health.maxValue);
 
         ref var bag = ref entity.Get<EcsComponent.Bag>();
-        bag.conteiners = new ItemConteiner[3]
+        bag.conteiners = new ItemConteiner[6]
          {
                 new AmmoConteiner(30),
                 new MedKitConteiner(50),
                 new FoodConteiner(1),
+                new BodyConteiner(1),
+                new WeaponConteiner(1),
+                new HeadConteiner(1),
          };
 
         entity.Get<EcsComponent.EquippingWeaponEvent>();

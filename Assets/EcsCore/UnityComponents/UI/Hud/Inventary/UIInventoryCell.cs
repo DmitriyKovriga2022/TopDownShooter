@@ -2,14 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIBagCell : MonoBehaviour
+public class UIInventoryCell : MonoBehaviour
 {
     public event Action<ItemConteiner> EventSetItem;
     public event Action<ItemConteiner> EventGetItem;
 
     [SerializeField] private DragItem dragCell;
-    [SerializeField] private Image image;
-    [SerializeField] private Button button;
+    private Image image;
+    private Button button;
 
     private Sprite defaultSprite;
     private ItemConteiner conteiner;

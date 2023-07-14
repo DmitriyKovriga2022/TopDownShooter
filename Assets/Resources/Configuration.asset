@@ -95,6 +95,10 @@ MonoBehaviour:
       Name: Weapon
       Sprite: {fileID: 1472445859, guid: 57d18ea758bdd3e4cbb555f6260f3d86, type: 3}
       Price: 50
+    Head:
+      Name: Helmet
+      Sprite: {fileID: 21300000, guid: aa4ae807d297c634d8884b02e2054590, type: 3}
+      Price: 10
     sound:
       inspectItem:
       - {fileID: 8300000, guid: 77d00072b70c83a4b9abfb2a40c10a1d, type: 3}

@@ -30,5 +30,10 @@ namespace UnityComponent
                 render.flipY = false;
             }
         }
+
+        private void OnDestroy()
+        {
+            lookTarget.EventLookAt -= LookTarget_EventLookAt;
+        }
     }
 }

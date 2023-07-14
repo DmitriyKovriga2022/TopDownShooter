@@ -14,24 +14,16 @@ internal class EquippingWeaponSystem : IEcsRunSystem
         {
             var entity = filter.GetEntity(i);
             var unitComponent = filter.Get1(i);
-            var equippingComponent = filter.Get2(i);
-
-            ref var hasWeapon = ref entity.Get<EcsComponent.HasWeapon>();
+            ref var weapon = ref entity.Get<EcsComponent.EquipWeapon>();
             var setting = staticData.weaponSettings;
             var weaponGO = Object.Instantiate(setting.weaponPrefab, unitComponent.UnitGO.weaponHolder);
-            var weaponEntity = ecsWorld.NewEntity();
-            ref var weapon = ref weaponEntity.Get<EcsComponent.Weapon>();
-            weapon.owner = entity;
+            weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
+            weapon.WeaponGo = weaponGO;
             weapon.totalAmmo = setting.totalAmmo;
             weapon.weaponDamage = setting.weaponDamage;
             weapon.currentInMagazine = setting.currentInMagazine;
             weapon.maxInMagazine = setting.maxInMagazine;
             weapon.shootPosition = weaponGO.PointShoot;
-            weapon.weaponGo = weaponGO;
-            hasWeapon.weapon = weaponEntity;
-            weaponGO.entity = weaponEntity;
-
-            weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
 
             if (unitComponent.owner.Has<EcsComponent.Player>())
             {
@@ -42,6 +34,33 @@ internal class EquippingWeaponSystem : IEcsRunSystem
             {
                 weaponGO.RenderTransform.gameObject.layer = 7;
             }
+
+            //ref var hasWeapon = ref entity.Get<EcsComponent.HasWeapon>();
+            //var setting = staticData.weaponSettings;
+            //var weaponGO = Object.Instantiate(setting.weaponPrefab, unitComponent.UnitGO.weaponHolder);
+            //var weaponEntity = ecsWorld.NewEntity();
+            //ref var weapon = ref weaponEntity.Get<EcsComponent.Weapon>();
+            //weapon.owner = entity;
+            //weapon.totalAmmo = setting.totalAmmo;
+            //weapon.weaponDamage = setting.weaponDamage;
+            //weapon.currentInMagazine = setting.currentInMagazine;
+            //weapon.maxInMagazine = setting.maxInMagazine;
+            //weapon.shootPosition = weaponGO.PointShoot;
+            //weapon.weaponGo = weaponGO;
+            //hasWeapon.weapon = weaponEntity;
+            //weaponGO.entity = weaponEntity;
+
+            //weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
+
+            //if (unitComponent.owner.Has<EcsComponent.Player>())
+            //{
+            //    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+            //    hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
+            //}
+            //else
+            //{
+            //    weaponGO.RenderTransform.gameObject.layer = 7;
+            //}
 
 
         }

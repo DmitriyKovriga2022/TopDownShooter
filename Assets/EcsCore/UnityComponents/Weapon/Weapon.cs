@@ -21,5 +21,10 @@ namespace UnityComponent
             ShootEvent.TargetPosition = targetPosition;
         }
 
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

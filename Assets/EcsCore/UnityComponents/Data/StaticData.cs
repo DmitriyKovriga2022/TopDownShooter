@@ -44,6 +44,7 @@ public class ItemData
     public ItemConfig Food;
     public ItemConfig Jacket;
     public ItemConfig Weapon;
+    public ItemConfig Head;
     public SoundClips sound;
     
 

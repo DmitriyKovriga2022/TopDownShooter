@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIBag : MonoBehaviour
 {
     public event Action EventOnHideBag;
-    [SerializeField] private UIBagCell[] cells;
+    [SerializeField] private UIInventoryCell[] cells;
     [SerializeField] private DragItem dragCell;
 
     private EcsEntity entityOwner;

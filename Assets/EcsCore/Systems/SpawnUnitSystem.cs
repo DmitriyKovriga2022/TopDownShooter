@@ -49,6 +49,11 @@ public class SpawnUnitSystem : IEcsRunSystem
                 new FoodConteiner(Random.Range(1, 50)),
              };
 
+
+            entity.Get<EcsComponent.EquipWeapon>();
+            entity.Get<EcsComponent.EquipWeaponSecond>();
+            entity.Get<EcsComponent.EquipBody>();
+            entity.Get<EcsComponent.EquipHead>();
             //entity.Get<EcsComponent.EquippingWeaponEvent>();
 
         }

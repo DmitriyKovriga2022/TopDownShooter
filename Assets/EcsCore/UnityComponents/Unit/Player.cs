@@ -44,6 +44,7 @@ namespace UnityComponent
             if (Input.GetKeyDown(KeyCode.I))
             {
                 entity.Get<EcsComponent.ShowUIBagEvent>().entity = entity;
+                entity.Get<EcsComponent.ShowUIEquipEvent>().entity = entity;
             }
 
         }

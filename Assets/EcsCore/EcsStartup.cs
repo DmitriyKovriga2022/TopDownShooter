@@ -32,7 +32,7 @@ sealed class EcsStartup : MonoBehaviour
 
         _updateSystems
              // register your systems here, for example:
-             .Add(new GenerateWorldSystem())
+             //.Add(new GenerateWorldSystem())
              .Add(new PlayerInitialiseSystem())
              .Add(new SpawnUnitSystem())
              .Add(new SpawnSceneItemSystem())
@@ -56,10 +56,11 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new DropToGroundBagSystem())
              
              .Add(new ShowTradeMenuSystem())
+             .Add(new ShowEquipMenuSystem())
              .Add(new ShowBagUISystem())
 
              .Add(new DestroySceneItemSystem())
-
+             .Add(new RemoveMainWeaponSystem())
 
              // register one-frame components (order is important), for example:
              .OneFrame<EcsComponent.ShootEvent>()
@@ -71,6 +72,8 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.EquippingAmmoEvent>()
              .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
+             .OneFrame<EcsComponent.ShowUIEquipEvent>()
+             .OneFrame<EcsComponent.RemoveEqipMainWeaponEvent>()
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.SpawnSceneItemEvent>()
              .OneFrame<EcsComponent.HitBulletEvent>()
