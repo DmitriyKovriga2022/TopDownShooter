@@ -19,6 +19,7 @@ sealed class EcsStartupBase : MonoBehaviour
 
         _world = new EcsWorld();
         EcsWorldsProvider.SetWorld(_world);
+
         _initSystems = new EcsSystems(_world);
         _updateSystems = new EcsSystems(_world);
         _fixedUpdateSystems = new EcsSystems(_world);

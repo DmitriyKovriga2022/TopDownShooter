@@ -9,6 +9,7 @@ sealed class EcsStartup : MonoBehaviour
     public Hud hud;
 
     EcsWorld _world;
+    EcsSystems _initSystems;
     EcsSystems _updateSystems;
     EcsSystems _fixedUpdateSystems;
     EcsSystems _lateUpdateSystems;
@@ -19,6 +20,8 @@ sealed class EcsStartup : MonoBehaviour
 
         _world = new EcsWorld();
         EcsWorldsProvider.SetWorld(_world);
+
+        _initSystems = new EcsSystems(_world);
         _updateSystems = new EcsSystems(_world);
         _fixedUpdateSystems = new EcsSystems(_world);
         _lateUpdateSystems = new EcsSystems(_world);
@@ -30,22 +33,33 @@ sealed class EcsStartup : MonoBehaviour
         Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_lateUpdateSystems);
 #endif
 
+        _initSystems
+                .Add(new FindSceneItemMarker())
+                .Add(new FindUnitSceneMarkerSystem())
+                .Add(new PlayerInitialiseSystem())
+
+                .Inject(configuration)
+                .Inject(sceneData)
+                .Inject(hud);
+
         _updateSystems
-             // register your systems here, for example:
-             //.Add(new GenerateWorldSystem())
-             .Add(new PlayerInitialiseSystem())
+              // register your systems here, for example:
+              //.Add(new GenerateWorldSystem())
              .Add(new SpawnUnitSystem())
              .Add(new SpawnSceneItemSystem())
-             .Add(new PlayerRotationSystem())
+             .Add(new SpawnProjectileSystem())
+
+             .Add(new EquippingWeaponSystem())
+             .Add(new EquippingAmmoSystem())
+             
              .Add(new PlayerInputShootSystem())
              .Add(new PickUpItemSystem())
              .Add(new ApplyMedKitSystem())
-            
-             .Add(new EquippingWeaponSystem())
-             .Add(new EquippingAmmoSystem())
-             .Add(new WeaponShootSystem())
+
              .Add(new WeaponReloadingSystem())
-             .Add(new SpawnProjectileSystem())
+             .Add(new WeaponShootSystem())
+
+             .Add(new PlayerRotationSystem())
              .Add(new ProjectileMoveSystem())
              .Add(new ProjectileHitSystem())
              .Add(new UnitHitBulletSystem())
@@ -93,8 +107,9 @@ sealed class EcsStartup : MonoBehaviour
             .Add(new CameraFollowSystem())
             .Inject(configuration)
             .Inject(sceneData);
-            
 
+
+        _initSystems.Init();
         _updateSystems.Init();
         _fixedUpdateSystems.Init();
         _lateUpdateSystems.Init();
@@ -118,6 +133,13 @@ sealed class EcsStartup : MonoBehaviour
 
     void OnDestroy()
     {
+        if (_initSystems != null)
+        {
+            _initSystems.Destroy();
+            _initSystems = null;
+        }
+
+
         if (_updateSystems != null)
         {
             _updateSystems.Destroy();

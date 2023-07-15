@@ -6,7 +6,7 @@ internal class WeaponShootSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.Weapon, EcsComponent.ShootEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeapon, EcsComponent.ShootEvent> filter;
 
     public void Run()
     {
@@ -28,7 +28,7 @@ internal class WeaponShootSystem : IEcsRunSystem
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
                 spawnProjectileEvent.power = weapon.weaponDamage;
 
-                if (weapon.owner.Has<EcsComponent.Player>())
+                if (entity.Has<EcsComponent.Player>())
                 {
                     hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
                 }

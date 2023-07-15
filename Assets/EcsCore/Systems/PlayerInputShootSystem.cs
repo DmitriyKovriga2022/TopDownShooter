@@ -4,7 +4,7 @@ using UnityEngine;
 internal class PlayerInputShootSystem : IEcsRunSystem
 {
     private SceneData sceneData;
-    private EcsFilter<EcsComponent.Player, EcsComponent.HasWeapon> filter;
+    private EcsFilter<EcsComponent.Player, EcsComponent.EquipWeapon> filter;
 
     public void Run()
     {
@@ -14,7 +14,7 @@ internal class PlayerInputShootSystem : IEcsRunSystem
         {
             foreach (var i in filter)
             {
-                var entity = filter.Get2(i).weapon;
+                var entity = filter.GetEntity(i);
                 ref var ShootEvent = ref entity.Get<EcsComponent.ShootEvent>();
                 ShootEvent.TargetPosition = sceneData.mainCamera.ScreenToWorldPoint(Input.mousePosition); 
             }

@@ -9,7 +9,7 @@ public class UIInventoryPanel : MonoBehaviour
     [SerializeField] private UIBag uiSelfBag;
     [SerializeField] private UIBag uiOtherBag;
     [SerializeField] private UITradePanel uiTradePanel;
-    [SerializeField] private UIEquipPanel uiEquiPanel;
+    [SerializeField] private UIEquipPanel uiEquipPanel;
     [SerializeField] private DragItem dragCell;
     [SerializeField] private Button swapButton;
     [SerializeField] private Button closeButton;
@@ -22,7 +22,7 @@ public class UIInventoryPanel : MonoBehaviour
         uiOtherBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
         dragCell.Initialise();
         uiTradePanel.Initialise();
-        uiEquiPanel.Initialise();
+        uiEquipPanel.Initialise();
         swapButton.onClick.AddListener(OnSwap);
         closeButton.onClick.AddListener(OnButtonClose);
         Hide();
@@ -71,7 +71,7 @@ public class UIInventoryPanel : MonoBehaviour
 
     public void ShowEquipPanel(EcsEntity selfEntity)
     {
-        uiEquiPanel.Show(selfEntity);
+        uiEquipPanel.Show(selfEntity);
         gameObject.SetActive(true);
     }
 
@@ -94,7 +94,7 @@ public class UIInventoryPanel : MonoBehaviour
         uiSelfBag.Hide();
         uiOtherBag.Hide();
         uiTradePanel.Hide();
-        uiEquiPanel.Hide();
+        uiEquipPanel.Hide();
         dragCell.ReturnItemToBag();
         dragCell.Clear();
         gameObject.SetActive(false);
