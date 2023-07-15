@@ -50,6 +50,9 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new SpawnProjectileSystem())
 
              .Add(new EquippingWeaponSystem())
+             .Add(new EquippingSecondWeaponSystem())
+             .Add(new EquippingHeadSystem())
+             .Add(new EquippingBodySystem())
              .Add(new EquippingAmmoSystem())
              
              .Add(new PlayerInputShootSystem())
@@ -75,6 +78,9 @@ sealed class EcsStartup : MonoBehaviour
 
              .Add(new DestroySceneItemSystem())
              .Add(new RemoveMainWeaponSystem())
+             .Add(new RemoveSecondWeaponSystem())
+             .Add(new RemoveBodySystem())
+             .Add(new RemoveHeadSystem())
 
              // register one-frame components (order is important), for example:
              .OneFrame<EcsComponent.ShootEvent>()
@@ -82,12 +88,22 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.TryReloadEvent>()
              .OneFrame<EcsComponent.ProjectileHitEvent>()
              .OneFrame<EcsComponent.PickUpSceneItemEvent>()
+
              .OneFrame<EcsComponent.EquippingWeaponEvent>()
+             .OneFrame<EcsComponent.EquippingWeaponSecondEvent>()
+             .OneFrame<EcsComponent.EquippingBodyEvent>()
+             .OneFrame<EcsComponent.EquippingHeadEvent>()
              .OneFrame<EcsComponent.EquippingAmmoEvent>()
+
              .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.ShowUIEquipEvent>()
+
              .OneFrame<EcsComponent.RemoveEqipMainWeaponEvent>()
+             .OneFrame<EcsComponent.RemoveEqipSecondWeaponEvent>()
+             .OneFrame<EcsComponent.RemoveEqipHeadEvent>()
+             .OneFrame<EcsComponent.RemoveEqipBodyEvent>()
+
              .OneFrame<EcsComponent.SpawnUnitEvent>()
              .OneFrame<EcsComponent.SpawnSceneItemEvent>()
              .OneFrame<EcsComponent.HitBulletEvent>()

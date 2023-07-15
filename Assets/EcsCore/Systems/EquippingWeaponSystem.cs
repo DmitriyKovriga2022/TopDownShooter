@@ -34,35 +34,6 @@ internal class EquippingWeaponSystem : IEcsRunSystem
             {
                 weaponGO.RenderTransform.gameObject.layer = 7;
             }
-
-            //ref var hasWeapon = ref entity.Get<EcsComponent.HasWeapon>();
-            //var setting = staticData.weaponSettings;
-            //var weaponGO = Object.Instantiate(setting.weaponPrefab, unitComponent.UnitGO.weaponHolder);
-            //var weaponEntity = ecsWorld.NewEntity();
-            //ref var weapon = ref weaponEntity.Get<EcsComponent.Weapon>();
-            //weapon.owner = entity;
-            //weapon.totalAmmo = setting.totalAmmo;
-            //weapon.weaponDamage = setting.weaponDamage;
-            //weapon.currentInMagazine = setting.currentInMagazine;
-            //weapon.maxInMagazine = setting.maxInMagazine;
-            //weapon.shootPosition = weaponGO.PointShoot;
-            //weapon.weaponGo = weaponGO;
-            //hasWeapon.weapon = weaponEntity;
-            //weaponGO.entity = weaponEntity;
-
-            //weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
-
-            //if (unitComponent.owner.Has<EcsComponent.Player>())
-            //{
-            //    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
-            //    hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
-            //}
-            //else
-            //{
-            //    weaponGO.RenderTransform.gameObject.layer = 7;
-            //}
-
-
         }
     }
 }

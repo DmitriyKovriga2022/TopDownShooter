@@ -1,6 +1,6 @@
 ﻿namespace EcsComponent
 {
-    internal struct EquippingWeaponEvent
+    public struct EquippingWeaponEvent
     {
     }
 }
