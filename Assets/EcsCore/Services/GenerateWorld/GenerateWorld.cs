@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class GenerateWorld : MonoBehaviour
 {
     public event Action EventEndGeneration;
-    //[SerializeField] private StaticData config;
+    [SerializeField] private StaticData config;
     [SerializeField] private NavMeshSurface Surface2D;
     [SerializeField] private BuildNavMesh buildNavMesh;
     [SerializeField] private Tilemap groundTilemap;
@@ -23,12 +23,17 @@ public class GenerateWorld : MonoBehaviour
     [SerializeField] private TileBase[] treeTiles;
     [SerializeField] private TileBase[] stoneTiles;
     [SerializeField] private TileBase exitPointTile;
-    [SerializeField] private TileBase colliderTile;
     [Space]
     [SerializeField] private Marker markerPrefab;
     [SerializeField] private ExitPoint exitPointPrefab;
 
     private GridData gridData;
+
+    private void Start()
+    {
+        Initialise(config.gridData);
+        StartGenerate();
+    }
 
     public void Initialise(GridData gridData)
     {
@@ -39,9 +44,9 @@ public class GenerateWorld : MonoBehaviour
     {
         GenerateGround();
         GenerateTree();
-        //GenerateStone();
+        GenerateStone();
         SpawnExitPoint();
-        Surface2D.BuildNavMeshAsync().completed += EndBuildNavMesh;
+        Invoke(nameof(BakeNavMesh), Time.deltaTime);
     }
 
     private void GenerateGround()
@@ -113,7 +118,7 @@ public class GenerateWorld : MonoBehaviour
                 };
 
                 treeTilemap.SetTile(changeData, false);
-                collisionTilemap.SetTile(position, colliderTile);
+                //collisionTilemap.SetTile(position, colliderTile);
             }
         }
     }
@@ -124,7 +129,7 @@ public class GenerateWorld : MonoBehaviour
         {
             for (int y = 0; y < gridData.GridSize.y; y++)
             {
-                if (UnityEngine.Random.Range(0, 100) > 30) continue;
+                if (UnityEngine.Random.Range(0, 100) > 10) continue;
 
                 var rnd = UnityEngine.Random.Range(0, stoneTiles.Length);
                 var transform = Matrix4x4.Scale(new Vector3(3, 3, 1));
@@ -137,7 +142,73 @@ public class GenerateWorld : MonoBehaviour
                 };
 
                 stoneTilemap.SetTile(changeData, false);
-                collisionTilemap.SetTile(position, colliderTile);
+            }
+        }
+    }
+
+    private void SpawnEnemy()
+    {
+        var iteration = 100;
+        var unitCount = 20;
+        while (unitCount > 0)
+        {
+            iteration--;
+            if (RandomPoint(out Vector3 position))
+            {
+                var marker = Instantiate(StaticData.Instance.unitData.unitMarkerPrefab, position, Quaternion.identity);
+                marker.unitType = UnitType.Combat;
+                unitCount--;
+            }
+
+            if (iteration < 0)
+            {
+                Debug.LogError("Cant find free position for spawn unit");
+                break;
+            }
+        }
+    }
+
+    private void SpawnAmmoBox()
+    {
+        var iteration = 100;
+        var itemCount = 10;
+        while (itemCount > 0)
+        {
+            iteration--;
+            if (RandomPoint(out Vector3 position))
+            {
+                var component = Instantiate(StaticData.Instance.sceneItemMarkerPrefab, position, Quaternion.identity);
+                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] { new UnityComponent.SceneItemMarker.Conteiner("Ammo", 50) };
+                itemCount--;
+            }
+
+            if (iteration < 0)
+            {
+                Debug.LogError("Cant find free position for spawn unit");
+                break;
+            }
+        }
+    }
+
+    private void SpawnMedKit()
+    {
+        var iteration = 100;
+        var itemCount = 10;
+        while (itemCount > 0)
+        {
+            iteration--;
+            if (RandomPoint(out Vector3 position))
+            {
+                var component = Instantiate(StaticData.Instance.sceneItemMarkerPrefab, position, Quaternion.identity);
+                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] { new UnityComponent.SceneItemMarker.Conteiner("MedKit", 50) };
+                itemCount--;
+                itemCount--;
+            }
+
+            if (iteration < 0)
+            {
+                Debug.LogError("Cant find free position for spawn unit");
+                break;
             }
         }
     }
@@ -161,7 +232,29 @@ public class GenerateWorld : MonoBehaviour
     private void EndBuildNavMesh(AsyncOperation asyncOperation)
     {
         asyncOperation.completed -= EndBuildNavMesh;
+        SpawnEnemy();
+        SpawnAmmoBox();
+        SpawnMedKit();
         EventEndGeneration?.Invoke();
+
+    }
+
+    private void BakeNavMesh()
+    {
+        Surface2D.BuildNavMeshAsync().completed += EndBuildNavMesh;
+    }
+
+    private bool RandomPoint(out Vector3 position)
+    {
+        position = new Vector2(UnityEngine.Random.Range(-config.gridData.GridSize.x / 2, config.gridData.GridSize.x / 2),
+                               UnityEngine.Random.Range(-config.gridData.GridSize.y / 2, config.gridData.GridSize.y / 2));
+        UnityEngine.AI.NavMeshHit hit;
+        if (UnityEngine.AI.NavMesh.SamplePosition(position, out hit, 10.0f, UnityEngine.AI.NavMesh.AllAreas))
+        {
+            position = hit.position;
+            return true;
+        }
+        return false;
     }
 
 }

@@ -34,8 +34,6 @@ sealed class EcsStartup : MonoBehaviour
 #endif
 
         _initSystems
-                .Add(new FindSceneItemMarker())
-                .Add(new FindUnitSceneMarkerSystem())
                 .Add(new PlayerInitialiseSystem())
 
                 .Inject(configuration)
@@ -43,24 +41,28 @@ sealed class EcsStartup : MonoBehaviour
                 .Inject(hud);
 
         _updateSystems
-              // register your systems here, for example:
-              //.Add(new GenerateWorldSystem())
+             // register your systems here, for example:
+             .Add(new FindSceneItemMarker())
+             .Add(new FindUnitSceneMarkerSystem())
+
+             .Add(new RemoveEmptyConteinersSystem())
              .Add(new SpawnUnitSystem())
+
              .Add(new SpawnSceneItemSystem())
-             .Add(new SpawnProjectileSystem())
 
              .Add(new EquippingWeaponSystem())
              .Add(new EquippingSecondWeaponSystem())
              .Add(new EquippingHeadSystem())
              .Add(new EquippingBodySystem())
              .Add(new EquippingAmmoSystem())
-             
+
              .Add(new PlayerInputShootSystem())
              .Add(new PickUpItemSystem())
              .Add(new ApplyMedKitSystem())
 
-             .Add(new WeaponReloadingSystem())
              .Add(new WeaponShootSystem())
+             .Add(new SpawnProjectileSystem())
+             .Add(new WeaponReloadingSystem())
 
              .Add(new PlayerRotationSystem())
              .Add(new ProjectileMoveSystem())
@@ -71,7 +73,7 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new UnitDeadSystem())
              .Add(new DropToGroundWeaponSystem())
              .Add(new DropToGroundBagSystem())
-             
+
              .Add(new ShowTradeMenuSystem())
              .Add(new ShowEquipMenuSystem())
              .Add(new ShowBagUISystem())
@@ -112,7 +114,7 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.DestroyEntityEvent>()
              .OneFrame<EcsComponent.ApplyMedKitEvent>()
 
-             // inject service instances here (order doesn't important), for example:
+            // inject service instances here (order doesn't important), for example:
             .Inject(configuration)
             .Inject(sceneData)
             .Inject(hud);

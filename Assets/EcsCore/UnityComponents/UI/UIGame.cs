@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -31,6 +32,7 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private void Start()
     {
         hud.EventShowDeadMenu += Hud_EventShowDeadMenu;
+        hud.Initialise();
 
         showMenuButton.onClick.AddListener(OnButtonShowMenu);
         pauseMenu.EventOnButtonExit += PauseMenu_EventOnButtonExit;
@@ -60,7 +62,7 @@ public class UIGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private void LeaveMenu_EventOnButtonExit()
     {
         leaveMenu.EventOnButtonExit -= LeaveMenu_EventOnButtonExit;
-        QuitApplication();
+        SceneManager.LoadScene("GlobalWorld");
     }
 
     private void PauseMenu_EventOnButtonExit()

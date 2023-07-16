@@ -17,6 +17,12 @@ namespace UnityComponent
         [System.Serializable]
         public class Conteiner
         {
+            public Conteiner(string name, float count)
+            {
+                this.name = name;
+                this.count = count;
+            }
+
             public string name;
             public float count;
         }

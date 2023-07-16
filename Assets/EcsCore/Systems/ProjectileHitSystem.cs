@@ -36,9 +36,10 @@ public class ProjectileHitSystem : IEcsRunSystem
             }
             else
             {
-                if(collider.TryGetComponent(out UnityComponent.Unit unit))
+                if(collider.TryGetComponent(out UnityComponent.HitHandler handler))
                 {
-                    unit.entity.Get<EcsComponent.HitBulletEvent>().hitPower = power;
+                    handler.entity.Get<EcsComponent.HitBulletEvent>().hitPower = power;
+                    Debug.Log("Hit ");
                 }
             }
 

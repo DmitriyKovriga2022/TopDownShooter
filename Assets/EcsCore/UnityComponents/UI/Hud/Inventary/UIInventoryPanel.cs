@@ -14,7 +14,7 @@ public class UIInventoryPanel : MonoBehaviour
     [SerializeField] private Button swapButton;
     [SerializeField] private Button closeButton;
 
-    private void Awake()
+    public void Initialise()
     {
         uiSelfBag.Initialise(this);
         uiSelfBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;

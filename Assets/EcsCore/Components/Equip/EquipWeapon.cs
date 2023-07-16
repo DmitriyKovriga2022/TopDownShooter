@@ -7,7 +7,6 @@ namespace EcsComponent
     public struct EquipWeapon
     {
         public UnityComponent.Weapon WeaponGo;
-        public int totalAmmo;
         public int weaponDamage;
         public int currentInMagazine;
         public int maxInMagazine;

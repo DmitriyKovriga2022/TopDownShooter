@@ -12,9 +12,9 @@ internal class WeaponShootSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
+            ref var entity = ref filter.GetEntity(i);
             ref var weapon = ref filter.Get1(i);
             ref var shootEvent = ref filter.Get2(i);
-            ref var entity = ref filter.GetEntity(i);
 
             if (weapon.currentInMagazine > 0)
             {
@@ -23,14 +23,15 @@ internal class WeaponShootSystem : IEcsRunSystem
                 int rnd = Random.Range(0, config.weaponSettings.sound.shootClip.Length);
                 SoundController.PlayClipAtPosition(config.weaponSettings.sound.shootClip[rnd], weapon.shootPosition.position, 0.2f);
 
-                ref var spawnProjectileEvent = ref ecsWorld.NewEntity().Get<EcsComponent.SpawnProjectileEvent>();
+                var projectileEntity = ecsWorld.NewEntity();
+                ref var spawnProjectileEvent = ref projectileEntity.Get<EcsComponent.SpawnProjectileEvent>();
                 spawnProjectileEvent.spawnPosition = weapon.shootPosition.position;
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
                 spawnProjectileEvent.power = weapon.weaponDamage;
 
                 if (entity.Has<EcsComponent.Player>())
                 {
-                    hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
+                    hud.HudWeapon.ShowMagazine(weapon.currentInMagazine);
                 }
             }
             else

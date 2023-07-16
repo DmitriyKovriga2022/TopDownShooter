@@ -21,8 +21,8 @@ public class EquippingAmmoSystem : IEcsRunSystem
 
             if (entity.Has<EcsComponent.Player>())
             {
-                hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
-                hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
+                hud.HudWeapon.ShowMagazine(weapon.currentInMagazine);
+                hud.HudWeapon.ShowTotalAmmo(weapon.totalAmmo);
             }
         }
     }

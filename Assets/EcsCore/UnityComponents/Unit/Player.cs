@@ -80,7 +80,18 @@ namespace UnityComponent
         {
             if (collider.TryGetComponent(out SceneItem item))
             {
-                interactionObject.InteractObject = null;
+                if (this.interactionObject.InteractObject == item)
+                {
+                    this.interactionObject.InteractObject = null;
+                }
+            }
+
+            if (collider.TryGetComponent(out InteractionObject interactionObject))
+            {
+                if (this.interactionObject.InteractObject == interactionObject)
+                {
+                    this.interactionObject.InteractObject = null;
+                }
             }
         }
 
@@ -91,6 +102,10 @@ namespace UnityComponent
     {
         public InteractionObject InteractObject
         {
+            get
+            {
+                return currentObject;
+            }
             set
             {
                 if (currentObject != null)

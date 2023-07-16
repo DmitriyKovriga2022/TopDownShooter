@@ -9,6 +9,7 @@ public class UIInventoryCell : MonoBehaviour
 
     [SerializeField] private DragItem dragCell;
     private Image image;
+    private Text text;
     private Button button;
 
     private Sprite defaultSprite;
@@ -16,6 +17,7 @@ public class UIInventoryCell : MonoBehaviour
 
     public void Initialise()
     {
+        text = GetComponentInChildren<Text>(true);
         image = GetComponent<Image>();
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButton);
@@ -43,12 +45,13 @@ public class UIInventoryCell : MonoBehaviour
         if(conteiner == null)
         {
             image.sprite = defaultSprite;
+            text.text = "";
             return;
         }
 
         this.conteiner = conteiner;
         image.sprite = conteiner.GetIcon();
-
+        text.text = conteiner.GetContent().ToString();
         if (conteiner.GetIcon() == null)
         {
             Debug.LogError("Conteiner sprite is null");
@@ -59,6 +62,7 @@ public class UIInventoryCell : MonoBehaviour
     {
         image.sprite = defaultSprite;
         conteiner = null;
+        text.text = "";
     }
 
     private void OnDisable()

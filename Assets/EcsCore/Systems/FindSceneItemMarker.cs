@@ -1,11 +1,11 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-public class FindSceneItemMarker : IEcsInitSystem
+public class FindSceneItemMarker : IEcsRunSystem
 {
     private EcsWorld ecsWorld;
 
-    public void Init()
+    public void Run()
     {
         foreach (var item in GameObject.FindObjectsOfType<UnityComponent.SceneItemMarker>())
         {

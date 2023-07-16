@@ -48,6 +48,7 @@ public class UIEquipWeaponMainCell : UIEquipCell
 
     protected override void OnButton()
     {
+
         if (conteiner == null)
         {
             if (dragCell.Conteiner != null)

@@ -6,5 +6,6 @@ namespace EcsComponent
     public struct Bag
     {
         public ItemConteiner[] conteiners;
+
     }
 }

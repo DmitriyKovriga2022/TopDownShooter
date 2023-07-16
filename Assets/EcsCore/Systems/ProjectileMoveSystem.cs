@@ -60,6 +60,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
 
     private void Hit(HitInfo hitInfo, Quaternion rotation)
     {
+        
         var entity = ecsWorld.NewEntity();
         ref var hitEvent = ref entity.Get<EcsComponent.ProjectileHitEvent>();
         hitEvent.power = power;
@@ -89,6 +90,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * speed, distance, mask);
         if (hit.collider != null)
         {
+            //Debug.Log("Hit: " + hit.collider.name);
             hitInfo.hitCollider = hit.collider;
             hitInfo.hitPosition = hit.point;
             return true;

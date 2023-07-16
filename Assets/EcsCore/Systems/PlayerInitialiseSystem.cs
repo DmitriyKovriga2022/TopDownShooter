@@ -55,7 +55,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
                 new HeadConteiner(1),
          };
 
-        entity.Get<EcsComponent.EquippingWeaponEvent>();
+        //entity.Get<EcsComponent.EquippingWeaponEvent>();
 
     }
 

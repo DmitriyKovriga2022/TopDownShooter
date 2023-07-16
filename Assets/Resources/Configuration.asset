@@ -16,6 +16,7 @@ MonoBehaviour:
   smoothTime: 0.05
   unitData:
     unitPrefab: {fileID: 8860612680123976218, guid: 4035f2b7de45edf4f9c6fc23e7a3c240, type: 3}
+    unitMarkerPrefab: {fileID: 5592214169106337194, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
     unitSpeed: 60
     sound:
       hit:
@@ -38,7 +39,7 @@ MonoBehaviour:
     LiveTime: 3
     hitMask:
       serializedVersion: 2
-      m_Bits: 2561
+      m_Bits: 6145
     sound:
       groundHit:
       - {fileID: 8300000, guid: 8db15c8efc6cfe24096f5db3a945667b, type: 3}
@@ -61,9 +62,8 @@ MonoBehaviour:
     projectileSpeed: 0
     projectileRadius: 0
     weaponDamage: 5
-    currentInMagazine: 15
+    currentInMagazine: 0
     maxInMagazine: 15
-    totalAmmo: 50
   spriteCollisionData:
     exitPointSprite: {fileID: 21300000, guid: 53f9b43033919b049accfaa32d445103, type: 3}
   itemData:
@@ -112,5 +112,6 @@ MonoBehaviour:
     - {fileID: -106362660, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
     - {fileID: 1061885174, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
   sceneItemPrefab: {fileID: -4381123570635304340, guid: 72973c40ac55d544f81b826d4e5e578b, type: 3}
+  sceneItemMarkerPrefab: {fileID: 2477303864631913639, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
   interactionObjectPrefab: {fileID: 564673014926776961, guid: 00de02232fcfa7149adfde7257f21f13, type: 3}
   merchantConversation: {fileID: 5513088885042226599, guid: 02d2b9d96136f274498d8e07bad2d91d, type: 3}

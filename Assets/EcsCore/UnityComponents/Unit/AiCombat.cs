@@ -34,7 +34,7 @@ public class AiCombat : MonoBehaviour, ILookTarget
         unitMovePath = gameObject.AddComponent<UnitMovePath>();
         unitMovePath.Initialise(path);
 
-        Invoke(nameof( FindEnemy), 1);
+        Invoke(nameof(FindEnemy), 1);
 
     }
 

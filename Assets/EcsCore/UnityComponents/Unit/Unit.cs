@@ -12,6 +12,13 @@ namespace UnityComponent
         public Transform visualTransform;
         public Transform weaponHolder;
 
+        public void Initialise(EcsEntity entity)
+        {
+            this.entity = entity;
+            var hitHandler = gameObject.GetComponentInChildren<UnityComponent.HitHandler>();
+            hitHandler.entity = this.entity;
+        }
+
         public void Dead()
         {
             Debug.Log("Dead: " + this);

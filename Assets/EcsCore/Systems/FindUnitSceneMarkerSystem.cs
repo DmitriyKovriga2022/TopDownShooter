@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class FindUnitSceneMarkerSystem : IEcsInitSystem
+public class FindUnitSceneMarkerSystem : IEcsRunSystem
 {
     private EcsWorld ecsWorld;
 
-    public void Init()
+    public void Run()
     {
         foreach (var item in GameObject.FindObjectsOfType<UnityComponent.UnitSceneMarker>())
         {

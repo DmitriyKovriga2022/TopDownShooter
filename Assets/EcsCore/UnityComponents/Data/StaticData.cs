@@ -29,6 +29,7 @@ internal class StaticData : ScriptableObject
     public GridData gridData;
     public TileData tileData;
     public UnityComponent.SceneItem sceneItemPrefab;
+    public UnityComponent.SceneItemMarker sceneItemMarkerPrefab;
     public InteractionObject interactionObjectPrefab;
     public NPCConversation merchantConversation;
 
@@ -71,6 +72,7 @@ public class ItemData
 public class UnitData
 {
     public UnityComponent.Unit unitPrefab;
+    public UnityComponent.UnitSceneMarker unitMarkerPrefab;
     public float unitSpeed;
     public SoundClips sound;
 

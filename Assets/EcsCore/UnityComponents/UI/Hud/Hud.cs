@@ -14,6 +14,11 @@ public class Hud : MonoBehaviour
     public HudHealth HudHealth => hudHealth;
     [SerializeField] private HudHealth hudHealth;
 
+    public void Initialise()
+    {
+        inventory.Initialise();
+    }
+
     public void ShowDeadPanel()
     {
         EventShowDeadMenu?.Invoke();

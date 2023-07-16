@@ -15,6 +15,12 @@ public class ShowTradeMenuSystem : IEcsRunSystem
             ref var otherEntity = ref filter.Get2(i).otherEntity;
             var position = filter.Get1(i).UnitGO.transform.position;
 
+            if(otherEntity.IsNull())
+            {
+                Debug.LogError("Other Entity is null");
+                continue;
+            }
+
             if (otherEntity.Has<EcsComponent.Player>())
             {
                 otherEntity.Get<EcsComponent.ShowUIBagEvent>().entity = otherEntity;

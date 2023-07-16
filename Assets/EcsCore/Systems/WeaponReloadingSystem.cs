@@ -1,35 +1,71 @@
 ﻿using Leopotam.Ecs;
+using System.Linq;
 using UnityEngine;
 
-internal class WeaponReloadingSystem : IEcsRunSystem
+public class WeaponReloadingSystem : IEcsRunSystem
 {
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.TryReloadEvent, EcsComponent.Weapon> filter;
+    private EcsFilter<EcsComponent.EquipWeapon, EcsComponent.Bag, EcsComponent.TryReloadEvent> filter;
+
+    EcsEntity entity;
+    int rnd;
+    int needAmmo;
 
     public void Run()
     {
         foreach (var i in filter)
         {
-            ref var weapon = ref filter.Get2(i);
+            entity = filter.GetEntity(i);
+            ref var weapon = ref filter.Get1(i);
+            needAmmo = weapon.maxInMagazine - weapon.currentInMagazine;
 
-            var needAmmo = weapon.maxInMagazine - weapon.currentInMagazine;
+            ref var conteiners = ref filter.Get2(i).conteiners;
+            var totalAmmo = GetTotalAmmo(conteiners);
 
-            weapon.currentInMagazine = (weapon.totalAmmo >= needAmmo)
+            weapon.currentInMagazine = (totalAmmo >= needAmmo)
                 ? weapon.maxInMagazine
-                : weapon.currentInMagazine + weapon.totalAmmo;
+                : weapon.currentInMagazine + totalAmmo;
 
-            weapon.totalAmmo -= needAmmo;
-            weapon.totalAmmo = weapon.totalAmmo < 0 ? 0 : weapon.totalAmmo;
+            totalAmmo -= needAmmo;
+            totalAmmo = Mathf.Clamp(totalAmmo, 0, int.MaxValue);
 
-            int rnd = Random.Range(0, config.weaponSettings.sound.reloadClip.Length);
+            SetTotalAmmo(totalAmmo, conteiners);
+
+            rnd = Random.Range(0, config.weaponSettings.sound.reloadClip.Length);
             SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip[rnd], weapon.shootPosition.position);
 
-            if (weapon.owner.Has<EcsComponent.Player>())
+            if (entity.Has<EcsComponent.Player>())
             {
-                hud.HudWeapon.ShowAmmo(weapon.currentInMagazine);
-                hud.HudWeapon.ShowMagazin(weapon.totalAmmo);
+                hud.HudWeapon.ShowMagazine(weapon.currentInMagazine);
+                hud.HudWeapon.ShowTotalAmmo(GetTotalAmmo(conteiners));
             }
         }
     }
+
+    private int GetTotalAmmo(ItemConteiner[] conteiners)
+    {
+        for (int i = 0; i < conteiners.Length; i++)
+        {
+            if(conteiners[i] is AmmoConteiner)
+            {
+                return (conteiners[i] as AmmoConteiner).GetContent();
+            }
+        }
+
+        return 0;
+    }
+
+    private void SetTotalAmmo(int ammo, ItemConteiner[] conteiners)
+    {
+        for (int i = 0; i < conteiners.Length; i++)
+        {
+            if (conteiners[i] is AmmoConteiner)
+            {
+                (conteiners[i] as AmmoConteiner).SeContentValue(ammo);
+                break;
+            }
+        }
+    }
+
 }

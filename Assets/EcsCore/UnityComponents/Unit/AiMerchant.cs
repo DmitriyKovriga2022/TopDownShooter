@@ -16,7 +16,7 @@ public class AiMerchant : MonoBehaviour
     private NPCConversation conversation;
     private EcsEntity otherEntity;
 
-    public void Initialise(Vector2Int mapsize, NPCConversation conversation)
+    public void Initialise(Vector2Int mapsize)
     {
         this.mapsize = mapsize;
         livePoint = transform.position;
@@ -27,7 +27,7 @@ public class AiMerchant : MonoBehaviour
         interactionObject = Instantiate(StaticData.Instance.interactionObjectPrefab, transform);
         interactionObject.EventToInteract += InteractionObject_EventToInteract;
 
-        this.conversation = conversation;
+        conversation = Instantiate(StaticData.Instance.merchantConversation, transform);
         NodeEventHolder node = this.conversation.GetNodeData(1);
         node.Event.AddListener(ShowTradeInventary);
 
@@ -67,6 +67,13 @@ public class AiMerchant : MonoBehaviour
     private void InteractionObject_EventToInteract(EcsEntity other)
     {
         otherEntity = other;
+
+        if (otherEntity.IsNull())
+        {
+            Debug.LogError("Other Entity is null");
+            return;
+        }
+
         if (ConversationManager.Instance == null)
         {
             Debug.Log("ConversationManager is null");
@@ -78,13 +85,12 @@ public class AiMerchant : MonoBehaviour
 
     public void ShowTradeInventary()
     {
-        if (otherEntity == null)
+        if (otherEntity.IsNull())
         {
-            Debug.LogError("Other entity is null");
+            Debug.LogError("Other Entity is null");
             return;
         }
 
-        Debug.Log("ShowTradeInventary");
         EcsEntity entity = GetComponent<UnityComponent.Unit>().entity;
         ref var component = ref entity.Get<EcsComponent.ShowTradeMenuEvent>();
         component.otherEntity = otherEntity;

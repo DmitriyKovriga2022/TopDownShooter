@@ -47,7 +47,7 @@ namespace Leopotam.Ecs.UnityIntegration.Editor {
             EditorGUI.indentLevel++;
             for (var i = 0; i < systems.Count; i++) {
                 var item = systems.Items[i];
-                if (item is IEcsInitSystem) {
+                if (item is IEcsRunSystem) {
                     var asSystems = item as EcsSystems;
                     EditorGUILayout.LabelField (asSystems != null ? $"[{asSystems.Name ?? asSystems.GetType ().Name}]" : systems.Items[i].GetType ().Name);
                     if (asSystems != null) {

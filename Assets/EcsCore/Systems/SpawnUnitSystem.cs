@@ -13,7 +13,6 @@ public class SpawnUnitSystem : IEcsRunSystem
         {
             var entity = filter.GetEntity(i);
             ref var unit = ref entity.Get<EcsComponent.Unit>();
-
             ref var health = ref entity.Get<EcsComponent.Health>();
             health.value = 100;
             health.maxValue = 100;
@@ -23,21 +22,27 @@ public class SpawnUnitSystem : IEcsRunSystem
             ref var unitType = ref filter.Get1(i).unitType;
 
             var unitGO = Object.Instantiate(staticData.unitData.unitPrefab, position, Quaternion.identity);
-            unitGO.entity = entity;
+            unitGO.Initialise(entity);
             unit.owner = entity;
             unit.UnitGO = unitGO;
-            
 
             if (unit.owner.Has<EcsComponent.Player>() == true) continue;
 
-            //AiCombat aiCombat = unitGO.gameObject.AddComponent<AiCombat>();
-            //aiCombat.Initialise(staticData.gridData.GridSize, sceneData.player);
-            //unitGO.visualTransform.gameObject.layer = 7;
-            //purse.value = Random.Range(0, 10);
+            ref var character = ref filter.Get1(i).unitType;
 
-            var merchant = unitGO.gameObject.AddComponent<AiMerchant>();
-            merchant.Initialise(StaticData.Instance.gridData.GridSize,
-                                StaticData.Instance.merchantConversation);
+            if (character == UnitType.Combat)
+            {
+                AiCombat aiCombat = unitGO.gameObject.AddComponent<AiCombat>();
+                aiCombat.Initialise(staticData.gridData.GridSize, sceneData.player);
+                unitGO.visualTransform.gameObject.layer = 7;
+                purse.value = Random.Range(0, 10);
+            }
+
+            if (character == UnitType.Merchant)
+            {
+                var merchant = unitGO.gameObject.AddComponent<AiMerchant>();
+                merchant.Initialise(StaticData.Instance.gridData.GridSize);
+            }
 
             ref var bag = ref entity.Get<EcsComponent.Bag>();
             bag.conteiners = new ItemConteiner[5]
@@ -54,14 +59,8 @@ public class SpawnUnitSystem : IEcsRunSystem
             entity.Get<EcsComponent.EquipWeaponSecond>();
             entity.Get<EcsComponent.EquipBody>();
             entity.Get<EcsComponent.EquipHead>();
-            //entity.Get<EcsComponent.EquippingWeaponEvent>();
 
         }
-    }
-
-    private void InstantiateGo()
-    {
-
     }
 
 }
