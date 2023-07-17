@@ -17,6 +17,7 @@ internal class PlayerInputShootSystem : IEcsRunSystem
                 var entity = filter.GetEntity(i);
                 ref var ShootEvent = ref entity.Get<EcsComponent.ShootEvent>();
                 ShootEvent.TargetPosition = sceneData.mainCamera.ScreenToWorldPoint(Input.mousePosition); 
+           
             }
         }
     }

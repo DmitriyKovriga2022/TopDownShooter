@@ -2600,7 +2600,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5707,11 +5707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.627
+      value: 1.728
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.911
+      value: -1.852
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18217,11 +18217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.656
+      value: 1.729
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.51
+      value: -2.593
       objectReference: {fileID: 0}
     - target: {fileID: 2477303864631913638, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20415,7 +20415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -15, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1390148390
@@ -35087,7 +35087,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -37612,7 +37612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000064888656}
+  m_AnchoredPosition: {x: 0, y: 0.0003664361}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1873142166
@@ -40083,7 +40083,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 540153660}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99808884
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -41152,6 +41152,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5592214169106337193, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592214169106337194, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
+      propertyPath: unitType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5592214169106337195, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}

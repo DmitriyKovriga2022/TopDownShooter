@@ -16,7 +16,7 @@ public class UnitMovePath : MonoBehaviour
     public void Initialise(NavMeshPath path)
     {
         this.path = path;
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponentInParent<Rigidbody2D>();
         speed = 60;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }

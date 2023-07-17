@@ -13,14 +13,6 @@ namespace UnityComponent
         public Transform RenderTransform => renderTransform;
         [SerializeField] private Transform renderTransform;
 
-        public EcsEntity entity;
-
-        public void AiShoot(Vector3 targetPosition)
-        {
-            ref var ShootEvent = ref entity.Get<EcsComponent.ShootEvent>();
-            ShootEvent.TargetPosition = targetPosition;
-        }
-
         public void DestroySelf()
         {
             Destroy(gameObject);

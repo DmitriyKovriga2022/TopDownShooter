@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EquippingBodySystem : IEcsRunSystem
 {
-    private EcsFilter<EcsComponent.Unit, EcsComponent.EquippingBodyEvent> filter;
+    private EcsFilter<EcsComponent.Unit, EcsComponent.EquippingBodyIntent> filter;
 
     public void Run()
     {
         foreach (var i in filter)
         {
-            filter.GetEntity(i).Get<EcsComponent.EquipBody>();
+            var entity = filter.GetEntity(i);
+            entity.Get<EcsComponent.EquipBody>();
+            entity.Del<EcsComponent.EquippingBodyIntent>();
         }
     }
 }

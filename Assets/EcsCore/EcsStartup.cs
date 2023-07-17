@@ -91,12 +91,6 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.ProjectileHitEvent>()
              .OneFrame<EcsComponent.PickUpSceneItemEvent>()
 
-             .OneFrame<EcsComponent.EquippingWeaponEvent>()
-             .OneFrame<EcsComponent.EquippingWeaponSecondEvent>()
-             .OneFrame<EcsComponent.EquippingBodyEvent>()
-             .OneFrame<EcsComponent.EquippingHeadEvent>()
-             .OneFrame<EcsComponent.EquippingAmmoEvent>()
-
              .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.ShowUIEquipEvent>()

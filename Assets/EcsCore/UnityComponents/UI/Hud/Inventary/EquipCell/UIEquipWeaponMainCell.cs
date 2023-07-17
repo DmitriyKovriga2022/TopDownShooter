@@ -41,7 +41,7 @@ public class UIEquipWeaponMainCell : UIEquipCell
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingWeaponEvent>();
+            entityOwner.Get<EcsComponent.EquippingWeaponIntent>();
             Invoke(nameof(Show), Time.deltaTime);
         }
     }

@@ -156,7 +156,7 @@ public class GenerateWorld : MonoBehaviour
             if (RandomPoint(out Vector3 position))
             {
                 var marker = Instantiate(StaticData.Instance.unitData.unitMarkerPrefab, position, Quaternion.identity);
-                marker.unitType = UnitType.Combat;
+                marker.unitType = UnitType.Netral;
                 unitCount--;
             }
 

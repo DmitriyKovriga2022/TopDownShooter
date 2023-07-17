@@ -19,7 +19,7 @@ public class DeadMenu : BaseMenu
 
     private void OnButtonRestart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Base");
     }
 
     private void OnButtonExit()

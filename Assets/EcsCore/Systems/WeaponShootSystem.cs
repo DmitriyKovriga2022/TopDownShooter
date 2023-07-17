@@ -28,6 +28,7 @@ internal class WeaponShootSystem : IEcsRunSystem
                 spawnProjectileEvent.spawnPosition = weapon.shootPosition.position;
                 spawnProjectileEvent.TargetPosition = shootEvent.TargetPosition;
                 spawnProjectileEvent.power = weapon.weaponDamage;
+                spawnProjectileEvent.origineEntity = entity;
 
                 if (entity.Has<EcsComponent.Player>())
                 {

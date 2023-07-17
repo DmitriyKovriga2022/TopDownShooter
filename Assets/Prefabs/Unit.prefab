@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 2080217872377509952}
   - component: {fileID: 8860612680123976218}
   - component: {fileID: 3753444289513832238}
+  - component: {fileID: 2384002472821245146}
   m_Layer: 9
   m_Name: Unit
   m_TagString: Untagged
@@ -277,6 +278,10 @@ MonoBehaviour:
   mainTransform: {fileID: 7592285494165898624}
   visualTransform: {fileID: 7592285492939959404}
   weaponHolder: {fileID: 622343294}
+  factionHandler:
+    SelfFactions:
+      Name: 
+    Factions: []
 --- !u!114 &3753444289513832238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +295,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
+--- !u!114 &2384002472821245146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592285494165898655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c86f4cd37ceac548a3da996546f7505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

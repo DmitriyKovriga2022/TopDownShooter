@@ -6,17 +6,27 @@ namespace UnityComponent
 {
     public class Unit : MonoBehaviour
     {
-        public EcsEntity entity;
+        public EcsEntity selfEntity;
         public new Rigidbody2D rigidbody;
         public Transform mainTransform;
         public Transform visualTransform;
         public Transform weaponHolder;
 
+        [SerializeField] private FactionHandler factionHandler;
+
         public void Initialise(EcsEntity entity)
         {
-            this.entity = entity;
+            this.selfEntity = entity;
             var hitHandler = gameObject.GetComponentInChildren<UnityComponent.HitHandler>();
-            hitHandler.entity = this.entity;
+            hitHandler.entity = this.selfEntity;
+            factionHandler = new FactionHandler();
+            factionHandler.SelfFactions = new FactionSelf(new Netral());
+            factionHandler.Factions = new FactionRelationship[3] 
+            { 
+                new FactionRelationship(new Netral(), 50), 
+                new FactionRelationship(new Military(), 50),
+                new FactionRelationship(new Bandit(), 50),
+            };
         }
 
         public void Dead()
@@ -27,7 +37,7 @@ namespace UnityComponent
 
         public void DebugSetHealth()
         {
-            entity.Get<EcsComponent.HitBulletEvent>().hitPower = 10;
+            selfEntity.Get<EcsComponent.HitBulletEvent>().hitPower = 10;
         }
 
         

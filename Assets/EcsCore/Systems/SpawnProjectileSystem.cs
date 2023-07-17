@@ -15,6 +15,7 @@ internal class SpawnProjectileSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
+            ref var origineEntity = ref filter.Get1(i).origineEntity;
             ref var spawnProjectileEvent = ref filter.Get1(i);
             power = spawnProjectileEvent.power;
             spawnPosition = spawnProjectileEvent.spawnPosition;
@@ -24,7 +25,7 @@ internal class SpawnProjectileSystem : IEcsRunSystem
             ref var projectile = ref entity.Get<EcsComponent.Projectile>();
             projectile.gameObject = projectileGO;
             projectile.power = power;
-
+            projectile.originEntity = origineEntity;
             ref var motionComponent = ref entity.Get<EcsComponent.ProjectileMotion>();
             motionComponent.Transform = projectileGO.Transform;
             motionComponent.Speed = projectileGO.Speed;

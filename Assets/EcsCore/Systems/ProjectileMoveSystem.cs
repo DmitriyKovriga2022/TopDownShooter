@@ -16,6 +16,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
         mask = config.projectileSetting.hitMask;
         foreach (var i in filter)
         {
+            ref var origineEntity = ref filter.Get1(i).originEntity;
             ref var projectile = ref filter.Get1(i);
             power = projectile.power;
 
@@ -27,7 +28,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
 
             if (RaycastHit(transform, speed, out HitInfo hitInfo))
             {
-                Hit(hitInfo, transform.rotation);
+                Hit(hitInfo, transform.rotation, origineEntity);
                 filter.Get1(i).gameObject.DestroySelf();
                 filter.GetEntity(i).Destroy();
             }
@@ -55,10 +56,11 @@ internal class ProjectileMoveSystem : IEcsRunSystem
         hitEvent.power = power;
         hitEvent.Position = position;
         hitEvent.Rotation = rotation;
-        hitEvent.Collider = null;
-    }
+        hitEvent.Collider = null; 
+        //hitEvent.origineEntity = null; 
+}
 
-    private void Hit(HitInfo hitInfo, Quaternion rotation)
+    private void Hit(HitInfo hitInfo, Quaternion rotation, EcsEntity origineEntity)
     {
         
         var entity = ecsWorld.NewEntity();
@@ -67,6 +69,7 @@ internal class ProjectileMoveSystem : IEcsRunSystem
         hitEvent.Position = hitInfo.hitPosition;
         hitEvent.Rotation = rotation;
         hitEvent.Collider = hitInfo.hitCollider;
+        hitEvent.origineEntity = origineEntity;
     }
 
     private bool RaycastHit(Transform transform, float speed, out Vector3 hitPosition)

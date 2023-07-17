@@ -6,13 +6,13 @@ namespace UnityComponent
     public class LookAtPosition : MonoBehaviour
     {
         private SpriteRenderer render;
-        private ILookTarget lookTarget;
+        private LookAt lookAt;
 
         private void Awake()
         {
             render = GetComponentInChildren<SpriteRenderer>();
-            lookTarget = GetComponentInParent<ILookTarget>();
-            lookTarget.EventLookAt += LookTarget_EventLookAt;
+            lookAt = GetComponentInParent<LookAt>();
+            lookAt.EventLookAt += LookTarget_EventLookAt;
         }
 
         private void LookTarget_EventLookAt(Vector2 targetPosition)
@@ -33,7 +33,7 @@ namespace UnityComponent
 
         private void OnDestroy()
         {
-            lookTarget.EventLookAt -= LookTarget_EventLookAt;
+            lookAt.EventLookAt -= LookTarget_EventLookAt;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace EcsComponent
 {
-    public struct EquippingBodyEvent
+    public struct EquippingBodyIntent
     {
     }
 }

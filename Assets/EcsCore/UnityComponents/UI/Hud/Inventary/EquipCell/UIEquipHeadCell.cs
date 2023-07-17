@@ -40,7 +40,7 @@ public class UIEquipHeadCell : UIEquipCell
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingHeadEvent>();
+            entityOwner.Get<EcsComponent.EquippingHeadIntent>();
             Invoke(nameof(Show), Time.deltaTime);
         }
     }

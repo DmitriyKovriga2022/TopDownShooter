@@ -40,7 +40,7 @@ public class UIEquipWeaponSecondCell : UIEquipCell
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingWeaponSecondEvent>();
+            entityOwner.Get<EcsComponent.EquippingWeaponSecondIntent>();
             Invoke(nameof(Show), Time.deltaTime);
         }
     }

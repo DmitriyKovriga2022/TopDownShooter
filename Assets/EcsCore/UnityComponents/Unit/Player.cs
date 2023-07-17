@@ -6,16 +6,17 @@ using UnityEngine.Tilemaps;
 
 namespace UnityComponent
 {
-    public class Player : MonoBehaviour, ILookTarget
+    public class Player : MonoBehaviour
     {
-        public event Action<Vector2> EventLookAt;
         public EcsEntity entity;
         private Vector2 targetPosition;
         private LookAtInteractionObject interactionObject;
+        private LookAt lookAt;
 
         public void Awake()
         {
             interactionObject = new LookAtInteractionObject();
+            lookAt = GetComponent<LookAt>();
         }
 
         private void Update()
@@ -29,7 +30,7 @@ namespace UnityComponent
                 targetPosition = transform.right;
             }
 
-            EventLookAt?.Invoke(targetPosition);
+            lookAt.LookTarget(targetPosition);
 
             if(Input.GetKeyDown(KeyCode.Delete))
             {
@@ -130,6 +131,7 @@ namespace UnityComponent
                 currentObject.ToInteract(other);
             }
         }
+
     }
 
 

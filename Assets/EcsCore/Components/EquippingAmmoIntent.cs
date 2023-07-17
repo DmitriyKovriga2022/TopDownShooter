@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace EcsComponent
 {
-    public struct EquippingWeaponSecondEvent
+    public struct EquippingAmmoIntent
     {
-
+        public int Count;
     }
 }

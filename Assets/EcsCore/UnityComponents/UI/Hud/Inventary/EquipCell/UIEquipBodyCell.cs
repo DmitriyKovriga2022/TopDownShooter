@@ -40,7 +40,7 @@ public class UIEquipBodyCell : UIEquipCell
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingBodyEvent>();
+            entityOwner.Get<EcsComponent.EquippingBodyIntent>();
             Invoke(nameof(Show), Time.deltaTime);
         }
     }

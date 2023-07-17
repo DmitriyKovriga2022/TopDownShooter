@@ -17,7 +17,7 @@ MonoBehaviour:
   unitData:
     unitPrefab: {fileID: 8860612680123976218, guid: 4035f2b7de45edf4f9c6fc23e7a3c240, type: 3}
     unitMarkerPrefab: {fileID: 5592214169106337194, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
-    unitSpeed: 60
+    unitSpeed: 40
     sound:
       hit:
       - {fileID: 8300000, guid: f35344101b277864d8fe2ab56230c831, type: 3}
@@ -111,6 +111,7 @@ MonoBehaviour:
     groundGrass:
     - {fileID: -106362660, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
     - {fileID: 1061885174, guid: 3160ee615e6ff8e479639a2fa26d2fbe, type: 3}
+  aiPrefab: {fileID: 863928797791299781, guid: 555e0dca263846446a4cb14c213ec37c, type: 3}
   sceneItemPrefab: {fileID: -4381123570635304340, guid: 72973c40ac55d544f81b826d4e5e578b, type: 3}
   sceneItemMarkerPrefab: {fileID: 2477303864631913639, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
   interactionObjectPrefab: {fileID: 564673014926776961, guid: 00de02232fcfa7149adfde7257f21f13, type: 3}

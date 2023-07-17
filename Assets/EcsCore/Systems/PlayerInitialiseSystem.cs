@@ -22,9 +22,11 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var health = ref entity.Get<EcsComponent.Health>();
 
         var unitGo = Object.Instantiate(staticData.unitData.unitPrefab);
+        unitGo.Initialise(entity);
+
         var playerGo = unitGo.gameObject.AddComponent<UnityComponent.Player>();
         unitGo.name = "Player";
-        unitGo.entity = entity;
+        unitGo.selfEntity = entity;
         player.mainTransform = unitGo.mainTransform;
         player.visualTransform = unitGo.visualTransform;
 

@@ -7,7 +7,7 @@ public class EquippingAmmoSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private StaticData staticData;
     private Hud hud;
-    private EcsFilter<EcsComponent.HasWeapon, EcsComponent.EquippingAmmoEvent> filter;
+    private EcsFilter<EcsComponent.HasWeapon, EcsComponent.EquippingAmmoIntent> filter;
 
     public void Run()
     {
@@ -24,6 +24,8 @@ public class EquippingAmmoSystem : IEcsRunSystem
                 hud.HudWeapon.ShowMagazine(weapon.currentInMagazine);
                 hud.HudWeapon.ShowTotalAmmo(weapon.totalAmmo);
             }
+
+            entity.Del<EcsComponent.EquippingAmmoIntent>();
         }
     }
 }

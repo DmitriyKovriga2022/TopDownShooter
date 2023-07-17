@@ -20,6 +20,7 @@ public class ProjectileHitSystem : IEcsRunSystem
             position = filter.Get1(i).Position;
             rotation = filter.Get1(i).Rotation;
             collider = filter.Get1(i).Collider;
+            EcsEntity origineEntity = filter.Get1(i).origineEntity;
 
             Object.Instantiate(config.projectileSetting.hitEffectPrefab, position, rotation);
 
@@ -38,8 +39,14 @@ public class ProjectileHitSystem : IEcsRunSystem
             {
                 if(collider.TryGetComponent(out UnityComponent.HitHandler handler))
                 {
+                    if (handler.entity.IsNull())
+                    {
+                        Debug.LogError("HitHandler entity is null");
+                        return;
+                    }
+
                     handler.entity.Get<EcsComponent.HitBulletEvent>().hitPower = power;
-                    Debug.Log("Hit ");
+                    handler.OnHit(origineEntity);
                 }
             }
 

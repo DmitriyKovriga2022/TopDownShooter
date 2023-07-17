@@ -6,12 +6,14 @@ internal class EquippingWeaponSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private StaticData staticData;
     private Hud hud;
-    private EcsFilter<EcsComponent.Unit, EcsComponent.Bag, EcsComponent.EquippingWeaponEvent> filter;
+    private EcsFilter<EcsComponent.Unit, EcsComponent.Bag, EcsComponent.EquippingWeaponIntent> filter;
 
     public void Run()
     {
         foreach (var i in filter)
         {
+            Debug.Log("Equip Weapon");
+
             var entity = filter.GetEntity(i);
             var unitComponent = filter.Get1(i);
             ref var weapon = ref entity.Get<EcsComponent.EquipWeapon>();
@@ -35,6 +37,8 @@ internal class EquippingWeaponSystem : IEcsRunSystem
             {
                 weaponGO.RenderTransform.gameObject.layer = 7;
             }
+
+            entity.Del<EcsComponent.EquippingWeaponIntent>();
         }
     }
 

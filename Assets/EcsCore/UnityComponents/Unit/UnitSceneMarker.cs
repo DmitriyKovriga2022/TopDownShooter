@@ -3,7 +3,8 @@ using UnityEngine;
 public enum UnitType
 {
     Combat,
-    Merchant
+    Merchant,
+    Netral
 }
 
 namespace UnityComponent

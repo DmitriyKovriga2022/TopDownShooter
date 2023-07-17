@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Leopotam.Ecs;
+using UnityEngine;
 
 namespace EcsComponent
 {
@@ -8,5 +9,9 @@ namespace EcsComponent
         public Vector2 Position;
         public Quaternion Rotation;
         public Collider2D Collider;
+        /// <summary>
+        /// Сущность, совершиашая выстрел
+        /// </summary>
+        public EcsEntity origineEntity;
     }
 }
