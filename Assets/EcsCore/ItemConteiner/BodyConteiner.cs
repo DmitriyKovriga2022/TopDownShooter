@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
+[Serializable]
 public class BodyConteiner: ItemConteiner
 {
     public BodyConteiner(int count)

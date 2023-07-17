@@ -48,6 +48,11 @@ namespace UnityComponent
                 entity.Get<EcsComponent.ShowUIEquipEvent>().entity = entity;
             }
 
+            /*if (Input.GetKeyDown(KeyCode.L))
+            {
+                entity.Get<EcsComponent.SaveBagEvent>();
+            }*/
+
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -64,6 +69,11 @@ namespace UnityComponent
             //}
         }
 
+        private void loadNextScene()
+        {
+            UIGame.Instance.ShowLeaveMenu();
+        }
+
         private void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.TryGetComponent(out InteractionObject interactionObject))
@@ -73,7 +83,8 @@ namespace UnityComponent
 
             if (collider.TryGetComponent(out ExitPoint point))
             {
-                UIGame.Instance.ShowLeaveMenu();
+                entity.Get<EcsComponent.SaveBagEvent>();
+                Invoke(nameof(loadNextScene), Time.deltaTime);
             }
         }
 
@@ -97,6 +108,8 @@ namespace UnityComponent
         }
 
     }
+
+
 
     [System.Serializable]
     public class LookAtInteractionObject
