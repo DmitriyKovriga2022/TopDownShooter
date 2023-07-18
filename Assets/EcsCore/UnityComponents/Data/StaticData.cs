@@ -44,9 +44,9 @@ public class ItemData
     public ItemConfig Bag;
     public ItemConfig Bullet;
     public ItemConfig Food;
-    public ItemConfig Jacket;
+    public ItemArmor Jacket;
     public ItemConfig Weapon;
-    public ItemConfig Head;
+    public ItemArmor Head;
     public SoundClips sound;
     
 
@@ -64,6 +64,12 @@ public class ItemData
         public Sprite Sprite;
         public int Price;
 
+    }
+
+    [System.Serializable]
+    public class ItemArmor : ItemConfig
+    {
+        public int ArmorValue;
     }
 
 }

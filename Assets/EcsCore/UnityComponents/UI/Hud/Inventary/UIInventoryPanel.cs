@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIInventoryPanel : MonoBehaviour
@@ -11,6 +12,7 @@ public class UIInventoryPanel : MonoBehaviour
     [SerializeField] private UITradePanel uiTradePanel;
     [SerializeField] private UIEquipPanel uiEquipPanel;
     [SerializeField] private DragItem dragCell;
+    [SerializeField] private UIUseItem useItem;
     [SerializeField] private Button swapButton;
     [SerializeField] private Button closeButton;
 
@@ -21,6 +23,7 @@ public class UIInventoryPanel : MonoBehaviour
         uiOtherBag.Initialise(this);
         uiOtherBag.EventOnHideBag += UiSelfBag_EventIntentHideBag;
         dragCell.Initialise();
+        useItem.Initialise();
         uiTradePanel.Initialise();
         uiEquipPanel.Initialise();
         swapButton.onClick.AddListener(OnSwap);
@@ -46,6 +49,7 @@ public class UIInventoryPanel : MonoBehaviour
         {
             dragCell.ReturnItemToBag();
             dragCell.Clear();
+            useItem.Hide();
             gameObject.SetActive(false);
         }
     }
@@ -100,4 +104,5 @@ public class UIInventoryPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    
 }

@@ -20,7 +20,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var motion = ref entity.Get<EcsComponent.UnitMotion>();
         ref var inputData = ref entity.Get<EcsComponent.DesiredMoveDirection>();
         ref var health = ref entity.Get<EcsComponent.Health>();
-
+        ref var armor = ref entity.Get<EcsComponent.Armor>();
         var unitGo = Object.Instantiate(staticData.unitData.unitPrefab);
         unitGo.Initialise(entity);
 
@@ -45,6 +45,7 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         sceneData.player = unitGo;
 
         hud.HudHealth.ShowHealth(health.value, health.maxValue);
+        hud.HudArmor.ShowArmor(armor.value, 100);
 
         ref var bag = ref entity.Get<EcsComponent.Bag>();
         bag.conteiners = new ItemConteiner[6]

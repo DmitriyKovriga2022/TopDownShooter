@@ -1,11 +1,21 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class UIInventoryCell : MonoBehaviour
+public interface IInventoryCellOptions
+{
+    public void Use();
+    public void Drop();
+}
+
+public class UIInventoryCell : MonoBehaviour, IPointerClickHandler, IInventoryCellOptions
 {
     public event Action<ItemConteiner> EventSetItem;
     public event Action<ItemConteiner> EventGetItem;
+    public event Action<ItemConteiner> EventUseItem;
+    public event Action<ItemConteiner> EventDropItem;
+    public event Action<Vector2, IInventoryCellOptions> EventGetItemMenu;
 
     [SerializeField] private DragItem dragCell;
     private Image image;
@@ -19,8 +29,8 @@ public class UIInventoryCell : MonoBehaviour
     {
         text = GetComponentInChildren<Text>(true);
         image = GetComponent<Image>();
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnButton);
+        //button = GetComponent<Button>();
+        //button.onClick.AddListener(OnButton);
         defaultSprite = image.sprite;
         Clear();
     }
@@ -70,4 +80,28 @@ public class UIInventoryCell : MonoBehaviour
         Clear();
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            if (conteiner == null) return;
+            EventGetItemMenu?.Invoke((transform as RectTransform).position, this as IInventoryCellOptions);
+        }
+        else
+        {
+            OnButton();
+        }
+    }
+
+    public void Use()
+    {
+        if (conteiner == null) return;
+
+        EventUseItem?.Invoke(conteiner);
+    }
+
+    public void Drop()
+    {
+        EventDropItem?.Invoke(conteiner);
+    }
 }

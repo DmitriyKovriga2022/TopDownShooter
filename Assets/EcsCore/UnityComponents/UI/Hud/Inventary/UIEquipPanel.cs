@@ -17,18 +17,17 @@ public class UIEquipPanel : MonoBehaviour
         }
     }
 
-    internal void Show(EcsEntity selfEntity)
+    public void Show(EcsEntity selfEntity)
     {
         foreach (var item in equipCells)
         {
             item.Show(selfEntity);
         }
-
         gameObject.SetActive(true);
     }
 
-    internal void Hide()
+    public void Hide()
     {
-        gameObject.SetActive(false);
+       gameObject.SetActive(false);
     }
 }

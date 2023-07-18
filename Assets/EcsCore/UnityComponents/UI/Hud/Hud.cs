@@ -14,6 +14,9 @@ public class Hud : MonoBehaviour
     public HudHealth HudHealth => hudHealth;
     [SerializeField] private HudHealth hudHealth;
 
+    public HudArmor HudArmor => hudArmor;
+    [SerializeField] private HudArmor hudArmor;
+
     public void Initialise()
     {
         inventory.Initialise();

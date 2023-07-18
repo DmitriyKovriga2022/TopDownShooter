@@ -9,6 +9,7 @@ public class UIBag : MonoBehaviour
     public event Action EventOnHideBag;
     [SerializeField] private UIInventoryCell[] cells;
     [SerializeField] private DragItem dragCell;
+    [SerializeField] private UIUseItem useItem;
 
     private EcsEntity entityOwner;
     private ItemConteiner[] conteiners;
@@ -22,7 +23,35 @@ public class UIBag : MonoBehaviour
             item.Initialise();
             item.EventGetItem += Item_EventGetCellItem;
             item.EventSetItem += Item_EventSetCellItem;
+            item.EventGetItemMenu += Item_EventGetItemMenu;
+            item.EventUseItem += Item_EventUseItem;
+            item.EventDropItem += Item_EventDropItem;
         }
+    }
+
+    private void Item_EventDropItem(ItemConteiner conteiner)
+    {
+        conteiner.Drop(entityOwner);
+        RemoveConteiner(conteiner);
+        HideUseItemPanel();
+        ReShow();
+    }
+
+    private void Item_EventUseItem(ItemConteiner conteiner)
+    {
+        conteiner.Apply(entityOwner);
+        RemoveConteiner(conteiner);
+        HideUseItemPanel();
+    }
+
+    private void Item_EventGetItemMenu(Vector2 screenPosition, IInventoryCellOptions cell)
+    {
+        useItem.Show(screenPosition, cell);
+    }
+
+    private void HideUseItemPanel()
+    {
+        useItem.Hide();
     }
 
     private void Item_EventSetCellItem(ItemConteiner value)
@@ -39,7 +68,7 @@ public class UIBag : MonoBehaviour
         }
 
         dragCell.Clear();
-        Show(entityOwner);
+        ReShow();
     }
 
     private void Item_EventGetCellItem(ItemConteiner value)
@@ -47,6 +76,11 @@ public class UIBag : MonoBehaviour
         if (dragCell.Conteiner != null) return;
         dragCell.SetConteiner(value, entityOwner);
 
+        RemoveConteiner(value);
+    }
+
+    private void RemoveConteiner(ItemConteiner value)
+    {
         conteiners = conteiners.Where(val => val != value).ToArray();
 
         if (entityOwner.Has<EcsComponent.Bag>())
@@ -54,7 +88,7 @@ public class UIBag : MonoBehaviour
             entityOwner.Get<EcsComponent.Bag>().conteiners = conteiners;
         }
 
-        Show(entityOwner);
+        ReShow();
     }
 
     public void Show(EcsEntity bagEntity)

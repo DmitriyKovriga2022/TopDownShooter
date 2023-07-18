@@ -7,7 +7,7 @@ public class UIEquipHeadCell : UIEquipCell
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
-        Show();
+        InvokeRepeating(nameof(Show), Time.deltaTime, Time.deltaTime);
     }
 
     private void Show()
@@ -41,7 +41,6 @@ public class UIEquipHeadCell : UIEquipCell
         if (conteiner != null)
         {
             entityOwner.Get<EcsComponent.EquippingHeadIntent>();
-            Invoke(nameof(Show), Time.deltaTime);
         }
     }
 
@@ -62,5 +61,10 @@ public class UIEquipHeadCell : UIEquipCell
         {
             GetConteiner();
         }
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

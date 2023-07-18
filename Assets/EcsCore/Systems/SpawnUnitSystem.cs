@@ -16,6 +16,7 @@ public class SpawnUnitSystem : IEcsRunSystem
             ref var unitType = ref filter.Get1(i).unitType;
             ref var unit = ref entity.Get<EcsComponent.Unit>();
             ref var health = ref entity.Get<EcsComponent.Health>();
+            ref var armor = ref entity.Get<EcsComponent.Armor>();
             health.value = 100;
             health.maxValue = 100;
 
@@ -35,7 +36,7 @@ public class SpawnUnitSystem : IEcsRunSystem
                 new AmmoConteiner(Random.Range(25, 50)),
                 new MedKitConteiner(Random.Range(10, 50)),
                 new WeaponConteiner(1),
-                new ArmorConteiner(1),
+                new BodyConteiner(1),
                 new FoodConteiner(Random.Range(1, 50)),
              };
 

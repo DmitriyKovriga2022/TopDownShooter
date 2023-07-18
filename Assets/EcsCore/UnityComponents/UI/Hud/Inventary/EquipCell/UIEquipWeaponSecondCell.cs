@@ -7,7 +7,7 @@ public class UIEquipWeaponSecondCell : UIEquipCell
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
-        Show();
+        InvokeRepeating(nameof(Show), Time.deltaTime, Time.deltaTime);
     }
 
     private void Show()
@@ -41,7 +41,6 @@ public class UIEquipWeaponSecondCell : UIEquipCell
         if (conteiner != null)
         {
             entityOwner.Get<EcsComponent.EquippingWeaponSecondIntent>();
-            Invoke(nameof(Show), Time.deltaTime);
         }
     }
 
@@ -62,5 +61,10 @@ public class UIEquipWeaponSecondCell : UIEquipCell
         {
             GetConteiner();
         }
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

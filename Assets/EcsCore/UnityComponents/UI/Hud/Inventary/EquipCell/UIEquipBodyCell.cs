@@ -7,7 +7,7 @@ public class UIEquipBodyCell : UIEquipCell
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
-        Show();
+        InvokeRepeating(nameof(Show), Time.deltaTime, Time.deltaTime);
     }
 
     private void Show()
@@ -63,4 +63,10 @@ public class UIEquipBodyCell : UIEquipCell
             GetConteiner();
         }
     }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
 }

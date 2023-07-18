@@ -1,3 +1,4 @@
+using Leopotam.Ecs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,5 +9,7 @@ public abstract class ItemConteiner
     public abstract int GetContent();
     public abstract Sprite GetIcon();
     public abstract int GetPrice();
-    
+    public abstract void Apply(EcsEntity entityTarget);
+    public abstract void Drop(EcsEntity entityTarget);
+
 }

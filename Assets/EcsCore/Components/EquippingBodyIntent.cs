@@ -2,5 +2,6 @@
 {
     public struct EquippingBodyIntent
     {
+        public int armorValue;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Leopotam.Ecs;
+using System.Collections;
 using UnityEngine;
 
 public class HeadConteiner : ItemConteiner
@@ -21,5 +22,15 @@ public class HeadConteiner : ItemConteiner
     public override int GetPrice()
     {
         return StaticData.Instance.itemData.Head.Price;
+    }
+
+    public override void Apply(EcsEntity entityTarget)
+    {
+        entityTarget.Get<EcsComponent.EquippingHeadIntent>();
+    }
+
+    public override void Drop(EcsEntity entityTarget)
+    {
+        throw new System.NotImplementedException();
     }
 }

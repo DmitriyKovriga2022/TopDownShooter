@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Leopotam.Ecs;
+using UnityEngine;
 
 [System.Serializable]
 public class MedKitConteiner : ItemConteiner
@@ -21,5 +22,15 @@ public class MedKitConteiner : ItemConteiner
     public override int GetPrice()
     {
         return StaticData.Instance.itemData.Medkit.Price;
+    }
+
+    public override void Apply(EcsEntity entityTarget)
+    {
+        entityTarget.Get<EcsComponent.ApplyMedKitEvent>().Count = count;
+    }
+
+    public override void Drop(EcsEntity entityTarget)
+    {
+        throw new System.NotImplementedException();
     }
 }

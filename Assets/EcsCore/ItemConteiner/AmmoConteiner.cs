@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Leopotam.Ecs;
+using UnityEngine;
 
 [System.Serializable]
 public class AmmoConteiner : ItemConteiner
@@ -33,5 +34,15 @@ public class AmmoConteiner : ItemConteiner
     public override int GetPrice()
     {
         return StaticData.Instance.itemData.Bullet.Price;
+    }
+
+    public override void Apply(EcsEntity entityTarget)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Drop(EcsEntity entityTarget)
+    {
+        throw new System.NotImplementedException();
     }
 }

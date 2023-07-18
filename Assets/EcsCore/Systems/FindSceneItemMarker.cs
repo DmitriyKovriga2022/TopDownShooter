@@ -37,11 +37,6 @@ public class FindSceneItemMarker : IEcsRunSystem
                 conteiners[i] = new FoodConteiner((int)items[i].count);
             }
 
-            if (items[i].name == "Armor")
-            {
-                conteiners[i] = new ArmorConteiner((int)items[i].count);
-            }
-
             if (items[i].name == "Weapon")
             {
                 conteiners[i] = new WeaponConteiner((int)items[i].count);
@@ -49,7 +44,7 @@ public class FindSceneItemMarker : IEcsRunSystem
 
             if (items[i].name == "Jacket")
             {
-                conteiners[i] = new ArmorConteiner((int)items[i].count);
+                conteiners[i] = new BodyConteiner((int)items[i].count);
             }
         }
 
