@@ -4,14 +4,21 @@ using UnityEngine;
 [System.Serializable]
 public class AmmoConteiner : ItemConteiner
 {
-    public AmmoConteiner(int count)
+    public AmmoConteiner(int count, int configId)
     {
         this.count = count;
+        this.config = ItemData.Instance.Bullet[configId];
+    }
+    public AmmoConteiner(int count, ItemData.ItemBulletConfig config)
+    {
+        this.count = count;
+        this.config = config;
     }
 
-    [SerializeField] private int count;
+    private int count;
+    private ItemData.ItemBulletConfig config;
 
-    public override int GetContent()
+    public override int GetCount()
     {
         return count;
     }
@@ -28,21 +35,21 @@ public class AmmoConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-       return StaticData.Instance.itemData.Bullet.Sprite;
+       return config.Sprite;
     }
 
     public override int GetPrice()
     {
-        return StaticData.Instance.itemData.Bullet.Price;
+        return config.Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Apply Function In Progress");
     }
 
     public override void Drop(EcsEntity entityTarget)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Drop Function In Progress");
     }
 }

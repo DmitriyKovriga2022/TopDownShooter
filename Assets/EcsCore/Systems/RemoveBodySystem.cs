@@ -14,8 +14,9 @@ public class RemoveBodySystem : IEcsRunSystem
         {
             Debug.Log("RemoveBodySystem");
             var entity = filter.GetEntity(i);
+            ref var configIndex = ref filter.Get1(i).configIndex;
             ref var armorValue = ref filter.Get3(i).value;
-            armorValue -= config.itemData.Jacket.ArmorValue;
+            armorValue -= ItemData.Instance.Body[configIndex].ArmorValue;
             armorValue = Mathf.Clamp(armorValue, 0, int.MaxValue);
             if (entity.Has<EcsComponent.Player>())
             {

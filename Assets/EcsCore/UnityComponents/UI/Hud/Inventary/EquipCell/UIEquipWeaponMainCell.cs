@@ -13,9 +13,9 @@ public class UIEquipWeaponMainCell : UIEquipCell
 
     private void Show()
     {
-        if (entityOwner.Has<EcsComponent.EquipWeapon>())
+        if (entityOwner.Has<EcsComponent.EquipWeaponMain>())
         {
-            conteiner = new WeaponConteiner(1);
+            conteiner = new WeaponConteiner(0);
             image.sprite = conteiner.GetIcon();
 
             if (conteiner.GetIcon() == null)

@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace EcsComponent
 {
-    public struct EquipWeapon
+    /// <summary>
+    /// Текущая экипировка
+    /// </summary>
+    public struct EquipWeaponMain
     {
+        public int configIndex;
         public UnityComponent.Weapon WeaponGo;
         public int weaponDamage;
         public int currentInMagazine;

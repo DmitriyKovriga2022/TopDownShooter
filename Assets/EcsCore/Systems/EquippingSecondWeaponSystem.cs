@@ -11,7 +11,8 @@ public class EquippingSecondWeaponSystem : IEcsRunSystem
         foreach (var i in filter)
         {
             var entity = filter.GetEntity(i);
-            filter.GetEntity(i).Get<EcsComponent.EquipWeaponSecond>();
+            var configIndex = filter.Get2(i).configIndex;
+            filter.GetEntity(i).Get<EcsComponent.EquipWeaponSecond>().configIndex = configIndex;
             entity.Del<EcsComponent.EquippingWeaponSecondIntent>();
         }
     }

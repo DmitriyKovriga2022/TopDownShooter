@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RemoveMainWeaponSystem : IEcsRunSystem
 {
-    private EcsFilter<EcsComponent.EquipWeapon, EcsComponent.RemoveEqipMainWeaponEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.RemoveEqipMainWeaponEvent> filter;
 
     public void Run()
     {
@@ -12,7 +12,7 @@ public class RemoveMainWeaponSystem : IEcsRunSystem
         {
             Debug.Log("RemoveMainWeaponSystem");
             filter.Get1(i).WeaponGo.DestroySelf();
-            filter.GetEntity(i).Del<EcsComponent.EquipWeapon>();
+            filter.GetEntity(i).Del<EcsComponent.EquipWeaponMain>();
         }
     }
 }

@@ -178,7 +178,8 @@ public class GenerateWorld : MonoBehaviour
             if (RandomPoint(out Vector3 position))
             {
                 var component = Instantiate(StaticData.Instance.sceneItemMarkerPrefab, position, Quaternion.identity);
-                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] { new UnityComponent.SceneItemMarker.Conteiner("Ammo", 50) };
+                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] 
+                { new UnityComponent.SceneItemMarker.Conteiner("Ammo", 50, 0) };
                 itemCount--;
             }
 
@@ -200,7 +201,8 @@ public class GenerateWorld : MonoBehaviour
             if (RandomPoint(out Vector3 position))
             {
                 var component = Instantiate(StaticData.Instance.sceneItemMarkerPrefab, position, Quaternion.identity);
-                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] { new UnityComponent.SceneItemMarker.Conteiner("MedKit", 50) };
+                component.items = new UnityComponent.SceneItemMarker.Conteiner[1] 
+                { new UnityComponent.SceneItemMarker.Conteiner("MedKit", 50, 0) };
                 itemCount--;
                 itemCount--;
             }

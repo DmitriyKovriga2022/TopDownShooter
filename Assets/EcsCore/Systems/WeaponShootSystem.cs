@@ -6,7 +6,7 @@ internal class WeaponShootSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.EquipWeapon, EcsComponent.ShootEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.ShootEvent> filter;
 
     public void Run()
     {
@@ -20,8 +20,10 @@ internal class WeaponShootSystem : IEcsRunSystem
             {
                 weapon.currentInMagazine--;
 
-                int rnd = Random.Range(0, config.weaponSettings.sound.shootClip.Length);
-                SoundController.PlayClipAtPosition(config.weaponSettings.sound.shootClip[rnd], weapon.shootPosition.position, 0.2f);
+                var shootClip = ItemData.Instance.Weapon[weapon.configIndex].Settings.sound.shootClip;
+                int rnd = Random.Range(0, shootClip.Length);
+
+                SoundController.PlayClipAtPosition(shootClip[rnd], weapon.shootPosition.position, 0.2f);
 
                 var projectileEntity = ecsWorld.NewEntity();
                 ref var spawnProjectileEvent = ref projectileEntity.Get<EcsComponent.SpawnProjectileEvent>();
@@ -37,8 +39,10 @@ internal class WeaponShootSystem : IEcsRunSystem
             }
             else
             {
-                int rnd = Random.Range(0, config.weaponSettings.sound.misfireClip.Length);
-                SoundController.PlayClipAtPosition(config.weaponSettings.sound.misfireClip[rnd], weapon.shootPosition.position);
+                var misClip = ItemData.Instance.Weapon[weapon.configIndex].Settings.sound.misfireClip;
+                int rnd = Random.Range(0, misClip.Length);
+
+                SoundController.PlayClipAtPosition(misClip[rnd], weapon.shootPosition.position);
 
                 entity.Get<EcsComponent.TryReloadEvent>();
             }

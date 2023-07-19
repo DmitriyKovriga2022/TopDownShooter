@@ -2,5 +2,6 @@
 {
     public struct EquippingWeaponIntent
     {
+        public int configIndex;
     }
 }

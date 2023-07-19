@@ -12,8 +12,9 @@ public class DropToGroundBagSystem : IEcsRunSystem
         foreach (var i in filter)
         {
             var worldPosition = filter.Get1(i).position;
+            var index = filter.Get2(i).configIndex;
             var sceneItemGo = Object.Instantiate(config.sceneItemPrefab, worldPosition, Quaternion.identity);
-            sceneItemGo.SetSprite(config.itemData.Bag.Sprite);
+            sceneItemGo.SetSprite(ItemData.Instance.Bag[index].Sprite);
             sceneItemGo.gameObject.layer = LayerMask.NameToLayer("Item");
 
             CircleCollider2D collider = sceneItemGo.gameObject.AddComponent<CircleCollider2D>();

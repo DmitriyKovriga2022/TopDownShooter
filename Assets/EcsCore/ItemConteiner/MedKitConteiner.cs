@@ -4,33 +4,40 @@ using UnityEngine;
 [System.Serializable]
 public class MedKitConteiner : ItemConteiner
 {
-    public MedKitConteiner(int count)
+    public MedKitConteiner(int configId)
     {
-        this.count = count;
+        this.config = ItemData.Instance.Medkit[configId];
     }
-    private int count;
-    public override int GetContent()
+
+    public MedKitConteiner(ItemData.ItemMedkitConfig config)
     {
-        return count;
+        this.config = config;
+    }
+
+    private ItemData.ItemMedkitConfig config;
+
+    public override int GetCount()
+    {
+        return 1;
     }
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.Medkit.Sprite;
+        return config.Sprite;
     }
 
     public override int GetPrice()
     {
-        return StaticData.Instance.itemData.Medkit.Price;
+        return config.Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        entityTarget.Get<EcsComponent.ApplyMedKitEvent>().Count = count;
+        entityTarget.Get<EcsComponent.ApplyMedKitEvent>().Power = config.Power;
     }
 
     public override void Drop(EcsEntity entityTarget)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Drop Function In Progress");
     }
 }

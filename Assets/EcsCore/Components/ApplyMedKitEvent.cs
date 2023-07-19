@@ -5,6 +5,6 @@ namespace EcsComponent
 {
     public struct ApplyMedKitEvent
     {
-        public int Count;
+        public int Power;
     }
 }

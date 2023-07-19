@@ -17,7 +17,7 @@ namespace UnityComponent
         [System.Serializable]
         public class Conteiner
         {
-            public Conteiner(string name, float count)
+            public Conteiner(string name, float count, int itemConfigIndex)
             {
                 this.name = name;
                 this.count = count;
@@ -25,6 +25,7 @@ namespace UnityComponent
 
             public string name;
             public float count;
+            public int itemConfigIndex;
         }
 
     }

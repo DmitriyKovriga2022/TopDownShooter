@@ -33,11 +33,11 @@ public class SpawnUnitSystem : IEcsRunSystem
             ref var bag = ref entity.Get<EcsComponent.Bag>();
             bag.conteiners = new ItemConteiner[5]
              {
-                new AmmoConteiner(Random.Range(25, 50)),
-                new MedKitConteiner(Random.Range(10, 50)),
-                new WeaponConteiner(1),
-                new BodyConteiner(1),
-                new FoodConteiner(Random.Range(1, 50)),
+                new AmmoConteiner(Random.Range(30, 60), 0),
+                new MedKitConteiner(0),
+                new WeaponConteiner(0),
+                new BodyConteiner(0),
+                new FoodConteiner(Random.Range(1, 50), 0),
              };
 
             ref var purse = ref entity.Get<EcsComponent.Purse>();

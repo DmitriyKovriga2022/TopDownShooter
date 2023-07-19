@@ -16,13 +16,15 @@ internal class EquippingWeaponSystem : IEcsRunSystem
 
             var entity = filter.GetEntity(i);
             var unitComponent = filter.Get1(i);
-            ref var weapon = ref entity.Get<EcsComponent.EquipWeapon>();
-            var setting = staticData.weaponSettings;
+            var configIndex = filter.Get2(i).configIndex;
+            ref var weapon = ref entity.Get<EcsComponent.EquipWeaponMain>();
+            weapon.configIndex = configIndex;
+            var setting = ItemData.Instance.Weapon[configIndex].Settings;
             var weaponGO = Object.Instantiate(setting.weaponPrefab, unitComponent.UnitGO.weaponHolder);
             weaponGO.gameObject.AddComponent<UnityComponent.LookAtPosition>();
             weapon.WeaponGo = weaponGO;
             weapon.weaponDamage = setting.weaponDamage;
-            weapon.currentInMagazine = setting.currentInMagazine;
+            weapon.currentInMagazine = setting.maxInMagazine;
             weapon.maxInMagazine = setting.maxInMagazine;
             weapon.shootPosition = weaponGO.PointShoot;
 
@@ -48,7 +50,7 @@ internal class EquippingWeaponSystem : IEcsRunSystem
         {
             if (conteiners[i] is AmmoConteiner)
             {
-                return (conteiners[i] as AmmoConteiner).GetContent();
+                return (conteiners[i] as AmmoConteiner).GetCount();
             }
         }
 

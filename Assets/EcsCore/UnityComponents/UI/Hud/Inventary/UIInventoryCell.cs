@@ -61,7 +61,7 @@ public class UIInventoryCell : MonoBehaviour, IPointerClickHandler, IInventoryCe
 
         this.conteiner = conteiner;
         image.sprite = conteiner.GetIcon();
-        text.text = conteiner.GetContent().ToString();
+        text.text = conteiner.GetCount().ToString();
         if (conteiner.GetIcon() == null)
         {
             Debug.LogError("Conteiner sprite is null");

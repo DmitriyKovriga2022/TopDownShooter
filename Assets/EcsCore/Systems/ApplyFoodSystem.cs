@@ -11,7 +11,7 @@ public class ApplyFoodSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
-            ref var medKitValue = ref filter.Get2(i).Count;
+            ref var medKitValue = ref filter.Get2(i).Power;
             ref var health = ref filter.Get1(i).value;
             ref var maxHealth = ref filter.Get1(i).maxValue;
             ref var unitEntity = ref filter.Get3(i).owner;

@@ -14,7 +14,7 @@ public class UIEquipHeadCell : UIEquipCell
     {
         if (entityOwner.Has<EcsComponent.EquipHead>())
         {
-            conteiner = new HeadConteiner(1);
+            conteiner = new HeadConteiner(0);
             image.sprite = conteiner.GetIcon();
 
             if (conteiner.GetIcon() == null)

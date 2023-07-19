@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public abstract class ItemConteiner
 {
-    public abstract int GetContent();
+    public abstract int GetCount();
     public abstract Sprite GetIcon();
     public abstract int GetPrice();
     public abstract void Apply(EcsEntity entityTarget);

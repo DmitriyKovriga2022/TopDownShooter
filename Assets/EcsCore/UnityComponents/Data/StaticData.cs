@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu]
 internal class StaticData : ScriptableObject
 {
-   private static StaticData instance;
     public static StaticData Instance
     {
         get
@@ -17,15 +16,15 @@ internal class StaticData : ScriptableObject
             return instance;
         }
     }
+    private static StaticData instance;
 
     public Vector3 followOffset;
     public float smoothTime;
 
     public UnitData unitData;
     public ProjectileSetting projectileSetting;
-    public WeaponSettingsData weaponSettings;
+    
     public SpriteCollisionData spriteCollisionData;
-    public ItemData itemData;
     public GridData gridData;
     public TileData tileData;
     public Ai aiPrefab;
@@ -33,44 +32,6 @@ internal class StaticData : ScriptableObject
     public UnityComponent.SceneItemMarker sceneItemMarkerPrefab;
     public InteractionObject interactionObjectPrefab;
     public NPCConversation merchantConversation;
-
-}
-
-[System.Serializable]
-public class ItemData
-{
-    public ItemConfig Box;
-    public ItemConfig Medkit;
-    public ItemConfig Bag;
-    public ItemConfig Bullet;
-    public ItemConfig Food;
-    public ItemArmor Jacket;
-    public ItemConfig Weapon;
-    public ItemArmor Head;
-    public SoundClips sound;
-    
-
-    [System.Serializable]
-    public class SoundClips
-    {
-        public AudioClip[] inspectItem;
-        public AudioClip[] destroyItem;
-    }
-
-    [System.Serializable]
-    public class ItemConfig
-    {
-        public string Name;
-        public Sprite Sprite;
-        public int Price;
-
-    }
-
-    [System.Serializable]
-    public class ItemArmor : ItemConfig
-    {
-        public int ArmorValue;
-    }
 
 }
 

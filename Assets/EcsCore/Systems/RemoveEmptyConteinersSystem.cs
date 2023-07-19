@@ -15,7 +15,7 @@ public class RemoveEmptyConteinersSystem : IEcsRunSystem
         foreach (var i in filter)
         {
             ref var conteiners = ref filter.Get1(i).conteiners;
-            conteiners = conteiners.Where(x => x.GetContent() != 0).ToArray();
+            conteiners = conteiners.Where(x => x.GetCount() != 0).ToArray();
         } 
     }
 }

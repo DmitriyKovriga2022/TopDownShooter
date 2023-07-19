@@ -50,12 +50,12 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         ref var bag = ref entity.Get<EcsComponent.Bag>();
         bag.conteiners = new ItemConteiner[6]
          {
-                new AmmoConteiner(30),
-                new MedKitConteiner(50),
-                new FoodConteiner(1),
-                new BodyConteiner(1),
-                new WeaponConteiner(1),
-                new HeadConteiner(1),
+                new AmmoConteiner(30, 0),
+                new MedKitConteiner(0),
+                new FoodConteiner(5, 0),
+                new BodyConteiner(0),
+                new WeaponConteiner(0),
+                new HeadConteiner(0),
          };
 
         //entity.Get<EcsComponent.EquippingWeaponEvent>();

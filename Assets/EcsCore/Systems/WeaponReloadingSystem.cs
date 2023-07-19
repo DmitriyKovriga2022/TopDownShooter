@@ -6,7 +6,7 @@ public class WeaponReloadingSystem : IEcsRunSystem
 {
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.EquipWeapon, EcsComponent.Bag, EcsComponent.TryReloadEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.Bag, EcsComponent.TryReloadEvent> filter;
 
     EcsEntity entity;
     int rnd;
@@ -32,8 +32,10 @@ public class WeaponReloadingSystem : IEcsRunSystem
 
             SetTotalAmmo(totalAmmo, conteiners);
 
-            rnd = Random.Range(0, config.weaponSettings.sound.reloadClip.Length);
-            SoundController.PlayClipAtPosition(config.weaponSettings.sound.reloadClip[rnd], weapon.shootPosition.position);
+            var clip = ItemData.Instance.Weapon[weapon.configIndex].Settings.sound.reloadClip;
+            rnd = Random.Range(0, clip.Length);
+
+            SoundController.PlayClipAtPosition(clip[rnd], weapon.shootPosition.position);
 
             if (entity.Has<EcsComponent.Player>())
             {
@@ -49,7 +51,7 @@ public class WeaponReloadingSystem : IEcsRunSystem
         {
             if(conteiners[i] is AmmoConteiner)
             {
-                return (conteiners[i] as AmmoConteiner).GetContent();
+                return (conteiners[i] as AmmoConteiner).GetCount();
             }
         }
 

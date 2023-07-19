@@ -5937,6 +5937,10 @@ PrefabInstance:
       propertyPath: items.Array.data[0].name
       value: Food
       objectReference: {fileID: 0}
+    - target: {fileID: 2477303864631913639, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
+      propertyPath: items.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8315056529895749050, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
       propertyPath: m_Name
       value: ItemMarker (1)
@@ -38548,7 +38552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000028757368}
+  m_AnchoredPosition: {x: 0, y: -0.000006395278}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1873142166
@@ -42451,7 +42455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5592214169106337194, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
       propertyPath: unitType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5592214169106337195, guid: bbfab409b8ef2e845a254dd7162bb0dc, type: 3}
       propertyPath: m_Name

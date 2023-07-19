@@ -5,6 +5,6 @@ namespace EcsComponent
 {
     public struct EquippingWeaponSecondIntent
     {
-
+        public int configIndex;
     }
 }

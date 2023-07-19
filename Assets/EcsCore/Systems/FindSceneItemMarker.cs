@@ -24,27 +24,27 @@ public class FindSceneItemMarker : IEcsRunSystem
         {
             if (items[i].name == "Ammo")
             {
-                conteiners[i] = new AmmoConteiner((int)items[i].count);
+                conteiners[i] = new AmmoConteiner((int)items[i].count, items[i].itemConfigIndex);
             }
 
             if (items[i].name == "MedKit")
             {
-                conteiners[i] = new MedKitConteiner((int)items[i].count);
+                conteiners[i] = new MedKitConteiner(items[i].itemConfigIndex);
             }
 
             if (items[i].name == "Food")
             {
-                conteiners[i] = new FoodConteiner((int)items[i].count);
+                conteiners[i] = new FoodConteiner((int)items[i].count, items[i].itemConfigIndex);
             }
 
             if (items[i].name == "Weapon")
             {
-                conteiners[i] = new WeaponConteiner((int)items[i].count);
+                conteiners[i] = new WeaponConteiner(items[i].itemConfigIndex);
             }
 
             if (items[i].name == "Jacket")
             {
-                conteiners[i] = new BodyConteiner((int)items[i].count);
+                conteiners[i] = new BodyConteiner(items[i].itemConfigIndex);
             }
         }
 

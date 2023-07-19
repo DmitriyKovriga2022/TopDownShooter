@@ -7,10 +7,10 @@ public class WeaponSettingsData
 {
     public UnityComponent.Weapon weaponPrefab;
     public SoundClips sound;
-    public float projectileSpeed;
-    public float projectileRadius;
+    //public float projectileSpeed;
+    //public float projectileRadius;
     public int weaponDamage;
-    public int currentInMagazine;
+    //public int currentInMagazine;
     public int maxInMagazine;
 
     [System.Serializable]

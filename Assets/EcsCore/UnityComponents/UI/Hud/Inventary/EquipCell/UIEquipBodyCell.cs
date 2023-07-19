@@ -14,7 +14,8 @@ public class UIEquipBodyCell : UIEquipCell
     {
         if (entityOwner.Has<EcsComponent.EquipBody>())
         {
-            conteiner = new BodyConteiner(1);
+            ref var configIndex = ref entityOwner.Get<EcsComponent.EquipBody>().configIndex;
+            conteiner = new BodyConteiner(configIndex);
             image.sprite = conteiner.GetIcon();
 
             if (conteiner.GetIcon() == null)

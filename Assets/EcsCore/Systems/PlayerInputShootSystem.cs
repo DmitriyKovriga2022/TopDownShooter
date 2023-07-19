@@ -4,7 +4,7 @@ using UnityEngine;
 internal class PlayerInputShootSystem : IEcsRunSystem
 {
     private SceneData sceneData;
-    private EcsFilter<EcsComponent.Player, EcsComponent.EquipWeapon> filter;
+    private EcsFilter<EcsComponent.Player, EcsComponent.EquipWeaponMain> filter;
 
     public void Run()
     {

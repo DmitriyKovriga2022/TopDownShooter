@@ -30,8 +30,8 @@ public class ShowTradeMenuSystem : IEcsRunSystem
             {
                 //Логика переноса предметов между npc
             }
-            int rnd = Random.Range(0, config.itemData.sound.inspectItem.Length);
-            SoundController.PlayClipAtPosition(config.itemData.sound.inspectItem[rnd], position);
+            int rnd = Random.Range(0, ItemData.Instance.sound.inspectItem.Length);
+            SoundController.PlayClipAtPosition(ItemData.Instance.sound.inspectItem[rnd], position);
 
         }
     }

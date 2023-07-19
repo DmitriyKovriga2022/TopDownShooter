@@ -49,7 +49,7 @@ public class Ai : MonoBehaviour
             var ecscomponent = origineEntity.Get<EcsComponent.Unit>();
             aiCombat.Enable(ecscomponent.UnitGO);
 
-            if (entitySelf.Has<EcsComponent.EquipWeapon>() == false)
+            if (entitySelf.Has<EcsComponent.EquipWeaponMain>() == false)
             {
                 entitySelf.Get<EcsComponent.EquippingWeaponIntent>();
             }

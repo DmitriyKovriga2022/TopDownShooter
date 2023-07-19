@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class HeadConteiner : ItemConteiner
 {
-    public HeadConteiner(int count)
+    public HeadConteiner(int configId)
     {
-        this.count = count;
+        this.config = ItemData.Instance.Head[configId];
     }
-    [SerializeField] private int count;
-    public override int GetContent()
+    public HeadConteiner(ItemData.ItemHeadConfig config)
     {
-        return count;
+        this.config = config;
+    }
+
+    private ItemData.ItemHeadConfig config;
+
+    public override int GetCount()
+    {
+        return 1;
     }
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.Head.Sprite;
+        return config.Sprite;
     }
 
     public override int GetPrice()
     {
-        return StaticData.Instance.itemData.Head.Price;
+        return config.Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
@@ -31,6 +37,6 @@ public class HeadConteiner : ItemConteiner
 
     public override void Drop(EcsEntity entityTarget)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Drop Function In Progress");
     }
 }

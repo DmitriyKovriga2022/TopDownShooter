@@ -4,24 +4,31 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponConteiner : ItemConteiner
 {
-    public WeaponConteiner(int count)
+    public WeaponConteiner(int configId)
     {
-        this.count = count;
+        this.config = ItemData.Instance.Weapon[configId];
     }
-    private int count;
-    public override int GetContent()
+
+    public WeaponConteiner(ItemData.ItemWeaponConfig config)
     {
-        return count;
+        this.config = config;
+    }
+
+    private ItemData.ItemWeaponConfig config;
+
+    public override int GetCount()
+    {
+        return 1;
     }
 
     public override Sprite GetIcon()
     {
-        return StaticData.Instance.itemData.Weapon.Sprite;
+        return config.Sprite;
     }
 
     public override int GetPrice()
     {
-        return StaticData.Instance.itemData.Weapon.Price;
+        return config.Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
@@ -31,6 +38,6 @@ public class WeaponConteiner : ItemConteiner
 
     public override void Drop(EcsEntity entityTarget)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Drop Function In Progress");
     }
 }
