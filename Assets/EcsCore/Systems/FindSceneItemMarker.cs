@@ -39,12 +39,12 @@ public class FindSceneItemMarker : IEcsRunSystem
 
             if (items[i].name == "Weapon")
             {
-                conteiners[i] = new WeaponConteiner(items[i].itemConfigIndex);
+                conteiners[i] = new WeaponConteiner(items[i].itemConfigIndex, 0);
             }
 
             if (items[i].name == "Jacket")
             {
-                conteiners[i] = new BodyConteiner(items[i].itemConfigIndex);
+                conteiners[i] = new BodyConteiner(items[i].itemConfigIndex, 0);
             }
         }
 

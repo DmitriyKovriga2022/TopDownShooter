@@ -10,6 +10,7 @@ namespace EcsComponent
     public struct EquipWeaponMain
     {
         public int configIndex;
+        public int wearout;
         public UnityComponent.Weapon WeaponGo;
         public int weaponDamage;
         public int currentInMagazine;

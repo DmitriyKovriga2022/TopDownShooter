@@ -11,9 +11,11 @@ public class EquippingBodySystem : IEcsRunSystem
         foreach (var i in filter)
         {
             var entity = filter.GetEntity(i);
-
+            var equipBody = entity.Get<EcsComponent.EquipBody>();
             ref var configIndex = ref filter.Get2(i).configIndex;
-            entity.Get<EcsComponent.EquipBody>().configIndex = configIndex;
+            ref var wearout = ref filter.Get2(i).configIndex;
+            equipBody.configIndex = configIndex;
+            equipBody.wearout = wearout;
 
             ref var armor = ref filter.Get3(i).value;
             armor += ItemData.Instance.Body[configIndex].ArmorValue;

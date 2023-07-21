@@ -4,17 +4,21 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponConteiner : ItemConteiner
 {
-    public WeaponConteiner(int configId)
+    public WeaponConteiner(int configId, int wearout)
     {
         this.config = ItemData.Instance.Weapon[configId];
+        this.wearout = wearout;
     }
 
-    public WeaponConteiner(ItemData.ItemWeaponConfig config)
+    public WeaponConteiner(ItemData.ItemWeaponConfig config, int wearout)
     {
         this.config = config;
+        this.wearout = wearout;
     }
 
     private ItemData.ItemWeaponConfig config;
+    public int Wearout => wearout;
+    private int wearout;
 
     public override int GetCount()
     {

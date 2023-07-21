@@ -62,7 +62,7 @@ public class FogOfWarManager : MonoBehaviour
     float m_CellSize;
 
 
-    Dictionary<Collider,List<Vector2Int>> m_VisionBlockers = new Dictionary<Collider, List<Vector2Int>>();
+    Dictionary<Collider2D,List<Vector2Int>> m_VisionBlockers = new Dictionary<Collider2D, List<Vector2Int>>();
 
     Texture2D m_VisionBlockingTexture;
 
@@ -227,17 +227,26 @@ public class FogOfWarManager : MonoBehaviour
         }
     }
 
-    public void SetVisionBlocker(Collider visionblocker)
+    public void SetVisionBlocker(Collider2D visionblocker)
     {
         if (!m_VisionBlockers.ContainsKey(visionblocker))
-            m_VisionBlockers.Add(visionblocker,new List<Vector2Int>());
+            m_VisionBlockers.Add(visionblocker, new List<Vector2Int>());
 
         m_VisionBlockers[visionblocker].Clear();
         GetColliderPositions(visionblocker);
         RecalculateBlockingMap();
     }
+    //public void SetVisionBlocker(Collider visionblocker)
+    //{
+    //    if (!m_VisionBlockers.ContainsKey(visionblocker))
+    //        m_VisionBlockers.Add(visionblocker,new List<Vector2Int>());
 
-    public void RemoveVisionBlocker(Collider visionblocker)
+    //    m_VisionBlockers[visionblocker].Clear();
+    //    GetColliderPositions(visionblocker);
+    //    RecalculateBlockingMap();
+    //}
+
+    public void RemoveVisionBlocker(Collider2D visionblocker)
     {
         m_VisionBlockers.Remove(visionblocker);
         RecalculateBlockingMap();
@@ -270,7 +279,7 @@ public class FogOfWarManager : MonoBehaviour
     }
 
     void ResizeVisionBlockerMap() {
-        foreach (Collider collider in m_VisionBlockers.Keys)
+        foreach (Collider2D collider in m_VisionBlockers.Keys)
         {
             m_VisionBlockers[collider].Clear();
             GetColliderPositions(collider);
@@ -279,7 +288,7 @@ public class FogOfWarManager : MonoBehaviour
 
     }
 
-    void GetColliderPositions(Collider collider)
+    void GetColliderPositions(Collider2D collider)
     {
         Bounds colliderbounds = collider.bounds;
         Vector2Int minBound = WorldPositionToMapPosition(collider.bounds.min);
@@ -294,13 +303,22 @@ public class FogOfWarManager : MonoBehaviour
                 {
                     Vector3 worldposition = MapPositionToWorldPosition(new Vector2Int(x, y));
                     worldposition.y = collider.bounds.max.y + 1.0f;
+                    m_VisionBlockers[collider].Add(new Vector2Int(x, y));
 
-                    Ray ray = new Ray(worldposition + new Vector3(m_CellSize / 2, 0.0f, m_CellSize / 2), Vector3.down);
-                    RaycastHit raycastHit;
-                    if (collider.Raycast(ray, out raycastHit, collider.bounds.size.y + 2))
+                    //Ray ray = new Ray(worldposition + new Vector3(m_CellSize / 2, 0.0f, m_CellSize / 2), Vector3.down);
+                    //RaycastHit raycastHit;
+                    //if (collider.Raycast(ray, out raycastHit, collider.bounds.size.y + 2))
+                    //{
+                    //    m_VisionBlockers[collider].Add(new Vector2Int(x, y));
+                    //}
+                    Vector2 origine = (Vector2)worldposition + new Vector2(m_CellSize / 2, m_CellSize / 2);
+                    Debug.Log("RayCast");
+                    Debug.DrawLine(origine, Vector3.forward * 10, Color.green, 5);
+                    if (Physics2D.OverlapBox(origine, new Vector2(m_CellSize, m_CellSize),0))
                     {
                         m_VisionBlockers[collider].Add(new Vector2Int(x, y));
                     }
+
                     counter++;
                 }
 
@@ -337,14 +355,14 @@ public class FogOfWarManager : MonoBehaviour
 
         for (float x = 0.0f; x < m_MapWidth; x+= ResolutionScale)
         {
-            Vector3 position1 = transform.position + new Vector3(x - m_MapWidth / 2, 0, -m_MapHeight / 2);
-            Vector3 position2 = transform.position + new Vector3(x - m_MapWidth / 2, 0, m_MapHeight / 2);
+            Vector3 position1 = transform.position + new Vector3(x - m_MapWidth / 2,  -m_MapHeight / 2);
+            Vector3 position2 = transform.position + new Vector3(x - m_MapWidth / 2, m_MapHeight / 2);
             Gizmos.DrawLine(position1, position2);
         }
         for (float y = 0.0f; y < m_MapHeight; y+= ResolutionScale)
         {
-            Vector3 position1 = transform.position + new Vector3(-m_MapWidth / 2, 0, y - m_MapHeight / 2);
-            Vector3 position2 = transform.position + new Vector3(m_MapWidth / 2, 0, y - m_MapHeight / 2);
+            Vector3 position1 = transform.position + new Vector3(-m_MapWidth / 2,  y - m_MapHeight / 2);
+            Vector3 position2 = transform.position + new Vector3(m_MapWidth / 2,  y - m_MapHeight / 2);
             Gizmos.DrawLine(position1, position2);
         }
 

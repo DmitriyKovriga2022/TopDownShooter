@@ -3,17 +3,21 @@ using UnityEngine;
 
 public class BodyConteiner: ItemConteiner
 {
-    public BodyConteiner(int configId)
+    public BodyConteiner(int configId, int wearout)
     {
         this.config = ItemData.Instance.Body[configId];
+        this.wearout = wearout;
     }
 
-    public BodyConteiner(ItemData.ItemArmorConfig config)
+    public BodyConteiner(ItemData.ItemArmorConfig config, int wearout)
     {
         this.config = config;
+        this.wearout = wearout;
     }
 
     private ItemData.ItemArmorConfig config;
+    public int Wearout => wearout;
+    private int wearout;
 
     public override int GetCount()
     {

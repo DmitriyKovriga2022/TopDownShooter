@@ -3,6 +3,6 @@
     public struct EquippingBodyIntent
     {
         public int configIndex;
-        //public int armorValue;
+        public int wearout;
     }
 }

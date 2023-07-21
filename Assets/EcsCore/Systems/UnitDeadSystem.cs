@@ -27,11 +27,11 @@ public class UnitDeadSystem : IEcsRunSystem
                 entity.Get<EcsComponent.DropToGroundEvent>().position = unitGo.transform.position;
             }
 
-            if (filter.GetEntity(i).Has<EcsComponent.HasWeapon>())
-            {
-                ref var hasWeapon = ref filter.GetEntity(i).Get<EcsComponent.HasWeapon>();
-                hasWeapon.weapon.Get<EcsComponent.DropToGroundEvent>();
-            }
+            //if (filter.GetEntity(i).Has<EcsComponent.HasWeapon>())
+            //{
+            //    ref var hasWeapon = ref filter.GetEntity(i).Get<EcsComponent.HasWeapon>();
+            //    hasWeapon.weapon.Get<EcsComponent.DropToGroundEvent>();
+            //}
 
             if (filter.GetEntity(i).Has<EcsComponent.Player>())
             {

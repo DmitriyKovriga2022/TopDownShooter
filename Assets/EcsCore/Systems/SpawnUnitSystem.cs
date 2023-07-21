@@ -35,8 +35,8 @@ public class SpawnUnitSystem : IEcsRunSystem
              {
                 new AmmoConteiner(Random.Range(30, 60), 0),
                 new MedKitConteiner(0),
-                new WeaponConteiner(0),
-                new BodyConteiner(0),
+                new WeaponConteiner(0, 0),
+                new BodyConteiner(0, 0),
                 new FoodConteiner(Random.Range(1, 50), 0),
              };
 

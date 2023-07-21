@@ -16,14 +16,14 @@ public class VisionBlockComponent : MonoBehaviour
     Vector3 PreviousRotation;
     Vector3 PreviousScale;
 
-    Collider m_Collider;
+    Collider2D m_Collider;
     void Start()
     {
 
         PreviousPosition = transform.position;
         PreviousRotation = transform.eulerAngles;
         PreviousScale = transform.lossyScale;
-        m_Collider = GetComponent<Collider>();
+        m_Collider = GetComponent<Collider2D>();
         FogOfWarManager.INSTANCE.SetVisionBlocker(m_Collider);
 
 

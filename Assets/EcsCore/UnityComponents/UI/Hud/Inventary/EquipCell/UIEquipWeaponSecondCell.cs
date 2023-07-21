@@ -14,7 +14,8 @@ public class UIEquipWeaponSecondCell : UIEquipCell
     {
         if (entityOwner.Has<EcsComponent.EquipWeaponSecond>())
         {
-            conteiner = new WeaponConteiner(1);
+            ref var weapon = ref entityOwner.Get<EcsComponent.EquipWeaponSecond>();
+            conteiner = new WeaponConteiner(weapon.configIndex, weapon.wearout);
             image.sprite = conteiner.GetIcon();
 
             if (conteiner.GetIcon() == null)

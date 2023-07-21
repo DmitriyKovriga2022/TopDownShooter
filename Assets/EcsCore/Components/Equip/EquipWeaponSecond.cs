@@ -10,5 +10,6 @@ namespace EcsComponent
     public struct EquipWeaponSecond
     {
         public int configIndex;
+        public int wearout;
     }
 }

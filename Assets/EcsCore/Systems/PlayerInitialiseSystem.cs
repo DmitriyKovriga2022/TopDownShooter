@@ -53,8 +53,8 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
                 new AmmoConteiner(30, 0),
                 new MedKitConteiner(0),
                 new FoodConteiner(5, 0),
-                new BodyConteiner(0),
-                new WeaponConteiner(0),
+                new BodyConteiner(0, 0),
+                new WeaponConteiner(0, 0),
                 new HeadConteiner(0),
          };
 
