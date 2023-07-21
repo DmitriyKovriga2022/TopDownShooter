@@ -23,6 +23,11 @@ public class FoodConteiner : ItemConteiner
         return count;
     }
 
+    public override int GetWearout()
+    {
+        return 0;
+    }
+
     public override Sprite GetIcon()
     {
         return config.Sprite;

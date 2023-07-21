@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-public class BodyConteiner: ItemConteiner
+public class BodyConteiner : ItemConteiner
 {
     public BodyConteiner(int configId, int wearout)
     {
@@ -16,12 +16,16 @@ public class BodyConteiner: ItemConteiner
     }
 
     private ItemData.ItemArmorConfig config;
-    public int Wearout => wearout;
     private int wearout;
 
     public override int GetCount()
     {
         return 1;
+    }
+
+    public override int GetWearout()
+    {
+        return wearout;
     }
 
     public override Sprite GetIcon()

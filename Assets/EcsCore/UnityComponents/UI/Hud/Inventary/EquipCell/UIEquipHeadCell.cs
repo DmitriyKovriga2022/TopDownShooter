@@ -1,9 +1,14 @@
 ﻿using Leopotam.Ecs;
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIEquipHeadCell : UIEquipCell
+public class UIEquipHeadCell : UIEquipCell, UIEquipCell.IShowContent
 {
+    public event Action<ItemConteiner> EventShowContent;
+    public event Action EventClearContent;
+
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
@@ -14,17 +19,20 @@ public class UIEquipHeadCell : UIEquipCell
     {
         if (entityOwner.Has<EcsComponent.EquipHead>())
         {
-            conteiner = new HeadConteiner(0);
+            conteiner = new HeadConteiner(entityOwner.Get<EcsComponent.EquipHead>().configIndex);
             image.sprite = conteiner.GetIcon();
 
             if (conteiner.GetIcon() == null)
             {
                 Debug.LogError("Conteiner sprite is null");
             }
+
+            EventShowContent?.Invoke(conteiner);
         }
         else
         {
             image.sprite = defaultSprite;
+            EventClearContent?.Invoke();
         }
     }
 

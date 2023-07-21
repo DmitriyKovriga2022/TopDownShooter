@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class UIEquipCell : MonoBehaviour
 {
+    public interface IShowContent
+    {
+        public event Action<ItemConteiner> EventShowContent;
+        public event Action EventClearContent;
+    }
+
     protected DragItem dragCell;
     protected Image image;
     private Button button;
@@ -15,7 +21,7 @@ public class UIEquipCell : MonoBehaviour
 
     protected EcsEntity entityOwner;
 
-    public void Initialise(DragItem dragCell)
+    public virtual void Initialise(DragItem dragCell)
     {
         this.dragCell = dragCell;
         image = transform.GetChild(0).GetComponent<Image>();

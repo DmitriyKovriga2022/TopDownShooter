@@ -25,6 +25,11 @@ public class WeaponConteiner : ItemConteiner
         return 1;
     }
 
+    public override int GetWearout()
+    {
+        return wearout;
+    }
+
     public override Sprite GetIcon()
     {
         return config.Sprite;

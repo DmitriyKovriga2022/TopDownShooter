@@ -23,6 +23,11 @@ public class AmmoConteiner : ItemConteiner
         return count;
     }
 
+    public override int GetWearout()
+    {
+        return 0;
+    }
+
     public void AddingContentValue(int value)
     {
         count += value;

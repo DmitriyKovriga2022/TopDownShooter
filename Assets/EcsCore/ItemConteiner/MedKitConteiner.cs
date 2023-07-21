@@ -21,6 +21,11 @@ public class MedKitConteiner : ItemConteiner
         return 1;
     }
 
+    public override int GetWearout()
+    {
+        return 0;
+    }
+
     public override Sprite GetIcon()
     {
         return config.Sprite;

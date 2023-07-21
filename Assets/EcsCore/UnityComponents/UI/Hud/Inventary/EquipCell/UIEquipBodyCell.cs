@@ -1,9 +1,13 @@
 ﻿using Leopotam.Ecs;
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class UIEquipBodyCell : UIEquipCell
+public class UIEquipBodyCell : UIEquipCell, UIEquipCell.IShowContent
 {
+    public event Action<ItemConteiner> EventShowContent;
+    public event Action EventClearContent;
+
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
@@ -22,10 +26,13 @@ public class UIEquipBodyCell : UIEquipCell
             {
                 Debug.LogError("Conteiner sprite is null");
             }
+
+            EventShowContent?.Invoke(conteiner);
         }
         else
         {
             image.sprite = defaultSprite;
+            EventClearContent?.Invoke();
         }
     }
 

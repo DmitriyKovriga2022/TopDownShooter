@@ -1,9 +1,13 @@
 ﻿using Leopotam.Ecs;
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class UIEquipWeaponSecondCell : UIEquipCell
+public class UIEquipWeaponSecondCell : UIEquipCell, UIEquipCell.IShowContent
 {
+    public event Action<ItemConteiner> EventShowContent;
+    public event Action EventClearContent;
+
     public override void Show(EcsEntity entityOwner)
     {
         base.Show(entityOwner);
