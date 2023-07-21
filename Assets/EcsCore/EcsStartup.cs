@@ -59,7 +59,6 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new PlayerInputShootSystem())
              .Add(new PickUpItemSystem())
              .Add(new ApplyMedKitSystem())
-             .Add(new ApplyFoodSystem())
 
              .Add(new WeaponShootSystem())
              .Add(new SpawnProjectileSystem())
@@ -85,6 +84,7 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new RemoveBodySystem())
              .Add(new RemoveHeadSystem())
 
+             .Add(new SaveBagSystem())
              // register one-frame components (order is important), for example:
              .OneFrame<EcsComponent.ShootEvent>()
              .OneFrame<EcsComponent.SpawnProjectileEvent>()
@@ -108,7 +108,7 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.DropToGroundEvent>()
              .OneFrame<EcsComponent.DestroyEntityEvent>()
              .OneFrame<EcsComponent.ApplyMedKitEvent>()
-             .OneFrame<EcsComponent.ApplyFoodEvent>()
+             .OneFrame<EcsComponent.SaveBagEvent>()
 
             // inject service instances here (order doesn't important), for example:
             .Inject(configuration)

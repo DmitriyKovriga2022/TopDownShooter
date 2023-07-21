@@ -1,7 +1,11 @@
+
 ﻿using Leopotam.Ecs;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class BodyConteiner : ItemConteiner
+[System.Serializable]
+public class BodyConteiner: ItemConteiner
 {
     public BodyConteiner(int configId, int wearout)
     {

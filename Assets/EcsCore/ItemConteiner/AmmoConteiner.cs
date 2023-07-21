@@ -1,7 +1,9 @@
-﻿using Leopotam.Ecs;
+
+using Leopotam.Ecs;
+﻿using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class AmmoConteiner : ItemConteiner
 {
     public AmmoConteiner(int count, int configId)

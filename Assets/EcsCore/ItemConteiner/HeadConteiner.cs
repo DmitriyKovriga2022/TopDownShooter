@@ -1,7 +1,9 @@
-﻿using Leopotam.Ecs;
+using Leopotam.Ecs;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
+[Serializable]
 public class HeadConteiner : ItemConteiner
 {
     public HeadConteiner(int configId)
