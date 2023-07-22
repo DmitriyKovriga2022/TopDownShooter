@@ -1281,7 +1281,7 @@ MonoBehaviour:
   deadMenu: {fileID: 1134672953}
   leaveMenu: {fileID: 1722551562}
   aim: {fileID: 932153896}
-  showMenuButton: {fileID: 932153894}
+  showMenuButton: {fileID: 1706223086}
 --- !u!1 &591055604
 GameObject:
   m_ObjectHideFlags: 0
@@ -3556,17 +3556,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25097365300eea408ee5159f575c265, type: 3}
---- !u!114 &932153894 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7856052373044012579, guid: c25097365300eea408ee5159f575c265, type: 3}
-  m_PrefabInstance: {fileID: 932153893}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &932153895 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7856052373210493610, guid: c25097365300eea408ee5159f575c265, type: 3}
@@ -5215,7 +5204,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.016666668
+  m_VoxelSize: 0.033333335
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
   m_NavMeshData: {fileID: 23800000, guid: 98bbed68abf9d344eb3ed926cc81d7ca, type: 2}
@@ -5330,6 +5319,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688834279}
   m_CullTransparentMesh: 1
+--- !u!114 &1706223086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6615787848373519018, guid: c25097365300eea408ee5159f575c265, type: 3}
+  m_PrefabInstance: {fileID: 932153893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1722551557
 GameObject:
   m_ObjectHideFlags: 0

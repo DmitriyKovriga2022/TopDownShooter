@@ -27,10 +27,13 @@ public class UIEquipWeaponMainCell : UIEquipCell, UIEquipCell.IShowContent
             {
                 Debug.LogError("Conteiner sprite is null");
             }
+
+            EventShowContent?.Invoke(conteiner);
         }
         else
         {
             image.sprite = defaultSprite;
+            EventClearContent?.Invoke();
         }
     }
 
@@ -46,7 +49,10 @@ public class UIEquipWeaponMainCell : UIEquipCell, UIEquipCell.IShowContent
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingWeaponIntent>();
+            ref var body = ref entityOwner.Get<EcsComponent.EquippingWeaponIntent>();
+            body.configIndex = conteiner.GetConfigId();
+            //body.wearout = conteiner.GetWearout();
+            Invoke(nameof(Show), Time.deltaTime);
         }
     }
 

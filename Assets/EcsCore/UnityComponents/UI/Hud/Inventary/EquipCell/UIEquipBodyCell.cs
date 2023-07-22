@@ -48,7 +48,10 @@ public class UIEquipBodyCell : UIEquipCell, UIEquipCell.IShowContent
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingBodyIntent>();
+            ref var body = ref entityOwner.Get<EcsComponent.EquippingBodyIntent>();
+            body.configIndex = conteiner.GetConfigId();
+            body.wearout = conteiner.GetWearout();
+            Debug.Log("Equip Body. Wearout= " + conteiner.GetWearout());
             Invoke(nameof(Show), Time.deltaTime);
         }
     }

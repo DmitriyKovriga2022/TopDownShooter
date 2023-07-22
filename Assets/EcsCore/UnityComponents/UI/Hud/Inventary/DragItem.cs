@@ -27,6 +27,8 @@ public class DragItem : MonoBehaviour
             return;
         }
 
+        Debug.Log("Item wearout= " + conteiner.GetWearout());
+
         this.conteiner = conteiner;
         this.entity = entity;
         image.sprite = conteiner.GetIcon();

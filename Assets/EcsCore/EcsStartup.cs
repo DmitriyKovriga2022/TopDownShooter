@@ -56,6 +56,11 @@ sealed class EcsStartup : MonoBehaviour
              .Add(new EquippingBodySystem())
              .Add(new EquippingAmmoSystem())
 
+             .Add(new ShiftEquipBodyToBagSystem())
+             .Add(new ShiftEquipHeadToBagSystem())
+             .Add(new ShiftEquipWeaponMainToBagSystem())
+             .Add(new ShiftEquipWeaponSecondToBagSystem())
+
              .Add(new PlayerInputShootSystem())
              .Add(new PickUpItemSystem())
              .Add(new ApplyMedKitSystem())
@@ -95,6 +100,11 @@ sealed class EcsStartup : MonoBehaviour
              .OneFrame<EcsComponent.ShowTradeMenuEvent>()
              .OneFrame<EcsComponent.ShowUIBagEvent>()
              .OneFrame<EcsComponent.ShowUIEquipEvent>()
+
+             .OneFrame<EcsComponent.ShiftBodyToBagEvent>()
+             .OneFrame<EcsComponent.ShiftHeadToBagEvent>()
+             .OneFrame<EcsComponent.ShiftWeaponMainToBagEvent>()
+             .OneFrame<EcsComponent.ShiftWeaponSecondToBagEvent>()
 
              .OneFrame<EcsComponent.RemoveEqipMainWeaponEvent>()
              .OneFrame<EcsComponent.RemoveEqipSecondWeaponEvent>()

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WeaponReloadingSystem : IEcsRunSystem
 {
-    private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.Bag, EcsComponent.TryReloadEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.Bag, EcsComponent.TryReloadEvent>.Exclude<EcsComponent.StateEndAmmo> filter;
 
     EcsEntity entity;
     int rnd;
@@ -41,6 +40,13 @@ public class WeaponReloadingSystem : IEcsRunSystem
             {
                 hud.HudWeapon.ShowMagazine(weapon.currentInMagazine);
                 hud.HudWeapon.ShowTotalAmmo(GetTotalAmmo(conteiners));
+            }
+            else
+            {
+                if (totalAmmo == 0)
+                {
+                    entity.Get<EcsComponent.StateEndAmmo>();
+                }
             }
         }
     }

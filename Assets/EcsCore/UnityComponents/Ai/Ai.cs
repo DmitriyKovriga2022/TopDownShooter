@@ -44,6 +44,8 @@ public class Ai : MonoBehaviour
     {
         aiMerchant.DisableSelf();
 
+        if (!origineEntity.IsAlive()) return;
+
         if (origineEntity.Has<EcsComponent.Unit>())
         {
             var ecscomponent = origineEntity.Get<EcsComponent.Unit>();

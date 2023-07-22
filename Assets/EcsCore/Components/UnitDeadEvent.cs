@@ -1,7 +1,9 @@
 ﻿
+using Leopotam.Ecs;
+
 namespace EcsComponent
 {
-    public struct UnitDeadEvent
+    public struct UnitDeadEvent : IEcsIgnoreInFilter
     {
 
     }

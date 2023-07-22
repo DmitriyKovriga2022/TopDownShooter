@@ -7,7 +7,7 @@ namespace EcsComponent
     /// <summary>
     /// Текущая экипировка
     /// </summary>
-    public struct EquipWeaponSecond
+    public struct EquipWeaponSecond : IEquiping
     {
         public int configIndex;
         public int wearout;

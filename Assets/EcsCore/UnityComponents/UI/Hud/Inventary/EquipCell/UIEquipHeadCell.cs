@@ -48,7 +48,9 @@ public class UIEquipHeadCell : UIEquipCell, UIEquipCell.IShowContent
     {
         if (conteiner != null)
         {
-            entityOwner.Get<EcsComponent.EquippingHeadIntent>();
+            ref var body = ref entityOwner.Get<EcsComponent.EquippingHeadIntent>();
+            body.configIndex = conteiner.GetConfigId();
+            Invoke(nameof(Show), Time.deltaTime);
         }
     }
 

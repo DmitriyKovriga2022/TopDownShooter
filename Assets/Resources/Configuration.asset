@@ -49,62 +49,8 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 93929408f1638734b971ffbcfea93863, type: 3}
       - {fileID: 8300000, guid: 713fa468b04c95f47b8c94f34e66113d, type: 3}
       - {fileID: 8300000, guid: 2a54859a6302bd145ab5c706d596ae77, type: 3}
-  weaponSettings:
-    weaponPrefab: {fileID: -4796381127803406112, guid: 0434b8fa78490ec4093c42a460608834, type: 3}
-    sound:
-      shootClip:
-      - {fileID: 8300000, guid: fab8bd08c8b02ea49b05ad0fd6af9776, type: 3}
-      - {fileID: 8300000, guid: 29879bcd27f559e468f02142ce0e2d10, type: 3}
-      reloadClip:
-      - {fileID: 8300000, guid: 74041e7eff56c94469fd1ba5283d32b5, type: 3}
-      misfireClip:
-      - {fileID: 8300000, guid: a1dfb5a1b1f48374ca3663cc791eb746, type: 3}
-    projectileSpeed: 0
-    projectileRadius: 0
-    weaponDamage: 5
-    currentInMagazine: 0
-    maxInMagazine: 15
   spriteCollisionData:
     exitPointSprite: {fileID: 21300000, guid: 53f9b43033919b049accfaa32d445103, type: 3}
-  itemData:
-    Box:
-      Name: Box
-      Sprite: {fileID: 21300000, guid: 103711e4f98e63640801688d9a82ee99, type: 3}
-      Price: 0
-    Medkit:
-      Name: Medkit
-      Sprite: {fileID: 21300000, guid: 2ad45743be8d5284aaa30d332198b238, type: 3}
-      Price: 10
-    Bag:
-      Name: Bag
-      Sprite: {fileID: 21300000, guid: de1834ce7b4e8f24384c306be3da57bd, type: 3}
-      Price: 0
-    Bullet:
-      Name: Bullet
-      Sprite: {fileID: 21300000, guid: 3f15f95ee10fda641a27c002956d55ef, type: 3}
-      Price: 1
-    Food:
-      Name: Food
-      Sprite: {fileID: 1999369447, guid: 6eb8d01ecaa7c5f44a9f7871179a5af0, type: 3}
-      Price: 1
-    Body:
-    - Name: Jacket
-      Sprite: {fileID: 0}
-      Price: 0
-      ArmorValue: 5
-    Weapon:
-      Name: Weapon
-      Sprite: {fileID: 1472445859, guid: 57d18ea758bdd3e4cbb555f6260f3d86, type: 3}
-      Price: 50
-    Head:
-      Name: Helmet
-      Sprite: {fileID: 21300000, guid: aa4ae807d297c634d8884b02e2054590, type: 3}
-      Price: 10
-      ArmorValue: 20
-    sound:
-      inspectItem:
-      - {fileID: 8300000, guid: 77d00072b70c83a4b9abfb2a40c10a1d, type: 3}
-      destroyItem: []
   gridData:
     GridSize: {x: 50, y: 50}
     CellSize: 1
@@ -118,3 +64,4 @@ MonoBehaviour:
   sceneItemMarkerPrefab: {fileID: 2477303864631913639, guid: 808a314e8e7311749ac49a40ad4083f9, type: 3}
   interactionObjectPrefab: {fileID: 564673014926776961, guid: 00de02232fcfa7149adfde7257f21f13, type: 3}
   merchantConversation: {fileID: 5513088885042226599, guid: 02d2b9d96136f274498d8e07bad2d91d, type: 3}
+  inventoryPrefab: {fileID: 4692782744839084191, guid: cc3c49b3d47a7de40b659779e76b54b0, type: 3}

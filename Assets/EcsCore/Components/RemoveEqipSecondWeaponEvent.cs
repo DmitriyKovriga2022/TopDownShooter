@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Leopotam.Ecs;
 
 namespace EcsComponent
 {
-    public struct RemoveEqipSecondWeaponEvent
+    public struct RemoveEqipSecondWeaponEvent : IEcsIgnoreInFilter
     {
 
     }

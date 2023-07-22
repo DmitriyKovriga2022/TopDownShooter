@@ -5,7 +5,7 @@ public class UnitHitBulletSystem : IEcsRunSystem
 {
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.Health, EcsComponent.HitBulletEvent, EcsComponent.Unit, EcsComponent.EquipBody> filter;
+    private EcsFilter<EcsComponent.Health, EcsComponent.HitBulletEvent, EcsComponent.Unit> filter;
 
     public void Run()
     {
@@ -17,12 +17,16 @@ public class UnitHitBulletSystem : IEcsRunSystem
             ref var power = ref filter.Get2(i).hitPower;
             ref var unitGo = ref filter.Get3(i).UnitGO;
             ref var unitEntity = ref filter.Get3(i).owner;
-            ref var body = ref filter.Get4(i);
 
-            var armor = CalculateArmorValue(ItemData.Instance.Body[body.configIndex].ArmorValue, body.wearout);
+            var armor = 0f;
 
-            body.wearout += (int)power;
-            body.wearout = Mathf.Clamp(body.wearout, 0, 100);
+            if (entity.Has< EcsComponent.EquipBody>())
+            {
+                ref var body = ref entity.Get<EcsComponent.EquipBody>();
+                armor = CalculateArmorValue(ItemData.Instance.Body[body.configIndex].ArmorValue, body.wearout);
+                body.wearout += (int)power;
+                body.wearout = Mathf.Clamp(body.wearout, 0, 100);
+            }  
 
             armor = CalculateHitArmor((int)armor, (int)power, out int resultPower);
 

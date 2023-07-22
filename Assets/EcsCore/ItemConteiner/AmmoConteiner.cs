@@ -9,16 +9,11 @@ public class AmmoConteiner : ItemConteiner
     public AmmoConteiner(int count, int configId)
     {
         this.count = count;
-        this.config = ItemData.Instance.Bullet[configId];
-    }
-    public AmmoConteiner(int count, ItemData.ItemBulletConfig config)
-    {
-        this.count = count;
-        this.config = config;
+        this.configId = configId;
     }
 
     private int count;
-    private ItemData.ItemBulletConfig config;
+    private int configId;
 
     public override int GetCount()
     {
@@ -28,6 +23,11 @@ public class AmmoConteiner : ItemConteiner
     public override int GetWearout()
     {
         return 0;
+    }
+
+    public override int GetConfigId()
+    {
+        return configId;
     }
 
     public void AddingContentValue(int value)
@@ -42,12 +42,12 @@ public class AmmoConteiner : ItemConteiner
 
     public override Sprite GetIcon()
     {
-       return config.Sprite;
+       return ItemData.Instance.Bullet[configId].Sprite;
     }
 
     public override int GetPrice()
     {
-        return config.Price;
+        return ItemData.Instance.Bullet[configId].Price;
     }
 
     public override void Apply(EcsEntity entityTarget)

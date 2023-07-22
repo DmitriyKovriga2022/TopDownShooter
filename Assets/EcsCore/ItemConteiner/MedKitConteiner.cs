@@ -6,15 +6,10 @@ public class MedKitConteiner : ItemConteiner
 {
     public MedKitConteiner(int configId)
     {
-        this.config = ItemData.Instance.Medkit[configId];
+        this.configId = configId;
     }
 
-    public MedKitConteiner(ItemData.ItemMedkitConfig config)
-    {
-        this.config = config;
-    }
-
-    private ItemData.ItemMedkitConfig config;
+    private int configId;
 
     public override int GetCount()
     {
@@ -26,19 +21,24 @@ public class MedKitConteiner : ItemConteiner
         return 0;
     }
 
+    public override int GetConfigId()
+    {
+        return configId;
+    }
+
     public override Sprite GetIcon()
     {
-        return config.Sprite;
+        return ItemData.Instance.Medkit[configId].Sprite;
     }
 
     public override int GetPrice()
     {
-        return config.Price;
+        return ItemData.Instance.Medkit[configId].Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        entityTarget.Get<EcsComponent.ApplyMedKitEvent>().Power = config.Power;
+        entityTarget.Get<EcsComponent.ApplyMedKitEvent>().Power = ItemData.Instance.Medkit[configId].Power;
     }
 
     public override void Drop(EcsEntity entityTarget)

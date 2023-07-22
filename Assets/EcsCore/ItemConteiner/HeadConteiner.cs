@@ -8,14 +8,10 @@ public class HeadConteiner : ItemConteiner
 {
     public HeadConteiner(int configId)
     {
-        this.config = ItemData.Instance.Head[configId];
-    }
-    public HeadConteiner(ItemData.ItemHeadConfig config)
-    {
-        this.config = config;
+        this.configId = configId;
     }
 
-    private ItemData.ItemHeadConfig config;
+    private int configId;
 
     public override int GetCount()
     {
@@ -27,19 +23,25 @@ public class HeadConteiner : ItemConteiner
         return 0;
     }
 
+    public override int GetConfigId()
+    {
+        return configId;
+    }
+
     public override Sprite GetIcon()
     {
-        return config.Sprite;
+        return ItemData.Instance.Head[configId].Sprite;
     }
 
     public override int GetPrice()
     {
-        return config.Price;
+        return ItemData.Instance.Head[configId].Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        entityTarget.Get<EcsComponent.EquippingHeadIntent>();
+        ref var head = ref entityTarget.Get<EcsComponent.EquippingHeadIntent>();
+        head.configIndex = configId;
     }
 
     public override void Drop(EcsEntity entityTarget)

@@ -15,6 +15,7 @@ public class UIWearoutImageHandler : MonoBehaviour
         showContent = GetComponentInParent<UIEquipCell.IShowContent>();
         showContent.EventShowContent += ShowContent_EventShowContent;
         showContent.EventClearContent += ShowContent_EventClearContent;
+        wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, -100);
     }
 
     private void ShowContent_EventClearContent()
@@ -29,8 +30,8 @@ public class UIWearoutImageHandler : MonoBehaviour
 
     private void ShowWearout(float value)
     {
-        float sizeY = wearoutImageSize / 100 * value;
-        wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, sizeY);
+        float sizeY = 100 - value;
+        wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, -sizeY);
     }
 
     private void HideWearout()

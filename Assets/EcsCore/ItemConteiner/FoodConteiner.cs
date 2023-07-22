@@ -7,16 +7,11 @@ public class FoodConteiner : ItemConteiner
     public FoodConteiner(int count, int configId)
     {
         this.count = count;
-        this.config = ItemData.Instance.Food[configId];
-    }
-    public FoodConteiner(int count, ItemData.ItemFoodConfig config)
-    {
-        this.count = count;
-        this.config = config;
+        this.configId = configId;
     }
 
     private int count;
-    private ItemData.ItemFoodConfig config;
+    private int configId;
 
     public override int GetCount()
     {
@@ -28,19 +23,24 @@ public class FoodConteiner : ItemConteiner
         return 0;
     }
 
+    public override int GetConfigId()
+    {
+        return configId;
+    }
+
     public override Sprite GetIcon()
     {
-        return config.Sprite;
+        return ItemData.Instance.Food[configId].Sprite;
     }
 
     public override int GetPrice()
     {
-        return config.Price;
+        return ItemData.Instance.Food[configId].Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        entityTarget.Get<EcsComponent.ApplyFoodEvent>().Power = config.Power;
+        entityTarget.Get<EcsComponent.ApplyFoodEvent>().Power = ItemData.Instance.Food[configId].Power;
 
     }
 

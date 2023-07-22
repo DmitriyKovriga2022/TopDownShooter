@@ -54,19 +54,20 @@ public class UIEquipCell : MonoBehaviour
 
     public virtual void SetConteiner(ItemConteiner conteiner)
     {
-        if (conteiner == null)
-        {
-            image.sprite = defaultSprite;
-            return;
-        }
+        Debug.Log("Set Cell in progress");
+        //if (conteiner == null)
+        //{
+        //    image.sprite = defaultSprite;
+        //    return;
+        //}
 
-        this.conteiner = conteiner;
-        image.sprite = conteiner.GetIcon();
+        //this.conteiner = conteiner;
+        //image.sprite = conteiner.GetIcon();
 
-        if (conteiner.GetIcon() == null)
-        {
-            Debug.LogError("Conteiner sprite is null");
-        }
+        //if (conteiner.GetIcon() == null)
+        //{
+        //    Debug.LogError("Conteiner sprite is null");
+        //}
     }
 
     public virtual void GetConteiner()

@@ -12,7 +12,7 @@ public class RemoveBodySystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
-            Debug.Log("RemoveBodySystem");
+            //Debug.Log("RemoveBodySystem");
             var entity = filter.GetEntity(i);
             ref var configIndex = ref filter.Get1(i).configIndex;
             ref var armorValue = ref filter.Get3(i).value;

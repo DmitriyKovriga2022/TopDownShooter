@@ -32,7 +32,7 @@ internal class StaticData : ScriptableObject
     public UnityComponent.SceneItemMarker sceneItemMarkerPrefab;
     public InteractionObject interactionObjectPrefab;
     public NPCConversation merchantConversation;
-
+    public UIInventoryPanel inventoryPrefab;
 }
 
 

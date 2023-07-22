@@ -1,6 +1,7 @@
 ﻿using Leopotam.Ecs;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -48,11 +49,6 @@ namespace UnityComponent
                 entity.Get<EcsComponent.ShowUIEquipEvent>().entity = entity;
             }
 
-            /*if (Input.GetKeyDown(KeyCode.L))
-            {
-                entity.Get<EcsComponent.SaveBagEvent>();
-            }*/
-
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -83,6 +79,10 @@ namespace UnityComponent
 
             if (collider.TryGetComponent(out ExitPoint point))
             {
+                entity.Get<EcsComponent.ShiftBodyToBagEvent>();
+                entity.Get<EcsComponent.ShiftHeadToBagEvent>();
+                entity.Get<EcsComponent.ShiftWeaponMainToBagEvent>();
+                entity.Get<EcsComponent.ShiftWeaponSecondToBagEvent>();
                 entity.Get<EcsComponent.SaveBagEvent>();
                 Invoke(nameof(loadNextScene), Time.deltaTime);
             }

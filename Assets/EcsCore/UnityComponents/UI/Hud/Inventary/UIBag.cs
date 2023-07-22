@@ -54,14 +54,15 @@ public class UIBag : MonoBehaviour
         useItem.Hide();
     }
 
-    private void Item_EventSetCellItem(ItemConteiner value)
+    private void Item_EventSetCellItem(ItemConteiner conteiner)
     {
         if(inventoryPanel.IsTradeState)
         {
             if (dragCell.Entity != entityOwner) return;
         }
 
-        conteiners = conteiners.Append(value).ToArray();
+        //Debug.Log("Item wearout= " + conteiner.GetWearout());
+        conteiners = conteiners.Append(conteiner).ToArray();
         if (entityOwner.Has<EcsComponent.Bag>())
         {
             entityOwner.Get<EcsComponent.Bag>().conteiners = conteiners;
@@ -71,12 +72,13 @@ public class UIBag : MonoBehaviour
         ReShow();
     }
 
-    private void Item_EventGetCellItem(ItemConteiner value)
+    private void Item_EventGetCellItem(ItemConteiner conteiner)
     {
         if (dragCell.Conteiner != null) return;
-        dragCell.SetConteiner(value, entityOwner);
+        
+        dragCell.SetConteiner(conteiner, entityOwner);
 
-        RemoveConteiner(value);
+        RemoveConteiner(conteiner);
     }
 
     private void RemoveConteiner(ItemConteiner value)

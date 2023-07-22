@@ -6,7 +6,7 @@ internal class WeaponShootSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private StaticData config;
     private Hud hud;
-    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.ShootEvent> filter;
+    private EcsFilter<EcsComponent.EquipWeaponMain, EcsComponent.ShootEvent>.Exclude<EcsComponent.StateEndAmmo> filter;
 
     public void Run()
     {

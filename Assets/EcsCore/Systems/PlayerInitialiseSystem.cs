@@ -48,27 +48,20 @@ internal class PlayerInitialiseSystem : IEcsInitSystem
         hud.HudArmor.ShowArmor(armor.value, 100);
 
         ref var bag = ref entity.Get<EcsComponent.Bag>();
-//<<<<<<< HEAD
-//        bag.conteiners = new ItemConteiner[6]
-//         {
-//                new AmmoConteiner(30, 0),
-//                new MedKitConteiner(0),
-//                new FoodConteiner(5, 0),
-//                new BodyConteiner(0, 0),
-//                new WeaponConteiner(0, 0),
-//                new HeadConteiner(0),
-//         };
-//=======
-         bag = SaveLoadManager.Load<EcsComponent.Bag>("Bag0");
-        /*bag.conteiners = new ItemConteiner[3]
+        bag = SaveLoadManager.Load<EcsComponent.Bag>("Bag0");
+        if (bag.conteiners == null)
         {
-            new AmmoConteiner(30),
-                new MedKitConteiner(30),
-                new FoodConteiner(3)
-                new BodyConteiner(1),
-                new WeaponConteiner(1),
-                new HeadConteiner(1),
-         };*/
+            Debug.LogWarning("Entity " + entity.GetInternalId() + ": Create new bag conteiners");
+            bag.conteiners = new ItemConteiner[6]
+                 {
+                        new AmmoConteiner(30, 0),
+                        new MedKitConteiner(0),
+                        new FoodConteiner(5, 0),
+                        new BodyConteiner(0, 0),
+                        new WeaponConteiner(0, 0),
+                        new HeadConteiner(0),
+                 };
+        }
 
         //entity.Get<EcsComponent.EquippingWeaponEvent>();
 

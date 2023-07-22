@@ -7,7 +7,7 @@ namespace EcsComponent
     /// <summary>
     /// Текущая экипировка
     /// </summary>
-    public struct EquipHead
+    public struct EquipHead : IEquiping
     {
         public int configIndex;
         public int wearout;

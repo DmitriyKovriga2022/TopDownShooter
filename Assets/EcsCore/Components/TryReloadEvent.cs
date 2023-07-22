@@ -1,7 +1,9 @@
 ﻿
+using Leopotam.Ecs;
+
 namespace EcsComponent
 {
-    internal struct TryReloadEvent
+    internal struct TryReloadEvent : IEcsIgnoreInFilter
     {
     }
 }

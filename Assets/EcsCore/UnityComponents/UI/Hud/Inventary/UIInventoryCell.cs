@@ -24,6 +24,7 @@ public class UIInventoryCell : MonoBehaviour, IPointerClickHandler, IInventoryCe
 
     private Sprite defaultSprite;
     private ItemConteiner conteiner;
+    private bool isInitialise = false;
 
     public void Initialise()
     {
@@ -32,6 +33,7 @@ public class UIInventoryCell : MonoBehaviour, IPointerClickHandler, IInventoryCe
         //button = GetComponent<Button>();
         //button.onClick.AddListener(OnButton);
         defaultSprite = image.sprite;
+        isInitialise = true;
         Clear();
     }
 
@@ -70,9 +72,16 @@ public class UIInventoryCell : MonoBehaviour, IPointerClickHandler, IInventoryCe
 
     public void Clear()
     {
-        image.sprite = defaultSprite;
-        conteiner = null;
-        text.text = "";
+        if (isInitialise == false)
+        {
+            Initialise();
+        }
+        else
+        {
+            image.sprite = defaultSprite;
+            conteiner = null;
+            text.text = "";
+        }
     }
 
     private void OnDisable()

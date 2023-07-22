@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Leopotam.Ecs;
+
 namespace EcsComponent
 {
-public struct SaveBagEvent
-{
-    
-}
+    public struct SaveBagEvent : IEcsIgnoreInFilter
+    {
+
+    }
 }

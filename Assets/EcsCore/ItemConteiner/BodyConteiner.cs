@@ -9,17 +9,11 @@ public class BodyConteiner: ItemConteiner
 {
     public BodyConteiner(int configId, int wearout)
     {
-        this.config = ItemData.Instance.Body[configId];
+        this.configId = configId;
         this.wearout = wearout;
     }
 
-    public BodyConteiner(ItemData.ItemArmorConfig config, int wearout)
-    {
-        this.config = config;
-        this.wearout = wearout;
-    }
-
-    private ItemData.ItemArmorConfig config;
+    private int configId;
     private int wearout;
 
     public override int GetCount()
@@ -32,19 +26,26 @@ public class BodyConteiner: ItemConteiner
         return wearout;
     }
 
+    public override int GetConfigId()
+    {
+        return configId;
+    }
+
     public override Sprite GetIcon()
     {
-        return config.Sprite;
+        return ItemData.Instance.Body[configId].Sprite;
     }
 
     public override int GetPrice()
     {
-        return config.Price;
+        return ItemData.Instance.Body[configId].Price;
     }
 
     public override void Apply(EcsEntity entityTarget)
     {
-        entityTarget.Get<EcsComponent.EquippingBodyIntent>();
+        ref var body = ref entityTarget.Get<EcsComponent.EquippingBodyIntent>();
+        body.configIndex = configId;
+        body.wearout = wearout;
     }
 
     public override void Drop(EcsEntity entityTarget)

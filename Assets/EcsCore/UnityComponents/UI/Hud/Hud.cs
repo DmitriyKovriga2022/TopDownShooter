@@ -19,6 +19,7 @@ public class Hud : MonoBehaviour
 
     public void Initialise()
     {
+        inventory = Instantiate(StaticData.Instance.inventoryPrefab, transform);
         inventory.Initialise();
     }
 

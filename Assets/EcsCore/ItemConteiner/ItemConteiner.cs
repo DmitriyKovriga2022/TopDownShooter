@@ -8,6 +8,7 @@ public abstract class ItemConteiner
 {
     public abstract int GetCount();
     public abstract int GetWearout();
+    public abstract int GetConfigId();
     public abstract Sprite GetIcon();
     public abstract int GetPrice();
     public abstract void Apply(EcsEntity entityTarget);
