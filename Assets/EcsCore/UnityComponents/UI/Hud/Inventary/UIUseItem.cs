@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class UIUseItem : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private RectTransform layoutGropTransform;
+    [SerializeField] private RectTransform infoTransform;
     [SerializeField] private Button useItemButton;
     [SerializeField] private Button dropItemButton;
 
@@ -30,6 +31,7 @@ public class UIUseItem : MonoBehaviour, IPointerClickHandler
 
         this.cell = cell;
         layoutGropTransform.position = screenPosition;
+        infoTransform.position = screenPosition;
         gameObject.SetActive(true);
     }
 

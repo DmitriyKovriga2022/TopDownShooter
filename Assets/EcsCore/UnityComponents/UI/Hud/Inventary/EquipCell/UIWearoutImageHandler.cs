@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class UIWearoutImageHandler : MonoBehaviour
 {
-    [SerializeField] private RectTransform wearoutTtransform;
+    [SerializeField] private RectTransform wearoutTransform;
+    [SerializeField] private Image wearoutImage;
     private float wearoutImageSize;
     private UIEquipCell.IShowContent showContent;
 
     private void Start()
     {
-        wearoutImageSize = wearoutTtransform.sizeDelta.y;
+        wearoutImageSize = wearoutTransform.sizeDelta.y;
         showContent = GetComponentInParent<UIEquipCell.IShowContent>();
         showContent.EventShowContent += ShowContent_EventShowContent;
         showContent.EventClearContent += ShowContent_EventClearContent;
-        wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, -100);
+        wearoutTransform.sizeDelta = new Vector2(wearoutTransform.sizeDelta.x, -100);
     }
 
     private void ShowContent_EventClearContent()
@@ -31,12 +32,18 @@ public class UIWearoutImageHandler : MonoBehaviour
     private void ShowWearout(float value)
     {
         float sizeY = 100 - value;
-        wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, -sizeY);
+        wearoutTransform.sizeDelta = new Vector2(wearoutTransform.sizeDelta.x, -sizeY);
+
+        float r = value;
+        float g = 1 - value;
+        float b = 0;
+
+        wearoutImage.color = new Color(r, g, b);
     }
 
     private void HideWearout()
     {
-       wearoutTtransform.sizeDelta = new Vector2(wearoutTtransform.sizeDelta.x, 0);
+       wearoutTransform.sizeDelta = new Vector2(wearoutTransform.sizeDelta.x, 0);
     }
 
     private void OnDestroy()

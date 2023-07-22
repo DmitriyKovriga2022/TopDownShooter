@@ -34,7 +34,7 @@ public class UIBag : MonoBehaviour
         conteiner.Drop(entityOwner);
         RemoveConteiner(conteiner);
         HideUseItemPanel();
-        ReShow();
+        //ReShow();
     }
 
     private void Item_EventUseItem(ItemConteiner conteiner)
@@ -69,7 +69,7 @@ public class UIBag : MonoBehaviour
         }
 
         dragCell.Clear();
-        ReShow();
+       // ReShow();
     }
 
     private void Item_EventGetCellItem(ItemConteiner conteiner)
@@ -90,14 +90,20 @@ public class UIBag : MonoBehaviour
             entityOwner.Get<EcsComponent.Bag>().conteiners = conteiners;
         }
 
-        ReShow();
+      //  ReShow();
     }
 
     public void Show(EcsEntity bagEntity)
     {
-        ClearCell();
-
         entityOwner = bagEntity;
+        gameObject.SetActive(true);
+        CancelInvoke();
+        InvokeRepeating(nameof(ReShow), Time.deltaTime, Time.deltaTime);
+    }
+
+    public void ReShow()
+    {
+        ClearCell();
 
         if (entityOwner.Has<EcsComponent.Bag>())
         {
@@ -114,18 +120,12 @@ public class UIBag : MonoBehaviour
         {
             cells[i].SetConteiner(conteiners[i]);
         }
-
-        gameObject.SetActive(true);
-    }
-
-    public void ReShow()
-    {
-        Show(entityOwner);
     }
 
     public void Hide()
     {
         ClearCell();
+        CancelInvoke();
         gameObject.SetActive(false);
         EventOnHideBag?.Invoke();
     }

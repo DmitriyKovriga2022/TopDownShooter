@@ -12,8 +12,6 @@ internal class EquippingWeaponSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
-            Debug.Log("Equip Weapon");
-
             var entity = filter.GetEntity(i);
             var unitComponent = filter.Get1(i);
             var configIndex = filter.Get2(i).configIndex;

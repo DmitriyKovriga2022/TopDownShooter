@@ -11,6 +11,12 @@ public class EquippingBodySystem : IEcsRunSystem
         foreach (var i in filter)
         {
             var entity = filter.GetEntity(i);
+            if(entity.Has<EcsComponent.EquipBody>())
+            {
+                entity.Get<EcsComponent.ShiftBodyToBagEvent>();
+                continue;
+            }
+
             ref var equipBody = ref entity.Get<EcsComponent.EquipBody>();
             equipBody.configIndex = filter.Get2(i).configIndex;
             equipBody.wearout = filter.Get2(i).wearout;
